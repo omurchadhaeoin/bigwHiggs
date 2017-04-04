@@ -1,0 +1,172 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+\title{Vector bundle over Riemann surface}
+\author{}
+\date{}
+
+\begin{document} 
+\maketitle
+
+\begin{definition}
+    Let $M$ be a Riemannanian manifold 
+    then a smooth vector bundle $(E, M, V, \pi) $ such that the projection 
+    $ \pi : E \rightarrow  M $ is smooth and 
+    there exists a cover of $M$ such that all $ p \in M $, $ \pi^{-1} (U_i) \cong U_i \times V $, for vector space $V$. 
+\end{definition}
+
+We get transition maps $ \{ \varphi_{ij} : U_{ij} \rightarrow  \mathrm{GL} ( V) $ satisfying the cocycle condition.
+
+From a cover $\{U_i \} $ and transition maps $ \varphi _{ij} $ we can recover the vector bundle. 
+
+Examples: 
+Trivial. 
+Cotangent space. 
+
+In the case $ E$ is of rank 1, then call $E$ a line bundle. 
+For $ \xi \in H^1( X \mathcal{O} ^* ) $ holomorphic line bundles. 
+
+Vector bundels from surface group representation 
+X a Riemann surface. 
+
+$\rho : \pi_1 ( X) \rightarrow  \mathrm{GL} (V) $, 
+$ \hat{X} \times _\rho V : = \hat{X} \times V / \sim $
+where $ \hat{X} $ is the universal cover of $ X $ .
+And the equivalence is as it should ....
+
+
+\begin{definition}
+ As mooth section $ s: X \rightarrow  E $ is a smooth map st $ \pi \circ s  = \mathrm{id} | _ X $ 
+\end{definition}
+
+$\Gamma ( TX) $ denotes the space of vector fields.
+
+We can construct new bundles from existing of ones with $ \oplus, \otimes$ and $ \wedge $. 
+Direct some, tensor product, exterior products 
+
+\begin{definition}
+    Let $E \rightarrow X $ and $ E' \rightarrow  X' $ be smooth vector bundles over $ X$. 
+    then a bundle map is a pair $(f,u) : (E,X) \rightarrow  ( E', X') $ such that the relevant maps commute. 
+    The set of all such is $\mathrm{Hom}(E, E') $ and pro... () 
+\end{definition}
+
+If we have a map $ f: Y \rightarrow X $ then we can consider the pullback of $ e \rightarrow X $. 
+
+
+\begin{proposition}
+    Let $E \rightarrow X $ be a smooth bundle, let $ f: Y \rightarrow  X $ 
+    and $ g: Y \rightarrow X $ be homotopic thenn $ f^* E \cong g^* E $, 
+    topological classification of rank $n$ vector bundles over $ X $ 
+\end{proposition}
+
+\begin{definition}
+    The grassmanian $G(n, n+k) $ is the space $n$-planes in $ \mathbb{R} ^{n+k} $
+\end{definition}
+
+\begin{definition}
+     The Tautological bundle $ \gamma^n ( \mathbb{R} ^{n+k} ) $ over $ G(n, n+k) $
+     to be the bundle with elements are of the form $ (V, v) $ where $ v \in V$. 
+\end{definition}
+
+\begin{theorem}
+    Any rank $n$ vector bundle over a paracompact space admits a bundle map to $ \gamma^n $. 
+    Any two bundle maps are isomorphic. 
+\end{theorem}
+
+Have a correspondence smooth rank $n$ vector bundles over $ X $ 
+and the homotopy classes of smooth maps from $ X $ to $ G(n) $. 
+
+Degree for line bundles look at the degree of the associated divisior. 
+For higher rank, do as above for $ \mathrm{det} ( E) $ . 
+
+
+Over $ X$ a Riemann surface. 
+The trivial complex line bundle with $ 2$ open sets. 
+Pick  $p_0 \in X $, $U_1 $ is a contractible neighbourhood of $p$.
+$ U_2  = U_1 \setminus \{p\} $. 
+$f : S^1 \rightarrow S^1 $ 
+
+Have short exact sequence 
+\begin{equation}
+    0 \rightarrow  \mathbb{Z}  \rightarrow  C^\infty \xrightarrow{\mathrm{exp}} C^{\infty *}
+\end{equation}
+Get the long exact sequence which results in 
+\begin{equation}
+    H^1 ( X, C^\infty ) \rightarrow H^2( X, \mathbb{Z} ) \cong \mathbb{Z} 
+\end{equation}
+which is otherwise known as the degree map
+
+\begin{definition}
+ A connection $ D: \Omega^0 ( X, E) \rightarrow  \Omega ^1 ( X, E) $ is a linear map satisfying a Leibniz rule:
+    for $ \sigma \in \Omega^0 ( X, E) $ and $f \in C^\infty $, then 
+    $ D(f \sigma) = df \otimes \sigma + f D\sigma$. 
+\end{definition}
+
+Pick a local frame. 
+Then there exists some $\omega$ such that $ D = d + \omega $. 
+$\omega $ is known as the connection 1-form. 
+
+$\omega $ satisfies the computational condition that changing frames by $g$ 
+\begin{equation}
+    \omega _ {e'} = dg \cdot g^{-1} + g \omega_e g^{-1} 
+\end{equation}
+
+\begin{definition}
+A hermitian structure $H$ on a complex vector bundle $ E$ is a smooth family of 
+    hermitiain scalar products on $E$ such that for any sections $ s, s'$, $ H(s,s') $ is smooth. 
+\end{definition}
+
+\begin{definition}
+    A hermitian structure $H$ is a unitary with respect to a connection $D$ if 
+    for $ s_1, s_2 \in \Omega^0 (E) $ we have $ dH(s_1, s_2 ) = H(Ds_1, s_2) + H(s_1, Ds_2)$.
+\end{definition}
+
+\begin{definition}
+    $E \rightarrow  X$ is a holomorphic vector bundle if $ \pi: E \rightarrow X $ is holomorphic. 
+\end{definition}
+
+\begin{proposition}
+The following are equivalent. 
+    1. $ \pi : E \rightarrow X $ is holomorphic.
+    2. $ \varphi_{ij} : U_{ij} \rightarrow \mathrm{GL}(U) $ holomorphic
+    3. $ \exists \bar{\partial} _E : \Omega ^0 ( E) \rightarrow \Omega ^{0,1} ( E) $ 
+    satisfying the Leibniz rule, and $ \bar{\partial} ^2  = 0 $ .
+\end{proposition}
+
+\begin{theorem}
+  Let $ (E, \bar{\partial}_E ) $ be a holomorphic vecotr bundle. 
+    Let $H$ be a holomorphic sturcture on $E$. 
+    Then there exisst a connection that is unitary with respect to $H$, 
+    and $D^{0,1} = \bar{\partial}_E$.
+\end{theorem}
+
+Where $ D^{0,1} = \pi^{0,1} \circ D$.
+
+Have $ J : TX \rightarrow TX $. 
+Proof: 
+Calculation using connection 1-form $ \omega \partial H \cdot H^{-1}$
+and parallel transport. 
+
+\begin{definition}
+A section is parallel with respect to a connection $ D$ if $Ds = 0 $
+\end{definition}
+
+Parallel transport is, in general, sensitive to the underlying curve. 
+It depends on the underlying curvature of the connection. 
+
+\begin{definition}
+The curvature of $D$ is given by $D^2$ 
+\end{definition}
+This is sensible by extending the initail definition of $ D$ to the exeterior algebra. 
+Say $D$ is flat, if $ D^2 = 0 $. 
+
+\begin{theorem}
+    $D$ is flat then the holonomy only depends on the homotopy of the curve. 
+\end{theorem}
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

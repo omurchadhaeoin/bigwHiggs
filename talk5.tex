@@ -1,0 +1,156 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+\title{Hitchin's equations: four dimensionsal motivation from Yang Mills theory, and reduction in two dimensions.}
+\author{Raul Sanchez Galan}
+\date{}
+
+\begin{document} 
+\maketitle
+
+\section{Principal bundles} % (fold)
+Let lie group $G$ act on manifold $P$.
+Suppose $G$ acts freely on $P$. 
+Let $M = P/G $. 
+The projection $ \pi: P \rightarrow M $ is a submersion such that there exists a good cover $U_i $ of $M$ which trivialises $P$. 
+That is $ \pi^{-1} ( U_i ) \cong U_i \times G $. 
+
+Let $ \rho : G \rightarrow \mathrm{GL} ( V) $ be some representation. 
+The associated vector bundle is defined to be $P \times V / \sim$. 
+Where $ (p,v) \sim ( pg, \rho(g^{-1}) v ) $
+
+Example: 
+The adjoint representation 
+$ \mathrm{Ad}_g : G \rightarrow  G $ by $ a \mapsto gag^{-1} $. 
+Something about $ G \rightarrow  \mathrm{Aut}(G) $ 
+the derivative $ \mathfrak{ad}_g : \mathfrak{g} \rightarrow  \mathfrak{g} $ 
+
+A connection on $ P$ is a 1-form $\omega$ with values in $ \mathfrak{g} $ such that
+$R_g$ is right multiplication by $ g$ 
+$ R_g ^* \omega = \mathfrak{ad} _{g^{-1}} (\omega)$
+$ \omega(\mathfrak{r} (X)) $ for vector field $X \in \mathfrak{G} $
+
+Relating to the covariant derivative given by Charles, need to have (locally) a one form on $M$ with values in $ \mathfrak{g} $. 
+
+Take a local trivialisation $ \{U_\alpha \} $, 
+and set $ A_\alpha = s^* (\omega) $ 
+where $ s: U_\alpha \rightarrow U_\alpha \times G $ is a section. 
+The covariant derivative is locally defined by $ \nabla = d + A $.
+
+The curvature of $ \nabla : \Omega^0 ( E) \rightarrow  \Omega^1 ( E) $
+But induces map $d_A$ extending to the exterior algebra. 
+So define curvature $F_A = d_A ^2 : \Omega^0 ( E ) \rightarrow \Omega^2(0)$ 
+
+In local coordinates we can write 
+$\nabla _i = \frac{\partial}{\partial x_i } + A_i $ where 
+$ A_\alpha = \sum A_i dx_i $
+
+Yang mills: 
+\begin{equation}
+    YM(A) = \int _{} | F_A | ^2 d \mu 
+\end{equation}
+
+The Euler Lagrange of the Yang Mills: 
+\begin{equation}
+     d_A F_A = 0 
+\end{equation}
+which is essentially the Bianchi identity 
+\begin{equation}
+    d_A * F_A = 0 
+\end{equation}
+and is 2nd order PDE on $A$.
+Minimum of YM with finite action are called instantons.  
+
+The Hodge star $*$ requires a metric to be defined. 
+For now we restrict to $ M = \mathbb{R}  ^4 $ with the standard metric. 
+
+\begin{equation}
+    YM ( E) \geq 8 \pi ^2 c_2 (E) 
+\end{equation}
+where 
+\begin{equation}
+    c_2 (E) = \frac{1}{8 \pi^2} \int_M \mathrm{tr} (F_A ^2) 
+\end{equation}
+have 
+\begin{align}
+    * : \Omega^2(\mathfrak{ad}P) & \rightarrow  \Omega^2(\mathfrak{ad}P) \\
+\end{align}
+$ * ^2 = ( -1) ^{n(n-k) } $ 
+as $ * ^2 = 1 \Rightarrow \Omega^2 () ... = \Omega^+ \oplus \Omega^- $. 
+$ F_A = F_A ^+ + F_A ^- $ 
+So in that case on minimum critical points we have that $ F_A = ^* F_A$ 
+which is only first order in $A$. 
+This is if and only if $A$ dual and if and only if $A$ is anti-self dual. 
+
+Note: Some issue computing Chern classes over the real bundles?
+
+Let $G$ be a compact group acting $ \mathbb{R} ^4$. 
+$ F = F_{ij} dx_i \wedge dx_j $.
+Then the self dual equations become:
+\begin{align}
+    F_{12} &= F_{34}  &
+    F_{13} &= F_{42}  &
+    F_{14} &= F_{23}  &
+\end{align}
+
+Suppose $ A $ is translation invariant in $x_3$ and $x_4$.
+Relabel $ A_3 = \varphi_1 $ and $A_4 \varphi_2$.
+Then on $ \mathbb{R} ^2 $ consider the connection $ A = A_1 dx_1 + A_2 dx_2 $. 
+
+ALGEBRA
+
+$\varphi = \varphi_1 + i \varphi_2$
+$ F_{12} = i/2 [ \varphi , \varphi ^* ] $
+$[ \nabla_1 + i \nabla_2 , \varphi ] = 0 $ 
+$ z = x_1 + ix_2$ 
+introduce 
+$ \Phi = \frac{1}{2} \varphi dz \in \Omega^{1,0} ( \mathbb{R} ^2 , \mathfrak{ad}P \otimes \mathbb{C} )$
+$\Phi^* = \frac{1}{2} \varphi * d\bar{z}$
+
+the equations become 
+\begin{align}
+    F = - [ \Phi , \Phi^* ] \\
+    \bar{\partial} _A \Phi = 0 
+\end{align}
+
+These are invariant under changes of coordinates and trivialisations of $ \Omega^1(\mathfrak{ad} P ) $
+
+Observe that the second equation syas that $\Phi $ is a holomorphic section of $ \Omega^{1,0} ( \mathfrak{ad} P \otimes \mathbb{C}) $.
+
+Examples: 
+$ M $ a compact Riemann surface. 
+$ G$ a compact Lie croup. 
+then $ \Phi = 0 \rightarrow F_A = 0 $ unitary flat connections are in one to one correspondence with stable holomorphic bundles. 
+
+$ g = h dz \wedge d \bar{z} $ compatible with the ex structure. 
+$ G = \mathrm{U} ( 1) $. 
+Take the Levi- Civita connection. 
+Induces a connection on $K$ by $ d + A $, 
+on $ K^{1/2} $ by $ d + 1/2 A $. 
+On $ V = K^{1/2} \oplus K^{-1/2} $ have direct sum of two connections. 
+
+Define $ \Phi = \begin{array}{rr}
+    0 & 0 \\
+    1 & 0 \\
+\end{array} \in \Omega ^{1,0} ( \mathrm{End} (V) ) $ 
+
+Have $ \mathrm{Hom} ( K^{1/2} , K^{-1/2} ) \cong K ^{-1} $ so $1$ denotes the canonical section of $ K^{-1} \otimes K $ 
+
+$F_A = - 2h dz d \bar{z} $ and $ \mathrm{Ricci}_g = -2 g $ 
+We are restricted to negative sectional curvature. 
+
+
+
+
+% section (end)
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+
