@@ -1,0 +1,106 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+
+\title{Metric structure on M}
+\author{}
+\date{}
+
+\begin{document} 
+\maketitle
+
+Let $ ( A , \varphi) \in \mathcal{A} \times \Omega ^{1,0} ( M, \mathrm{ad} P \otimes \mathbb{C} ) $.
+$\mathcal{A} $ is the space of connections compatible with a fixed hermitian metric. 
+
+\begin{equation}
+    \mathcal{M} = \{ ( A, \varphi) : \bar{\partial} _A \varphi = 0 , F_A + [\varphi, \varphi^*] = 0 \} / \mathcal{G}
+\end{equation}
+
+$\mathcal{G} $ acts on $ \mathcal{A} \times \Omega^{1,0} $ 
+
+
+\begin{equation}
+    g \in \mathfrak{g} \cong \Omega^0 (M, \mathrm{ad}P \otimes K ) ,~~ ( \bar{\partial}_A g, [g, \varphi]) \in T_{A, \varphi} \mathcal{A} \times \Omega^{1,0} 
+\end{equation}
+
+\begin{equation}
+    g((A_1, \varphi_1) , (A_2, \varphi_2)) = 2i \int _M \mathrm{tr} ( A_1 ^* A_2 + \varphi_1 \varphi_2 ^* ) 
+\end{equation}
+
+
+Claim that $ \Omega^{0,1} \oplus \Omega^{1,0} $ has a hyperkahler structure. 
+Explicitly 
+\begin{align}
+    J(A, \varphi) & = (i \varphi, -i \varphi^*) \\ 
+    K(A, \varphi) & = (- \varphi, -i \varphi^*) \\ 
+    I(A, \varphi) & = (i \varphi, i \varphi^*) 
+\end{align}
+To each of these we have the associated symplectic $\omega_J, \omega_K, \omega_I$.
+
+$\omega_I$ is a symplectic form and so has an associated group action and moment map.
+\begin{equation}
+    \mu(A, \varphi) = F_A + [\varphi, \varphi^*] 
+\end{equation}
+Have holomorphic symplectic structure $\Omega_I$ 
+\begin{equation}
+    \Omega_I ^{((A_1, \varphi_1), (A_2, \varphi_2))} = \int_M \mathrm{tr}(\varphi_2 A_1 - \varphi_1 A_2) 
+\end{equation}
+We have the action $g \in \mathfrak{g} $ from the lie algebra associated to the Gauge group. 
+\begin{equation}
+    g \in \mathfrak{g} \cong \Omega^0 (M, \mathrm{ad}P \otimes K ) ,~~ ( \bar{\partial}_B g, [g, \psi]) \in T_{B, \psi} \mathcal{A} \times \Omega^{1,0} 
+\end{equation}
+induces moment map
+\begin{equation}
+    i_X \Omega_I = d f_{X_g} = d \left< \mu, g \right> 
+\end{equation}
+
+Consider the symplectic contraction on two forms 
+\begin{align}
+    \Omega_I ( (\bar{\partial}_A g, [\varphi', g] )( A^{0,1}, \Phi))& = \int \\
+    & = - \int_M \mathrm{tr}( - g \bar{\partial} _A \Phi - g [ A^{0,1}, \varphi']) \\
+    & = d \int _M \left( \int_M \mathrm{tr}(\bar{\partial}_A \Phi g) \right) ( A^{0,1} , \Phi) 
+\end{align}
+Have $ \mu(A', \varphi') = \bar{\partial}_{A'} \varphi' $
+
+Split moment maps into real and imaginary parts $ \mu = \mu_J + i \mu_K$.
+For $ i = I,J,K$, have $\mu_i ( A', \varphi') = 0 $. 
+This is equivalent to the self duality equations.
+\begin{equation}
+    \mathcal{M} = \bigcap_{i} \mu^{-1}_i (0) / \mathcal{G} 
+\end{equation}
+
+Want to construct a hyperkahler structure over $\mathcal{M}$.
+Let $ P : \bigcap_i \mu^{-1} _i (0) \rightarrow \mathcal{M} $, 
+suppose that $ \bar{\omega}_i $ is pullbacked by $ P^* \bar{\omega}_i = \omega_i |_{\bigcap \mu}$
+This is hypersymplectic structure. 
+Complex structure (requires a descension of metric). 
+
+We are taking for granted that the Moduli space $\mathcal{M}$ is smooth.
+And that the dimension is $ 12(g-1) $. 
+Claim we have shown it is hyperkahler. 
+So we have a sphere of complex structures on $\mathcal{M} $.
+
+Recall we have a $U(1)$ action on the solution to Hitchins equations. 
+If $(A, \varphi)$ a solution then so to is $( A, e^{i \vartheta}) $. 
+The $U(1) $ action induces action on ... 
+\begin{align}
+    \omega_I \rightarrow \omega_I , ~~ \Omega_I \rightarrow  e^{i \vartheta} \Omega_I 
+\end{align}
+preserves one kahler form, so on $S^2$ of $\mathbb{C} $ structures there are two fixed points, 
+the two poles $ \pm I$.
+
+$I$ is then the `preferred' $\mathbb{C} $ structure. 
+
+Aside: consider stable Higgs bundles then if $(V, \varphi) $ is stable, so too is $(V, e^{i\vartheta} \varphi) $ is also stable. 
+$( \mathcal{M}, I) $ is isomorphic to the space of stable Higgs bundles.
+
+$(\mathcal{M}, J) $ is isomorphic to the moduli space of flat connections $A + \varphi + \varphi^* +A ^* $.
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

@@ -1,0 +1,131 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+\title{Non Abelian hodge theory}
+\author{Owen}
+\date{}
+
+\begin{document} 
+\maketitle
+
+Throughout $X$ is  a compact connected Riemann surface. 
+
+
+\begin{theorem}
+    (Non Abelain Hodge Theorem)
+    \begin{equation}
+        \mathcal{M}_{\mathrm{flat}}|^{\mathrm{ss}} \rightarrow  \mathcal{M}_{\mathrm{higgs}} 
+    \end{equation}
+\end{theorem}
+
+where $Mflat$ is the moduli space of rank $n$ vector bundles over $X$ with flat connection. 
+and $Mhiggs$ is the moduli space of rank $n$, degree $0$ vector bundles $E$ over $X$ together with a section $\varphi \in H^0 (X, \mathrm{End}(E) \otimes \Omega^1 _X) $. 
+
+\begin{definition}
+    $(E, \nabla)$ is simple if it has no proper flat subbundles. 
+    It is semisimple if it decomposes as a direct sum of simple bunldes. 
+\end{definition}
+By $ Mflat|^{\mathrm{ss}} $ we denot the moduli space restricted to semisimple bundles. 
+
+Assume $n=1$, so and $E$ is a line bundle. 
+
+Recall that there is a comples analytic isomorphsm. 
+\begin{align}
+    Mbet & = \mathrm{Maps}(\pi_1 ( X) , \mathrm{GL}_n \mathbb{C} ) / \mathrm{GL}_n \mathbb{C}  \\
+    & = \mathrm{Maps}(\pi_1 ( X) , \mathbb{C} ^*) \\
+    & = \mathrm{Maps}(\pi_1 ( X)/[\pi_1(X) , \pi_1(X) , \mathbb{C} ^*) \\
+    & = \mathrm{Maps}(H^1(X, \mathbb{Z} , \mathbb{C} ^*) \\
+    & = H^1(X, \mathbb{C} ^*) 
+\end{align}
+
+In the case is a genus $g$ Riemann surface we have 
+\begin{align}
+    H^\bullet (X, \mathbb{Z} ) \begin{cases}
+        things 
+    \end{cases} 
+\end{align}
+
+Remark: when $n=1$ stability and semistability are automatic. 
+Thus we have that NAHT is equivalent in our case to 
+\begin{equation}
+    H^1(X, \mathbb{C} ^*) \rightarrow Mhiggs
+\end{equation}
+
+Fact: there exists a complex manifold $\mathrm{Pic} ^0 $ called the Jacobian 
+which parameterizes degree 0 line bundles.
+In the case that $E$ is of rank 1 so the endomorphism bundle is trivial. 
+Have higgs field $\varphi \in H^0 ( X , \Omega_X ^1 ) $ 
+
+Thus we reformulate NAHT as 
+\begin{equation}
+    H^1(X, \mathbb{C} ^*) \rightarrow \mathrm{Pic}^0 (X) \times H^0 (\Omega_X ^1 ) 
+\end{equation}
+
+The usual hodge decomposition 
+\begin{equation}
+    H^1 ( X, \mathbb{C} ) = H^1 ( X, \mathcal{O} _X ) \oplus H^0 ( \Omega_X ^1 ) 
+\end{equation}
+which is almost what we want, but not quite. 
+
+The rest of the talk aims to patch over some holes above, 
+and complete the proof of NAHT.
+
+\section{Sheaves} % (fold)
+
+Consider the short exact sequence of sheaves of abelian groups 
+\begin{align}
+    0 & \mathbb{Z}  & \mathbb{C}  & \mathbb{C} ^* & 0 \\
+    0 & \mathbb{Z}  & \mathcal{O}  & \mathcal{O}^* & 0 \\
+\end{align}
+And applying functor $H^ \bullet (X, - ) $ and consider the long exact sequence. 
+We now play the diagram chasing game to prove the necessary injectivity and surjectivity results. 
+
+Claim $ H^0 ( \mathbb{C} ^* ) \rightarrow  H^1 ( \mathbb{Z} ) $. 
+Same holds for $ H^1 ( \mathbb{Z} ) \rightarrow  H^1( \mathcal{O} _X ) $.
+
+By definition $ \mathrm{Pic} (X) = H^1 ( \mathcal{O} _X ) $
+The $\mathrm{ker}( \mathrm{deg}: H^1 ( \mathcal{O}_X ^* ) \rightarrow H^2(\mathbb{Z} ) )$ is preciselt the Jacobian $\mathrm{Pic}^0 (X)$.
+
+Surjectivity at $H^1( \mathbb{C} ^* ) $ follows from the universal soefficient theorem since 
+\begin{equation}
+    H^2 (\mathbb{Z} ) \rightarrow H^2 ( \mathbb{C} ) 
+\end{equation}
+is injective. 
+
+Example: 
+Suppose $X$ has genus 1. 
+Then 
+$H^1(\mathbb{Z} ) = \mathbb{Z} ^2 $, $ H^1 ( \mathbb{C} ) = \mathbb{C} ^2 $, $H^1 ( \mathcal{O} _X )  = \mathbb{C} $, 
+$H^1(\mathbb{C} ^*) = (\mathbb{C} ^*) ^2 $, $H^0 (\Omega_X ^1) $. 
+
+Warning: 
+$H^1 ( \mathbb{C} ^* ) $ is not holomorphically equal to $\mathcal{M} _{\mathrm{flat}} $.
+
+Suppose $H^1 ( \mathbb{C} ^* )$ splits as $ \mathrm{Pic} ^0 (X) \times H^0 (\Omega_X ^1 ) $. 
+Then there is a section $s: \mathrm{Pic}^0 (X) \rightarrow  H^1 ( \mathbb{C} ^*) $. 
+Pulls back to a map $ s: \mathrm{Pic}^0 (X) \rightarrow H^1 (\mathbb{C} ) $
+
+[[ OTHER THINGS I CANNOT READ ]] 
+
+
+% section (end)
+
+
+Proof of $n=1 $ NAHT 
+
+...
+
+
+
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

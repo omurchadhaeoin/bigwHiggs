@@ -1,0 +1,145 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+
+\title{}
+\author{Ben}
+\date{}
+
+\begin{document} 
+\maketitle
+
+BPS states 
+
+Character states stacks 
+
+$P = W$ 
+
+\section{BPS states} % (fold)
+
+\begin{definition}
+    BPS states or counts are invariants of 3CY categories. 
+\end{definition}
+
+A CY category is a category with a duality condition on associated algebras.
+
+Examples of 3 CY categories:
+\begin{enumerate}
+    \item Coherent sheaves on $X$ where $X$ is a smooth projective 3-fold over $ \mathbb{C} $ 
+        with trivial canonical bundle. 
+        Serre duality $E, F \in \mathrm{Coh} (X) $ then $ \mathrm{Ext} ^i (E, F)  \cong \mathrm{Ext}  ( F, E) ^* $.
+    \item Local systems on a real 3 dimensional closed orientable manifold. 
+        IN this case $ H^i * (M, E^* \otimes F ) \cong H ^{3-i } ( M, F^* \otimes E^* ) ^* $ .
+    \item $M$ as above. Then Representations of $ \mathbb{C} [ \pi_1 ( M) ] $. 
+\end{enumerate}
+Any one of these examples gives us the input of DT theory. 
+
+Let $ C $ be 3CY category. 
+Introduce the notion of charge lattice. 
+Target for some [[SOMETHING ]]  invariant of algebras of $ \mathbb{C} $ 
+
+Let $ N = \mathbb{Z}  $ - dimension of $ \mathbb{C} [ \pi ( M) ] $ - module 
+
+$ \mathcal{M} _\gamma $ for $ \gamma \in N $ stack of objects  in $ C $ of class $ \gamma $. 
+This is manageably small. 
+
+Vanishing cycles: Say $\mathrm{Spec} ( \mathbb{C} [x]/ x^d ) $ is a moduli space of objects in some category $B$. 
+This naively has a only a single object of a single point. 
+However a deformation of $x^d $ will see the point split into $d$ objects. 
+Thus we would like $ \# \mathrm{Spec} ( \mathbb{C} [x]/ x^d ) $ to be $ d$ and not $1$. 
+
+Consider $ H^* ( X, \mathbb{Q} ) .... $ 
+[[CANT SEE ]] 
+
+DT theory is the study of the cohomology $ H( M ( C) , \mathcal{Q}  ) $ of the stack $M( C) $ over the category into sheaf $ \mathcal{Q} $  
+We use the charge lattice and mixed hodge structures to decompose this space $D(MHS_N) $.
+
+More precisely $[H(M(C), \mathcal{Q} ) ] \in K_0 (MHS_N) $ where 
+$ K_0 ( MHS_N) = \mathbb{Z} [[L]] / ([L'] +[L''] = [L] ) $ if $ L' \rightarrow L \rightarrow L'' \rightarrow \Delta \in D(MHS_N) $. 
+This is huge and unwieldly. 
+
+How to even write this down? 
+Answer: via Pletystic exponential $\mathrm{EXP} $, 
+$f = \sum_{d \in \mathbb{Z} ^m } a_d x^d $ , 
+$ \mathrm{EXP} (f) = \prod_{d \in \mathbb{Z} ^m } ( 1 - x^d ) ^{-a_d } $ . 
+
+Where does this come from?
+Origin: consider 
+\begin{align}
+    K ( \mathrm{Vect} _{\mathbb{Z} ^m } ) \xarrowright{\chi} \mathbb{Z} [[\mathbb{Z} ^m ]] \\
+    [v] \mapsto \sum _d \mathrm{dim} V_d x^d 
+\end{align}
+but this ill defined... 
+
+cf Grothendeick something. 
+Commutative diagramme between chracters and symmetric algebra maps. 
+
+[[ ERRRRRRR ]]
+
+Question: How does on understand $[ H(M(C), \mathcal{Q} ] $?
+Its just too big. 
+
+Integrality conjecture (historically misnamed):
+This says that $ [H ( M (C), \mathcal{Q} ) ]  = \mathrm{EXP} ( \oplus_{\gamma} BPS_\gamma \otimes H_{\mathbb{C} ^* }  () $ 
+where $ BPS _\gamma $ is a finite dimensional mixed hodge structures. 
+
+Many stupid things have appeared in this talk. 
+We should try to address these...
+
+Let $ M $ be an $n$ dimensional orientable closed real manifold. 
+$ \mathbb{C} [\pi_1 ( M) ]$ -modules. 
+$n$CY categories, with $ \mathrm{Ext}^i (E,F) \cong \mathrm{Ext}^{n-i} ( F, E ) ^* $
+we want $ n = 2 $ not $3$. 
+
+\begin{theorem}
+    (BEN) 
+    Let $B$ be a 2CY category. 
+    Let $ C $ be a category of pairs $(E,f)$ for $ E \in B $, and $ f: E \rightarrow E^* $.
+    Then $C$ is 3CY  and $H ( M(C) , \mathcal{Q} ) \cong H( M( B) , \mathbb{Q} ) $ 
+\end{theorem}
+
+Conclusion: $[ M(\mathbb{C} [\pi_1 ( \Sigma_g) ] ) ] = \mathrm{EXP} ([\oplus _n BPS_{n,g} \otimes H_{\mathbb{C} ^* } ( pts) ] ) $
+
+Hausel Villegas : $[BPS _{n,g} ] = [ H( \mathrm{Rep}_n ^1 ( \Sigma_g) ] $ 
+
+$ \mathrm{Rep}_n ^1 (\Sigma_g ) = [A, B ...] / \mathrm{PGL}_n $
+
+and by NAHT $ \cong \mathrm{Higgs}_{n,1} ( C) $ 
+
+Categorified Integrability theorem. 
+this is much much stronger. 
+
+What does this have to do with the $P=W $?
+Only conjectures to follow?
+
+Conjecture: 
+$ BPS_{g,n} \cong H( \mathrm{Rep} _n ^1 ( \Sigma_g ) $
+
+Theres analogue of the conjecture on the Higgs side. 
+There's a network of conjectures. 
+
+Conjecture: 
+$H(\mathrm{Rep} ( \mathbb{C} [\pi_1(\Sigma_g)] )) \cong \mathrm{Sym} ( \bigoplus H(\mathrm{Rep}_n ^1 ( \Sigma_g ) \otimes H_\mathbb{C} (pt) ) ) $
+
+$ H(\mathrm{Higgs} _{0} ^{ss} ) \cong \mathrm{Sym} ( \bigoplus H( \mathrm{Higgs} ( C)  \oplus H_{\mathbb{C} ^*} (pt) )) $ 
+
+If we believe these conjectures, 
+then $P = W $ becomes equivalent to the an isomorphism between the two LHS above ( call it $\alpha$). 
+$\alpha$ is an isomorphism between 2 qunantum groups. 
+They contain lie algebra structures on respective BPSg and BPS-Higgs 
+
+Claim: $P, W$ filtrations come from induced $\mathfrak{sl}_2 $ on these Lie algebra. 
+
+
+% section (end)
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

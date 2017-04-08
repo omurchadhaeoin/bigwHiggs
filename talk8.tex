@@ -1,0 +1,213 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+\title{Hitchin to Higgs and back}
+\author{Fabian}
+\date{}
+
+\begin{document} 
+\maketitle
+\Large
+
+\section{Hitchins to Higgs} % (fold)
+
+Let $M$ be compact Riemann surface of genus $g > 1$ and group $ G  = \mathrm{U}(2) $.
+Let $ V \rightarrow M $ be a unitary vector bundle of rank 2, that is, $V$ has a Hermitian metric, and admits action by $\mathrm{U}(2)$.
+Let $\{U_{\alpha} \} $ be a trivialisation of $V$ with transition functions 
+$ u_{\alpha \beta} : U_{\alpha \beta} \rightarrow  \mathrm{U}(2) $. 
+
+Suppose $ (A, \varphi) $ be the solution to the Hitchin equation \ref{hitchineq} for $A \in \Omega^1(V)$.
+In local coordinates we can express the connection $A$ as 
+\begin{equation}
+    \nabla _{ A} s = ds + A_{\alpha} s \\
+\end{equation}
+The transformation conditions dictate $ A_j = u_{\alpha \beta} ^{-1} A_{\alpha} u_{\alpha \beta}  +  u_{\alpha \beta} ^{-1} d u_{\alpha \beta}$. 
+Over the cover then $ F_A |_{U_{\alpha} }  = d A_{\alpha} + 1/2 [A_{\alpha} , A_{\alpha}] $
+$ \Phi \in \Omega ^0 (M , \mathrm{End}_0 V) $.
+
+
+Hitchin's equations are
+$F_A + [ \Phi , \Phi^* ] =0 $,
+
+$d_A ^{0,1} \Phi = 0 $. 
+
+\begin{theorem}
+    Let $( A,  \Phi ) $ be a solution to Hitchens equations. 
+    Let $ L \subset V $ that is $ \Phi $ invariant subbundle of rank 1. 
+    Then $ \mathrm{deg} (L ) \leq \frac{1}{2} \mathrm{deg} ( \mathrm{det} ( V) ) $ 
+\end{theorem}
+
+Idea of proof. 
+
+Let $\omega $ be a $2$form such that 
+$ \int 1/2 \pi \omega  = 1$ 
+
+$ s \in \Omega( M, L^* \otimes V ) = \Omega ^0 ( M , \mathrm{Hom}(L, V) ) $ 
+Where $s$ is holomorphic since $L$ is holomorphic. 
+
+Construct a connection $B$ on $L^* \otimes V$ such that 
+$F(B) s = F(A) s - \mathrm{deg} ( L) \leq \omega + 1/2 \mathrm{deg}( \mathrm{det} V ) \leq \omega $ 
+$ - [\Phi , \Phi ^* ] s + ... $ 
+and 
+$ \left< F(B) s, s \right> _{L^2} \geq 0 $ 
+
+If $ \mathrm{deg}(L) > 1/2 \mathrm{deg} (\mathrm{det} V)$ then $ \int \left< F(B) s, s \right> < 0 $  so contradiction.
+
+\begin{lemma}
+ $ L \rightarrow M $ holomorphic line bundle. 
+    Then there exists connection $ \vartheta$ on $ L $ such that $ F(\vartheta) = \deg ( L) \omega $ 
+\end{lemma}
+
+\begin{proof} 
+    Let $ \vartheta $ be a any connection on $ L $. 
+    Then 
+    \begin{align}
+        \int _M \frac{1}{2 \pi}   F_\vartheta = \deg L = \int \frac{1}{2 \pi } \deg L \cdot \omega 
+    \end{align}
+    ( Upto constant. )
+    This implies $ [ \frac{1}{2 \pi} F_\vartheta] = [ ( \deg L \cdot \omega ]  $ 
+
+    Get a second connection $ \vartheta ' =  \vartheta + \partial \rho $ for some $ \rho  \in C^\infty (M) $. 
+    Then $ F(\vartheta' ) = F(\vartheta) - \partial \bar{ \partial} \rho $. 
+
+    Then $ F(\vartheta ' ) = \deg L \cdot \omega $ if and only if 
+    $ \partial \bar{\partial } =  F(\vartheta) - \deg L \cdot \omega $. 
+
+    The latter is precisely the $ d \bar{d} $ lemma . 
+    And since we have a Kahler manifold we can solve for $\rho$. 
+\end{proof}
+
+We have exact sequence of groups 
+\begin{equation}
+    0 \rightarrow\mathrm{U}(1)  \rightarrow U ( 2) \rightarrow  \mathrm{SO}(3) \rightarrow  -0 
+\end{equation}
+
+$SO(3) $ connection $A$ induces $ \hat{A} $ on $V$ such that 
+\begin{equation}
+    F (\hat{A} ) = F ( A) + 1/2 F( A_0 ) \mathrm{id} 
+\end{equation}
+
+$\deg \det V \omega $ 
+connection on $L$ 
+Choose $A_0 $ such that curvature is $ F(A_0 )  = \deg L \cdot \omega $ 
+
+$ \left< d_B ^{0,1} s, s \right> $, 
+The first term lies in $ \Omega^{1,0} ( L^* \otimes V ) $ while the latter term lies in $ \Omega^{0} ( L^* \otimes V ) $.
+
+\begin{align}
+   d^{0,1}  \left< d_B ^{0,1} s, s \right> = \left<  d_B ^{0,1} d_B ^{0,1} s , s \right> - \left< d_B ^{0,1} s ,  d_B ^{0,1} s \right> 
+\end{align}
+Have that $ F(B) = d^2 _B =  d_B ^{0,1} d_B ^{1,0} - d_B ^{1,0} d_B ^{0,1} $
+As $s$ is holomorphic, ie $ d_B ^{0,1} s = 0 $
+
+\begin{equation}
+    \int_M \left< F(B) s , s \right>  \geq 0 
+\end{equation}
+
+
+
+% section (end)
+
+\section{Stable Higgs to Hitchin } % (fold)
+
+Let $ \mathcal{A} $ be the space of all $C ^{\infty}$ connections on stable Higgs bundle $(V, \Phi)$. 
+$\mathcal{A} $ is an affine space that is modelled on $ \Omega ^1(\mathrm{End}(V) )$. 
+Thus $ T _ A \mathcal{A} = \Omega^1 ( \mathrm{End} ( V) ) $. 
+This has a natural symplectic structure 
+\begin{equation}
+    \omega ( Y_1, Y_2 ) | _A : = \int _M \mathrm{Tr} (Y_1 ( A) \wedge Y_2 ( A) ) 
+\end{equation}
+where $Y_i$ vector fields on $ \mathcal{A} $. 
+Thus we have infinite dimensional symplectic manifold. 
+
+Recall that for symplectic manifold $(X, \omega)$, 
+we have associated $G$ acting on $X$, where $ L_x \omega = 0 $. 
+For $ g \in \mathfrak{g} $ have the associated $z_g \in \Gamma ( TX ) $.
+$\omega( \cdot , z_g ) = d H_g $ the action of the Hamiltonian if and only if 
+there exiss $ H_g$ for $ \forall g \in \mathfrak{g} $ 
+
+Define the moment 
+\begin{equation}
+    \mu : M \rightarrow \mathfrak{g} ^ * 
+\end{equation}
+with $ \left< \mu (m) , g \right> = H_g ( m) $.
+
+Let $ \mathcal{G} $ be the group of gauge transformations. 
+That is a collection of functions $g_{\alpha} : U_{\alpha} \rightarrow  {G} $ defined on a trivialisations
+satisfying transformation rule $ g_{\alpha} = u_{\alpha \beta} g_j u_{\beta \alpha }$. 
+Such maps are called gauge transformations and are equivalently defined as sections $g \in \Gamma(\mathrm{Ad}) $.
+ 
+
+The general idea is that Hitchin's equations are the moment map on the space of connections $\mathcal{A} \times \Omega^{1,0} ( \mathrm{ad}P \otimes \mathbb{C} ) $. 
+
+For a connection $\nabla$, the gauge transformation $g$ induces the following transformation to $\nabla'$
+\begin{equation}
+    \nabla' = \nabla  - ( \nabla  g ) g^{-1} 
+\end{equation}
+
+Now see $ \varphi $ as an element of the Lie algebra of the Gauge group. 
+$ \varphi \in \mathrm{Lie} ( \mathcal{G} ) = \Omega^0 (M, \mathrm{End} ( V)) $
+
+For a connection $A$, have the associated vector field
+$ z_\varphi ( A) = \frac{d}{dt} |_{t=0 } ( \nabla_A - \nabla{A} ( I + t \varphi ) ( I -t \varphi) ) = - \nabla_A \varphi $
+
+The associated hamiltonian to $z_\varphi ( A)$ is  
+$ f_\varphi (A) = - \int_M \mathrm{Tr} (F_A \wedge \varphi ) $
+
+We see this by considering
+$ d f_\varphi |_A (a) = - \frac{d}{dt} |_{t=0} \int_M \mathrm{Tr} ( F_{A+t a} \wedge \varphi) $
+where $a \in T_A \mathcal{A} $ that is $ a \in \Omega^1(\mathrm{End}(V) ) $.  
+
+We can write
+$F_{A+a } = F_A + d_A a + \frac{1}{2} [a,a ]$. 
+Commuting the differentiation and integration, 
+and seeing that $ \frac{d}{dt}|_{t=0} F_{A+ta} = d_A a  $
+we recover $ \omega ( a , z_\varphi) =  - \int_M \mathrm{Tr} (d_A a \wedge \varphi)  $ ie the hamiltonian. 
+
+The moment map
+$\mu : \mathcal{A} \rightarrow  \mathrm{Lie}^* ( \mathcal{G} )$ 
+
+Note that since there exists a natural pairing between $ \Omega ^0 ( \mathrm{End}(V))$ and $ \Omega ^2 ( \mathrm{End}(V)) $, so we can identify 
+$ \mathrm{Lie}^*(\mathcal{G}) = \Omega ^2 ( \mathrm{End}(V))$ 
+
+
+Now consider the action of $\mathrm{U} ( n) $ on $\mathrm{C} ^n $ 
+$ \mathrm{End} (\mathbb{C} ^n) $ has hermitian product.
+$h(A,B( = \mathrm{tr} ( AB^*) $
+$U(n) $ acts on $ \mathrm{End} ( \mathbb{C} ^n) $ by conjugation 
+
+$\omega(A,B) = - \mathrm{IM}(\mathrm{tr}( AB^*)) $
+
+$ \mu (A) = i/2 [ A, A^*] $ 
+
+$ \Omega^{1,0} ( M, \mathrm{End}_0 V ) $
+
+$\omega(\Phi, \Phi )  = .... $ 
+
+$\mathcal{G} $ acts on $ \Omega^{1,0}( M, \mathrm{End} _0 (V) ) $
+
+$ \mu(\Phi ) = [ \Phi , \Phi ^* ] $ 
+
+$ \mathcal{G} $ acts on $ \mathcal{A} \times \Omega^{1,0} (M , \mathrm{End}_0 V ) $ 
+
+$ \mu( A, \Phi) = F ( A') + [\Phi , \Phi ^* ] = 0 $ 
+
+to solve Hitchin equation find $(A, \Phi) $ such that $ \mu( A, \Phi) = 0 $. 
+
+Choose a Riemannain metrixc on $M$ so that we can consider $ \| \mu \| ^0 $ 
+
+Then $ \| \mu \|_2 ^ 2 = \int _M \| F_A + [\Phi , \Phi^* ] \| ^2 $ 
+
+
+
+% section (end)
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

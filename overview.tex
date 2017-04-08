@@ -8,44 +8,33 @@
 \begin{document} 
 \maketitle
 
-Higgs bundles were introduced in 1987 Nigel Hitchen. 
-Comes from the interaction of maths and physics. 
+Higgs bundles were introduced in 1987 Nigel Hitchen.
 They are at the core of many mathematical and physical objects and theories.
+In physics they appear when working with Yang-Mills equations, mirror symmetry, topological quantum field theory, supergravity.
+In mathematics they appear in Teichmuller theory, integrable systems, and representations of $ \pi_1 (X) $. 
 
-Physics: Yang-Mills equations give the first non-trivial examples of mirror symmetry. 
-Topological quantum field theory. Supergravity
+\begin{definition}
+    A Higgs bundle $(E, \varphi) $ where $ E \rightarrow  X $ is a holomorphic bundle over a compact Riemann Surface. 
+    $ \varphi \in H^0 ( X, \mathrm{End} (E \otimes K _X) ) $ where $K_X$ is the canonical bundle of $X$. 
+\end{definition}
 
-Mathematics: Teichmuller theory, Integrable systems, 
-representations of $ \pi_1 (X) $ into Lie group $G$. 
-
-Higgs bundles
-$(E, \varphi) $ where $ E \rightarrow  X $ is a holomorphic bundle over a () 
-compact Riemann Surface. 
+Let $X$ be an oriented Riemannian manifold, and $P \rightarrow X$ a principal $G$-bundle. 
+Yang - Mills functional $YM$ is a functional on the space of connections of the associated adjoint bundle, defined by
 \begin{equation}
-    \varphi \in H^0 ( X, \mathrm{End} (E \otimes K _X) ) 
+    YM(A) = \int_X \mathrm{tr}(F_A \wedge * F_A) 
 \end{equation}
-where $K_X$ is the canonical bundle of $X$. 
+where $ F_A= dA + [A, A] $ is the curvature of connection $A$, and $*$ is the Hodge star. 
 
-\begin{equation}
-    S(A) = \int F_A \wedge * F_A
-\end{equation}
-Yang - Mills functional where $A \in \Omega^1 (X, \mathfrak{g}) $  connection on principle bundle $ P \xrightarrow{G}  \mathbb{R} ^Y $
-where $ G$ complex lie group $ F_A= dA + [A, A] $
-$d_A F_A = d_A ( * F_A )$
-critical points of $ D_A (F_A) $ are 
-
-where $d_A $ is the covariant derivative and (1) 
-gives the so called Yang Mills equations. 
-
-This comes from dimensional reduction on the Yang mills.
-In 1 dim, this leads to magnetic monopoles studied by Atiyah and Hitchen
-in 2 dim, get Higgs bundles via the HIggs equations. 
+In the case of four dimensions, if $F_A$ is dual or anti self dual then global minimums are attained.
+Say that $A$ is an instanton if $ F_A = * F_A $, and has seen a lot of attention.
+Solving $A$ in four dimensions is a struggle, so people have considered dimensional reductions. 
+Reducing by supposing translational invariants in one dimension leads to magnetic monopoles studied by Atiyah and Hitchen.
+A further one dimensional reduction, leads to Higgs bundles via the Higgs equations. 
 \begin{align}
     \bar{\partial} \varphi & = 0 \\
-    F_A + [ \varphi , \varphi^* ] = 0 
+    F_A + [ \varphi , \varphi^* ] &= 0 
 \end{align}
 
-In the case that $ F_A = * F_A $ is an instanton 
 
 Let $(E,\varphi) $ where $ E \rightarrow  X$ holomorphic, 
 and $ E = H^\mathbb{C} $ bundle.
@@ -68,7 +57,9 @@ Mirror symmetry for the character varieties.
 
 \section{Non abelian Hodge} % (fold)
 
-$(E, \varphi) $ is a vector bundle onan algebraic curve and more. 
+Let $(E, \varphi) $ be our Higgs bundle over Riemann surface $X$.
+
+
 $\varphi = 0 $. 
 $M(r,d) $ is the moduli space of stable vector bundles of rank $r$ and degree $d$.
 Narashimhain-Sashadin theorem. 
@@ -117,6 +108,7 @@ In the case of Higgs bundles require stronger condition
 \begin{equation}
      \forall F \subset E, ~~ \varphi(F) \subset F \otimes K 
 \end{equation}
+% section (end)
 
 
 \section{Symplectic geometry} % (fold)
@@ -170,7 +162,6 @@ where $\mathcal{N} $ are some critical somethings of something.
 
 
 
-% section (end)
 
 
 \bibliographystyle{plain}

@@ -1,12 +1,14 @@
 % 
 \IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
 
-\title{}
+\title{Hodge theory}
 \author{Marille Ong}
 \date{}
 
 \begin{document} 
 \maketitle
+
+\section{Four worlds of Riemann surfaces} % (fold)
 
 \begin{definition}
   A Riemann surface $X$ is a complex manifold of dimension $1$.
@@ -15,39 +17,39 @@
 examples:
 $ \mathbb{P} $.... 
 
+Denote two sheaves of particular interest. 
+For open subset $U \subset X $, 
 \begin{align}
-    \mathcal{O}_X ( U) \mbox{ holomorpic functions on $U$ } \\
-    \mathcal{M}_X ( U) \mbox{ meromorphic functions on $U$ } \\
+    \mathcal{O}_X ( U) =  \mbox{ holomorpic functions on $U$ } \\
+    \mathcal{M}_X ( U) =  \mbox{ meromorphic functions on $U$ } 
 \end{align}
-
-\section{Four worlds} % (fold)
 
 To be Tabulated 
 
-Topological 
-Classification results: Every closed orientable surface is homeomorphic to a sphere with $g$ handles. 
+\begin{tabular*}{\textwidth}{c|cccc}
+   &   Topological  & Differential & Dolbeaut & algebraic \\
+    Classification results & 
+    Every closed orientable surface is homeomorphic to a sphere with $g$ handles.  & 
+Let $M $ be a smooth orientable closed manifold dimension $2$, 
+    then $M$ is diffeomorphic to $\Sigma _g $. & 
+
+
 Denote this by $\Sigma_g$. 
 Pictorially...
 
 Have descriptions of the fundamental group
-\begin{equation}
-    \pi_1 ( \Sigma_g) = \left< a_i, b_i | i =1, \dots, g ~~ a_i b_i a_i^{-1} b^{-1} \right> 
-\end{equation}
+    $\pi_1 ( \Sigma_g) = \left< a_i, b_i | i =1, \dots, g ~~ a_i b_i a_i^{-1} b^{-1} \right> $
 
 Differential 
-\begin{theorem}
-Let $M $ be a smooth orientable closed manifold dimension $2$, 
-then $M$ is diffeomorphic to $\Sigma _g $. 
-\end{theorem}
 
-\begin{theorem}
-    (d'Rham) 
-\end{theorem}
+D'rham theorem 
+
 
 Dolbeaut + Algebraic.
 Holomorphic objects relate to algebraic varieties, 
 Holomorphic maps relate to regular morphisms, 
 Riemann surfaces relate to projective curves. 
+\end{tabular*} 
 
 Example: Complex tori relate elliptic curves. 
 $ \Gamma( 1, \omega) $  and $j$-invariants 
@@ -158,7 +160,7 @@ The jacobian of $ X$ is given by
     \begin{equation}
         \mathrm{Jac}(X) = H^0 (\Omega^1 _X )/ \Lambda
     \end{equation}
-    Thus we identify $H^0 ( X, \Omega^1 _X) ^* $ with $ \mahtbb{C} ^ g$
+    Thus we identify $H^0 ( X, \Omega^1 _X) ^* $ with $ \mathbb{C} ^ g$
 \end{definition}
 
 \begin{definition}
@@ -216,11 +218,9 @@ Really long list defining the operators
 \end{theorem}
 
 
-Hodge theory  gives us the set of 1 dim representations $\pi_1(X) $ is isomorphic to the set of holomorphic line bundles with degree 0 
+Hodge theory gives us the set of 1 dim representations $\pi_1(X) $ is isomorphic to the set of holomorphic line bundles with degree 0 
 
 % section (end)
-
-
 
 
 \bibliographystyle{plain}

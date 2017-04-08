@@ -7,36 +7,45 @@
 
 \begin{document} 
 \maketitle
+\Large
+\section{The motivation} % (fold)
 
-Relate representation $ \pi_1 ( S) \rightarrow  \mathrm{Sl}(2, \mathbb{C} ) $ 
-Harmonic bundles $ ( E, \nabla, h )$ 
-and Higgs bundles 
+We wish to relate three distinct families of objects over a given manifold:
+representations $ \pi_1 ( S) \rightarrow  \mathrm{Sl}(2, \mathbb{C} ) $;
+harmonic bundles $ ( E, \nabla, h )$;
+and Higgs bundles $(E, \varphi)$.
+
+% section (end)
+
 
 \section{Setting} % (fold)
-$S$ connected closed oriented surface $ g \geq 2 $. 
-$X$ is Riemann surface over $ S$. 
+
+Let $S$ connected closed oriented surface $ g \geq 2 $ and $X$ a Riemann surface over $ S$. 
 
 \begin{definition}
-    A higgs bundle on $X$ is $(E, \varphi)$ 
+    A Higgs bundle on $X$ is a pair $(E, \varphi)$ 
     where $E \rightarrow  X $ is a rank $2$ holomorphic vector bundle 
     with trivial determinant and $ \varphi \in H^0 ( X, K \otimes \mathrm{End} _0 (E) ) $.
 \end{definition}
 
 \begin{definition}
-    $(E, \varphi)$ is stable if for any $L \subset E $ such that $ \varphi(L) \subset L \otimes K $ 
+    A Higgs bundle $(E, \varphi)$ is stable if for any $L \subset E $ such that $ \varphi(L) \subset L \otimes K $ 
     we have $\mathrm{deg}(L) < 0 $. 
-    Say $ (E, \varphi ) $ is polystable if $ E = \bigoplus_{i = 1} ^2  ( E_i , \varphi _i ) $ where the components are stable.
+    Such $L$ are called $\varphi$ invariant.
+    If $ E = \bigoplus_{i = 1} ^2  ( E_i , \varphi _i ) $ where the components are stable, then say $(E, \varphi)$is polystable.
 \end{definition}
 
 \begin{theorem}
  (Hitchin 87) 
-    $( E, \varphi) $ Polystable then there exists $H$ hermitian metric on $E$ st 
-    the chern connection $ A $ of $H$ satisfies 
+    If $( E, \varphi) $ is polystable then there exists hermitian metric $H$ on $E$ such that the Chern connection $ A $ of $H$ satisfies 
     \begin{equation}
         F _A + [ \varphi , \varphi ^{*_H} ] = 0  
     \end{equation}
     (This is the Hitchin equation. ) 
 \end{theorem}
+
+[[ CHERN CONNECTION ]] [[ H HERMITIAN ON E OR M ?? Whats is *H ]]
+
 
 Remark ... 
 ALGEBRA 
@@ -83,35 +92,32 @@ Complex structure with a complex compact submanifold.
 
 \section{Hyperbolic Geometry and Teichmuller theory} % (fold)
 
-\begin{equation}
-    \mathbb{H} = \{ (x,y) \in \mathbb{R}  | y> 0 \}, g = \frac{dx \wedge dy }{ y^2} 
-\end{equation}
-2 -dim simply connected Riemannian manifold with constant sectional curvature $-1$. 
-$ \mathrm{Aut}^+ ( \mathbb{H} ) = \mathrm{PSL}(2, \mathbb{R} ) $. 
-$z = x + iy $. 
+Recall that hyperbolic space $ \mathbb{H} = \{ (x,y) \in \mathbb{R}  |~ y> 0 \} $
+has hyperbolic metric $ g = \frac{dx \wedge dy }{ y^2} $.
+It has constant sectional curvature $-1$. 
+The orientation preserving automorphism group is $ \mathrm{Aut}^+ ( \mathbb{H} ) = \mathrm{PSL}(2, \mathbb{R} ) $. 
+How does one construct $ \mathbb{H}$-structures on $S $. 
 
-How to construct $ \mathbb{H}$-structures on $S $. 
-Let $ \Gamma < \mathrm{PSL}(2, \mathbb{R}) $ 
+[[Let $ \Gamma < \mathrm{PSL}(2, \mathbb{R}) $ ]]
 
-\begin{equation}
-    \mathcal{D} F ( \pi_1 ( S) , \mathrm{PSL} (2, \mathbb{R} ) ) =
-    \left \{ \rho : \pi ( S)  \rightarrow  \mathrm{PSL} ( 2, \mathbb{R} ) \right\}
-\end{equation}
-Fuchisan space 
 
-\begin{equation}
-    \mathcal{F} ( S)  = \left\{ ( Y, h, f) | \mbox{ $h$ hyperbolic metric on $Y$, $f:S \rightarrow Y$ marking} \right \} 
-\end{equation}
-Fricke space. 
-
-Teichmuller space 
-\begin{equation}
-     T(S)  = \left\{ ( x, l ) | X \mbox{ Riemann surface } \right \} 
-\end{equation}
+We define the following three spaces associated to $S$.
+The Fuchisan space $ \mathcal{D}F$ is 
+\begin{align}
+    \mathcal{D} F ( \pi_1 ( S) , \mathrm{PSL}_2 \mathbb{R} ) ) & = \\
+    \{ \rho : \pi ( S)  \rightarrow  \mathrm{PSL}_2( \mathbb{R} ) & | \mbox{ injective, discrete} \} /\mathrm{PSL}_2 (\mathbb{R} ) 
+\end{align}
+The Fricke space $\mathcal{F}(S)$ is
+\begin{align}
+    \mathcal{F} ( S)  = \left\{ ( Y, h, f) |~ h \mbox{ hyperbolic metric } f:S \rightarrow Y \right\} / \mathrm{Diff}_0 ( S)  
+\end{align}
+The Teichmuller space $\mathcal{T}(S)$ is
+\begin{align}
+    \mathcal{T}(S)  = \left\{ ( X, l ) |~ l: S \rightarrow X  \right \}  / \mathrm{Diff}_0 ( S)  
+\end{align}
 
 There are maps relating these three spaces ad the spaces. 
 cf Killing Hopf, Uniformization (Poincare Koebe) 
-
 
 \begin{theorem}
 As smooth manifolds $ \mathcal{D} F (S) = \mathcal{F} (S) = \mathcal{T} (S) = \mathbb{R}  ^{ 6g-6} $
@@ -131,7 +137,6 @@ Take short exact sequence
 \begin{equation}
     0 \rightarrow  \mathbb{Z} _2 \rightarrow \mathcal{O}^* \rightarrow \mathcal{O}^* 
 \end{equation}
-[WHATS]
 
 Let $ E = K^{1/2} \oplus K^{-1/2}$ which is holomorphic of rank 2. 
 Note that this is unstable.

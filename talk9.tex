@@ -1,0 +1,103 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+
+\title{Character Varieties}
+\author{Dan} 
+\date{}
+
+\begin{document} 
+\maketitle
+
+Let $X$ be a fixed Riemann surface. 
+
+We have three associated spaces that correspond to topological, smooth, and holomorphic perspectives. 
+\begin{align}
+    R_{\mbox{Betti} } & = \mathrm{Hom} _{\mathrm{grp}} ( \pi_1 (X) , \mathrm{GL}_n \mathbb{C} ) \\
+    R_{\mbox{dR} } & = \mbox{rank $n$ flat vector bundles} \\
+    R_{\mbox{Higgs} } & = \mbox{rank $n$ Higgs bundles} \\
+\end{align}
+Quotienting by relevant subgroups gives 
+\begin{align}
+    \mathcal{M}_{\mbox{Betti} } & =  R_{\mbox{Betti} } / \mbox{ conj} \\
+    \mathcal{M}_{\mbox{dR} } &     =  R_{\mbox{dR} } / \mbox{ gauge} \\
+    \mathcal{M}_{\mbox{Higgs} } &   = R_{\mbox{Higgs} } / \mbox{ equiv} \\
+\end{align}
+
+These are all equivalent as topological spaces. 
+
+Let $\gamma$ be a group, and $ G$ a Lie group. 
+$R(\Gamma, G) = \mathrm{Hom}(\Gamma, G) $. 
+
+Example: $ \Gamma = \mathbb{Z}  $ and $ G = \mathrm{SL}_2 ( \mathbb{R} ) $ then $ R(\Gamma, G) = \mathrm{SL}_2 ( \mathbb{R} ) $. 
+The closure of an orbit of $ \left( \begin{array}{rr} 1 & 1 \\ 0 & 1 \\ \end{array} \right) $ contains the identity. 
+Something bad happens here. 
+We lack the ability to find an invariant decomposition. 
+
+\begin{definition}
+A representation $ \rho $ is reductive or semisimple it is a sum of irreducible representations. 
+\end{definition}
+
+\begin{align}
+    \mathrm{Hom}(\Gamma, G) & \rightarrow  G^d \\
+    \rho \mapsto \left[ \begin{array}{r}
+        \rho(\gamma_1)\\ 
+        \dots \\
+        \rho(\gamma_1)\\ 
+    \end{array} \right]  \\
+\end{align}
+where $ \Gamma  = \left< \gamma_i \right> $. 
+In the case that $ \Gamma$ is a fundamental group...
+
+Suppose $n=1$. 
+Then 
+\begin{align}
+    \mathcal{M}_{\mathrm{Betti}} & = \mathrm{hom} ( \pi_1 (X) , \mathbb{C} ^* ) \cong (\mathbb{C} ^*)^{2g} \\
+    \mathcal{M}_{\mathrm{Higgs}} & = T^* \mathrm{Jac} ( X) \\
+\end{align}
+Which can (sort of) easily be seen to be diffeomorphic, but not necessarily analytic. 
+
+Consider $ \frac{\partial f }{ \partial z } = \frac{1}{2z} f $ on $ \mathbb{C} ^* $.
+Locally a solution will have the form $ f = c z^{1/2} $ for $c \in \mathbb{C} $. 
+Considering this solution as it varies along a curve circumventing the origin we return to $z ^{-1/2} $.
+
+[[REPHRASE]] 
+
+Repesentations of $\pi_1 (X,x) $. 
+Local systems $\mathcal{F} $ on $X$,
+Locally constant sheaf $ \mathcal{F}_x  = \mathrm{colim} _{U} \mathcal{F} = \mathcal{F}(U_x) $, 
+that is their exists a neighbourhood, which agrees with the stalk??.
+Vector bundles with flat connection on $X$ 
+
+First we wish to construct a map from local systems $\mathcal{F}$ on $X $ to reps of $\pi_1(X)$. 
+
+[[ WHAT IS A LOCAL SYSTEM ]] 
+
+Fix base point $x \in X$, and a trivialisation of the sheaf $\mathcal{F}$. 
+For loop $ \gamma: [0,1] \rightarrow  X$ anchored at $x$, 
+Let $ \gamma: \mathcal{F}_x \rightarrow  \mathcal{F}_x $ by concanotaion of inclusion and restriction maps from the sheaf.  
+It transpires that in the case of locally constant sheaf, we can show that this depends only on the homotopic class of the curve. 
+Thus we get a map from locally constant sheaves and representations of $\pi_1(X) $ to $\mathrm{Aut}(\mathcal{F} ) $ 
+
+Secondly, we consider vector bundles with flat connections on $X$ to locally constant sheafs. 
+$ \mathrm{Ker}(\nabla) $ .
+
+We have previously seen the monodromy representation of a flat connection $( E, \nabla ) $ 
+by considering parallel transport about loops.
+
+The Riemann Hilbert correspondence gives us
+\begin{equation}
+    \mathcal{M} _{\mbox{Betti}} \rightarrow \mathcal{M} _{\mbox{dR}} 
+\end{equation}
+equivalence as real analytic spaces, but the algebraic structures may differ. 
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

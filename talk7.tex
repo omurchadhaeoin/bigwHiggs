@@ -10,28 +10,29 @@
 
 \begin{definition}
 Let $M$ compact Riemann surface. 
-    A $\mathrm{GL}_n $-higgs bundle is pair $(V, \varphi)$ 
+    A $\mathrm{GL}_n $-Higgs bundle is pair $(V, \varphi)$ 
     where $ V$ is a holomorphic rank $n$ vector bundle and 
     $ \varphi$ is a holomorphic section of $ \mathrm{End}(V) \otimes K $.
-    That is $ \varphi \in H^0 ( \mathrm{End} (V) \otimes K) $ 
+    That is $ \varphi \in H^0 ( \mathrm{End} (V) \otimes K) $.
 \end{definition}
 
 \begin{definition}
-    Two Higgs bundles $(V, \varphi) $ and $(V', \varphi')$ are isomorphic if 
+    Say two Higgs bundles $(V, \varphi) $ and $(V', \varphi')$ are isomorphic if 
     there exists $ \psi: V \rightarrow  V'$ inducing the commutative diagram
 \end{definition}
 
-Recall that $P$ a principal $G$-bundle, 
-the connection $A$ on $P$, then $ \varphi \in \omega^1 ( M , \mahtfrac{ad} ( P) \otimes \mathbb{C} ) $ 
+Recall that for $P$ a principal $G$-bundle, 
+and connection $A$ on $P$, 
+then $ \varphi \in \omega^1 ( M , \mathrm{ad} ( P) \otimes \mathbb{C} ) $ 
 such that $ F_ A = [ \varphi , \varphi ^* ] $ and $ \bar{\partial} _A \varphi = 0 $
 
 Claim: $ V = (P \otimes \mathbb{C} ^n) / G $ then $V, \varphi$ is a higgs bundle. 
-Note that $ \Omega^1 ( M, \mathfrac{ad} ( p) \otimes \mathbb{C}  = H^0 ( M , ( \mathfrak{ad} P \otimes \mathbb{C} ) \otimes K) $
+Note that $ \Omega^1 ( M, \mathrm{ad} ( P) \otimes \mathbb{C}  = H^0 ( M , ( \mathrm{ad} P \otimes \mathbb{C} ) \otimes K) $
 
 Commutative diagram defining that map 
 \begin{align}
-    (\mathfrak{ad}P \otimes \mathbb{C} )_x  \rightarrow  \mathrm{End}(V) _x \\
-    [p, m ] \mapsto ([pg, v] \mapsto [pg, g^-1 m g v] ) 
+    (\mathrm{ad}P \otimes \mathbb{C} )_x & \rightarrow  \mathrm{End}(V) _x \\
+    [p, m ] & \mapsto ([pg, v] \mapsto [pg, g^{-1} m g v] ) 
 \end{align}
 
 
@@ -39,7 +40,7 @@ Commutative diagram defining that map
 
 \begin{definition}
     Let $( V, \varphi) $ be higgs bundle. 
-    Say $ E \subset L$ is $ \varphi$ invariant if $ \varphi(E) \subset E \oitmes K$. 
+    Say $ E \subset L$ is $ \varphi$ invariant if $ \varphi(E) \subset E \otimes K$. 
     In such cases, say $E$ is a Higgs subbundle. 
 
     A Higgs bundle is stable if $\mu(E) < \mu(V) $ for all Higgs subbundles. 
@@ -63,7 +64,7 @@ Example:
 Let $ G = \mathrm{SU}(2) $. 
 Then 
 \begin{equation}
-    \mathfrac{su}(2) \otimes \mathbb{C}  \cong \mathfrak{sl}(2, \mathbb{C} ) = \{ m \in \mathrm{Mat}(2, \mathbb{C} )| ~ \mathrm{tr}(m) = 0 \}
+    \mathfrak{su}(2) \otimes \mathbb{C}  \cong \mathfrak{sl}(2, \mathbb{C} ) = \{ m \in \mathrm{Mat}(2, \mathbb{C} )| ~ \mathrm{tr}(m) = 0 \}
 \end{equation}
 $ \varphi \in H^0 ( \mathrm{End} _0 ( V) \otimes K) $ 
 $V$ of rank 2. 
@@ -91,18 +92,15 @@ $ \mathrm{deg}(L) \geq \frac{1}{2} \mathrm{deg} (\Lambda^2 V ) $
 
 \begin{proposition}
     Let $ g>1 $. A rank $2$ vector bundle $V$ occurs in a stble Higgs bundle $(V, \varphi) $ iff one of the folloing holds. 
+    \begin{enumerate}[label=(\roman*)]
+    \item $V$ is stable,
+    \item $V$ is semistable and $g>2$, 
 
-    $V$ is stable,
-
-    $V$ is semistable and $g>2$, 
-
-    $V$ is semistable and $g=2$, and $V = U \otimes L$, 
-    and $U$ decomposable or $0 \rightarrow  \mathcal{O} \rightarrow U \rightarrow \mathcal{O} \rightarrow 0 $
-
-    $V$ is not semistable and $h^0 (L^{-2} \otimes \mathrm{det}(V) \otimes K ) > 1 $
-
-    $V$ is not semistable and $h^0 (L^{-2} \otimes \mathrm{det}(V) \otimes K ) = 1 $ and 
-    $V = L\oplus (L^* \otimes \mathrm{det}(V) ) $
+    \item $V$ is semistable and $g=2$, and $V = U \otimes L$, 
+    and $U$ decomposable or $0 \rightarrow  \mathcal{O} \rightarrow U \rightarrow \mathcal{O} \rightarrow 0 $ 
+\item $V$ is not semistable and $h^0 (L^{-2} \otimes \mathrm{det}(V) \otimes K ) > 1 $ 
+\item $V$ is not semistable and $h^0 (L^{-2} \otimes \mathrm{det}(V) \otimes K ) = 1 $ and $V = L\oplus (L^* \otimes \mathrm{det}(V) ) $
+\end{enumerate}
     
 \end{proposition}
 
@@ -114,7 +112,7 @@ Have
 \end{equation}
 
 \begin{equation}
-    0 \rightarrow  F \rightarrow  \mathrm{End} _0 ( V \otimes K) \rightarrow L^{-2} \otimes \mathrm{det} ( V) zotimes K \rightarrow  0 
+    0 \rightarrow  F \rightarrow  \mathrm{End} _0 ( V \otimes K) \rightarrow L^{-2} \otimes \mathrm{det} ( V) \otimes K \rightarrow  0 
 \end{equation}
 
 $H^0 ( L^{-2} \otimes \mathrm{Det} (V)  \otimes K ) = \mathrm{Hom} ( L...) $ 

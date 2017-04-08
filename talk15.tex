@@ -1,0 +1,124 @@
+% 
+\IfFileExists{/u/r/dw580/Qspace/mypreamble}{ \input{/u/r/dw580/Qspace/mypreamble} }{ \input{/home/waalge/Qspace/mypreamble} } % Work and Laptop versions
+
+
+\title{Extending to non compact Riemann surfaces}
+\author{}
+\date{}
+
+\begin{document} 
+\maketitle
+Non-abelian hodge theory for non compact curves (tame or wild) .
+
+Have a punctured Rieman surface $ X \setminus \{ p_1 , \dtos, p_k \} $ 
+
+Recap the compact case : 
+1) Harmonic Bundle, 
+2) flat (stable) complex bundle, 
+3) Irreducible representations $ \pi_1(X) \rightarrow GLn $ 
+4) Higgs bundles 
+
+Maps: 
+1) ---> 2)
+2) ---> 1) Couvette donladson 
+2) ---> 3) RH 
+1) ---> 4) << Hitchn Kobeshi 
+
+
+Maps from moduli ...
+
+Over the top have the non-compact analogues that we'll see. 
+Includes parabolic bundles, 
+parabolic Higgs bundle 
+
+\begin{definition}
+    A parabolic bundle $ E \rightarrow \bar{X} $ over compact Riemann surface $ \bar{X}$ 
+    is a bundle together with a subset $ D \subset \bar{X}$, 
+    such that for each $p \in D$, we have a full flag 
+    \begin{align}
+        E|_p > E|_{1,p} > \dots > E|_{r , p } > \{ 0 \} \\
+        0 \leq \alpha_ 1 < \dots < \alpha _r < 1
+    \end{align}
+\end{definition}
+
+This models holomorphic bundles on $X$. 
+
+Parabolic Higgs field $(E, E_\alpha , \vartheta) $ 
+such that $ E_{\alpha , p } \rightarrow \Omega_X \otimes E_{\alpha, p} $ .
+
+Parabolic flat bundle $(E, \{ E_\alpha \}, \nabla ) $ 
+around the punctures we model these in local coordinates $ \frac{dz}{z} $ weigthed by alpha. 
+
+Both $ \vartheta $ and $\nabla $ allow poles of order at most one. 
+
+Stability for parabolic Higgs-bundle. 
+
+\begin{definition}
+    Let $ ( E, \{ E_\alpha \} $ parabolic bundle. 
+    For subbundle $F \rightarrow  E $ we inherit the flag structure by restricting the flags $\{E_\alpha\} $.
+
+    $\mathrm{pardeg}(E) = \mathrm{deg}(E) + \sum_p \sum_i \alpha_i(p) $. 
+    
+    Then $E$ is stable if it admits the stability where we consider the the $\mathrm{pardeg} $ instead of $\mathrm{deg}$ 
+\end{definition}
+
+\begin{definition}
+    $(E, D, D'', h) $ is tame  if 
+    for each puncture  the standard metric on $D^2$ 
+    1) Higgs bundles side $ | \lambda_i | _{D_z} < c / |z| $ 
+    2) Flat bundle $ \nabla $ flat connection have at most polynomial growth at $p $
+    $v$ my flat section then $ |v|^2 < r ^2 $ 
+
+    As expressed in local coordinates
+\end{definition}
+
+We have a Riemann Hilbert singularieties. 
+for connections with regular singularieties 
+
+\begin{align}
+    \mathrm{Rep} \{ \pi_1 ( \bar{X} \setminus D ) \rightarrow GLnC \} \rightarrow \{ \mbox{ flat connections with regular singularities} \} 
+\end{align}
+
+Tabulate 
+$( E,\vartheta) $, $ (E, \nabla ) $ , $ (L, \mu) $ 
+
+weights 
+
+eigenvalues 
+
+
+
+Moduli spaces
+
+Once we fix the weight $\alpha$
+recover all the results we want. 
+
+$m \alpha $ hyperkaheler 
+
+$Mbetti $ is the usual 
+$Mdr$ has log connections 
+$Mdol $ If we consider the special case of nilpotent Higgs fields 
+$\vartheta = \begin{array} 0 &  * \\ 0 & 0 \end{array} $ 
+    then $E_{i, p} \rightarrow E_{i+1, p } \otimes _p \Omega^1 _ X $ 
+
+    Then consider the strong parabolic endomorphism. 
+
+
+    What about the wild case??
+
+    $ \nabla = \sum A_i z^{-i } dz $ 
+    
+    (Boalch - Biquard ) 
+
+    Still get a correspondence 
+
+    But we dont get Mbetti
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+
