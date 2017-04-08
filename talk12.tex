@@ -1,0 +1,139 @@
+% 
+\input{preamble}
+
+\title{Spectral curves and integrability of Dolbeaut moduli}
+\author{Philip}
+\date{}
+
+\begin{document} 
+\maketitle
+
+Rationale setup:
+Moduli space $\mathcal{M}_{Dol} $ of stable Higgs Bundles 
+
+Remark:
+$\mathcal{M} \subset T^* \mathcal{N} $ open dense for $\mathcal{N} $ is the moduli space of stable vector bundles
+Can generalise this: 
+Let $ P \rightarrow  C $ be a principal $G$ - bundle, 
+then let $v$ be an associated vector bundle to the fundamental representation 
+
+Claim: $ \mathcal{M} _{Dol} $ is an algebraically completely integrable system. 
+
+Want: proof by construction 
+Hitchin fibration $h : \mathcal{M} \rightarrow \mathcal{B}$ 
+There exists curve $ \Sigma \rightarrow  C $ such that the fibres of the Hitchin fibration are $\mathrm{Jac}(\Sigma) $ spectral curves. 
+
+
+
+Integrable systems 
+Hitchin Fibration 
+Spectral curve 
+Outlook
+
+\section{Integral Systems} % (fold)
+
+Let $(M,\omega) $ be a (holomorphic) symplectic manifold. 
+
+Example: Cotangent spaces, Kahler manifolds or hyperkahler manifolds. 
+The latter is holomorphic symplectic $\Omega = \omega_J + i \Omega_K $. 
+
+\begin{definition}
+     For $ f \in C^{\infty} (M) $, the Hamiltonian of $f$ is the vector field $X_f $, such that 
+     \begin{equation}
+            df = \omega(X_f, \cdot) 
+     \end{equation}
+\end{definition}
+
+\begin{definition}
+    For $ f,g \in C^{\infty}(M)$, the Poisson Bracket $\{f, g\} = \omega(X_f, X_g) $. 
+    Say $f,g$ Poisson commute if their Poisson bracket is 0. 
+\end{definition}
+
+Let f,g be $G$-invariant functions on $M$, then can define $\tilde{f}, \tilde{g}$ on quotient $\mu^{-1} (0)/ G $. 
+They Poisson commute if and only if  $\tilde{f}, \tilde{g} $ Poisson commute. 
+
+\begin{definition}
+    Let $(M, \omega) $ of dim $2n$ is called (holomorphically) completely integrable system if:
+    there exists $n$ functions $\{f_1, \dots, f_n \}$ which pairwise Poisson commute, 
+    and are functionally independent ie $\Lambda_i df_i \neq 0 $ on an open dense set of $M$, denoted $M_0$. 
+\end{definition}
+
+Remark: 
+The level sets of $\{f_i \} $ give a foliation on $M_0$ 
+
+\begin{theorem}
+    (Arnold - Louiville) 
+    Let $(M, \omega, \{f_i \} ) $ be a (holomorphic) complete integrable system. 
+    Let $N$ be a connected complement of the level set of $f$. 
+    Then $ N$ is a diffeo (biholomorphic) to $ \mathbb{R} ^k \times T^{n-k} $ ( $ \mathbb{C} ^k \times T^{n-k} $) 
+
+    In particular complete connected components are diffeomorphic (biholomorphic) to a torus. 
+\end{theorem}
+
+\begin{definition}
+Algebraically complete integrable system is a holomorphic completely integrable system if the generic fibres of $f:M \rightarrow \mathbb{C} ^n $ are abelian varieties 
+\end{definition}
+
+
+
+
+% section (end)
+
+\section{Hitchin Fibration} % (fold)
+
+Consider $\mathcal{M}_{Dol} $. 
+
+Want map $\varphi$ to a basis of $n = \mathrm{dim} (\mathcal{M}) /2 $ 
+functions given by polynomials 
+\begin{align}
+    h: \mathcal{M} & \rightarrow  \mathcal{B} := \bigoplus _{i =1} ^r H^0 ( C, K ) 
+    ( V, \varphi ) & \mapsto ( a_i (\varphi), \dots , a_r (\varphi) )
+\end{align}
+
+$\mathrm{det} ( \lambda - \varphi) = \lambda ^r  + a_1 \lambda^{r-1} +\dots + a_{r-1} \lambda + a_r $
+
+Actually take $ \pi: K \rightarrow  C $ for $ \{ a_i \} \in \mathcal{B} $, 
+let $ \varphi $ be the tautological section of $\pi^* K $. 
+This map is proper and surjective and $ \mathrm{dim}(\bigoplus _i ^r H^{0} (C, K^i ) ) = n $. 
+% section (end)
+
+\section{Spectral Curve} % (fold)
+
+Consider $ \mathrm{det}( \lambda - \varphi) = \mathrm{Char}_\varphi ( \lambda) $, 
+gives an algebraic curve $\Sigma $ in $K = T^*C $ and is called a spectral curve. 
+A generic curve (generic $\{a_i \} \in \mathcal{B}$ ) is smooth. 
+We have map $ \pi: T^*C \rightarrow  C $, restricting to $\pi: \Sigma \rightarrow  C$. 
+
+Thus we view $\Sigma$ as a ramified $r$ cover of $ C$. 
+At generic points on $C$, the $\lambda_1, \dots, \lambda_r $ distinct . 
+Eigenspaces give a line bundle $ L \rightarrow \Sigma $ implies a point in $\mathrm{Jac} (\Sigma) $
+
+Claim: The fibre of $ h: \mathcal{M} \rightarrow \mathcal{B} $ are given by $\mathrm{Jac} (\Sigma) $ for $\Sigma = \Sigma_{\{a_i \}} $ 
+
+Some technicalities about how all this work is omitted here. 
+Use the direct image construction to get line bundle over $\Sigma$.
+
+$u \subset C $ $H^0 (U, \pi_* L) = H^0 ( \pi^{-1} (U) , L) $
+
+To retrieve $\varphi$ via the functorial structure.
+[[ COMMUTATIVE DIAGRAM HERE ]] 
+
+Stability: 
+$\Sigma$ is irreducible. 
+If there exists $M \subset V = \pi_* L $, 
+$\varphi$ invariant then $ \mathrm{char}_\varphi |_M $ divides the character variety. 
+
+
+
+
+
+% section (end)
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 

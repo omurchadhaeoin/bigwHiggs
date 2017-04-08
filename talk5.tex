@@ -1,0 +1,170 @@
+% 
+\input{preamble}
+
+\title{Hitchin's equations: four dimensionsal motivation from Yang Mills theory, and reduction in two dimensions.}
+\author{Raul Sanchez Galan}
+\date{}
+
+\begin{document} 
+\maketitle
+\Large
+
+\section{Principal bundles} % (fold)
+
+Let $\pi : P \rightarrow M $ be a principal $G$-bundle over $M$ with trivialisation $\{ U_\alpha \} $. 
+Suppose we have a representation $ \rho : G \rightarrow \mathrm{GL} ( V) $, 
+then the associated vector bundle is defined to be $P \times V / \sim$ where the equivalence classes are given by $ (p,v) \sim ( pg, \rho(g^{-1}) v ) $.
+
+Example representation: 
+The adjoint representation.
+For each $g \in G $, set $ \mathrm{Ad}_g : G \rightarrow  G $, where 
+$\mathrm{Ad}_g : h \mapsto ghg^{-1} $.
+Consider the map $ \mathrm{Ad}: G \rightarrow \mathrm{Aut}(G) $, 
+defined $ g \mapsto \mathrm{Ad}_g$. 
+We can identify the tangent space $ T_e G$ at the identity with the Lie algebra $\mathfrak{g}$,
+and hence get the derivative $d_e ( \mathrm{Ad}_g) : \mathfrak{g} \rightarrow \mathfrak{g} $. 
+The adjoint representation $\mathrm{ad} : G \rightarrow \mathrm{Aut}(\mathfrak{g}) $
+is defined by $ g \mapsto \mathrm{ad}_g := d_e ( \mathrm{Ad}_g) $. 
+Note that $\mathrm{Aut}(\mathfrak{g}) $ denotes the group of automorphisms respecting the Lie Bracket. 
+
+
+\begin{definition}
+    A connection on $ P$ is a 1-form $\omega$ satisfying the following conditions:
+    \begin{enumerate}[label=(\roman*)]
+        \item $\omega$ is $\mathfrak{g}$ valued, under the decomposition $T^* P = T^* M \oplus \mathfrak{g}$.
+        \item for $g \in G$, $R^* _g \omega_{pg} = \mathrm{ad}_{g^{-1}} \circ \omega_p$, 
+        where $R_g$ denotes the action of the Lie group on $P$.
+    \item restricted to fibres, $\omega$ agrees with the Maurer-Cartan right invariant form, with values in the Lie algebra $\mathfrak{g}$, $ \omega(dR X) =  X $ for $X \in \mathfrak{g}$
+\end{enumerate}
+\end{definition}
+
+Relating to the covariant derivative given by Charles (talk, need to have (locally) a one form on $M$ with values in $ \mathfrak{g} $. 
+
+Take a local trivialisation $ \{U_\alpha \} $, 
+and set $ A_\alpha = s^* (\omega) $ 
+where $ s: U_\alpha \rightarrow U_\alpha \times G $ is a section. 
+The covariant derivative is locally defined by $ \nabla = d + A $.
+
+The curvature of $ \nabla : \Omega^0 ( E) \rightarrow  \Omega^1 ( E) $
+But induces map $d_A$ extending to the exterior algebra. 
+So define curvature $F_A = d_A ^2 : \Omega^0 ( E ) \rightarrow \Omega^2(0)$ 
+
+In local coordinates we can write 
+$\nabla _i = \frac{\partial}{\partial x_i } + A_i $ where 
+$ A_\alpha = \sum A_i dx_i $
+
+
+% section (end)
+
+\section{Yang-Mills equations} % (fold)
+
+On a manifold $M$ with metric and orientation, 
+we can define the Yang mills functional is defined on the space of connections of a vector bundles
+\begin{equation}
+    YM(A) = \int _{} | F_A | ^2 d \mu 
+\end{equation}
+The critical points are the solutions of the associated Euler Lagrange
+\begin{equation}
+     d_A F_A = 0, ~~ d_A * F_A = 0 
+\end{equation}
+The first of these is the Bianchi identity and is automatically satisfied. 
+The latter is 2nd order PDE on $A$.
+Minimum of the Yang-Mills equations with finite action are called instantons.  
+The Yang-Mills functional for a vector bundle $E$ is bounded from below by $ YM \geq 8 \pi ^2 c_2 (E) $ 
+where $ c_2 (E) = \frac{1}{8 \pi^2} \int_M \mathrm{tr} (F_A ^2) $. 
+Thus if the integral is defined for some connection, there exists a minimum. 
+
+Note that the Hodge star $*$, implicitly appearing in the functional, requires a metric and orientation to be defined.  
+  $ * : \Omega^2(\mathrm{ad}P)  \rightarrow  \Omega^2(\mathrm{ad}P) $ 
+
+% section (end)
+
+\section{Restricting to Euclidean space} % (fold)
+
+
+For now we restrict to $ M = \mathbb{R}  ^4 $ with the standard metric. 
+Then the hodge squared $ * ^2 = ( -1) ^{n(n-k) } $ since $ * ^2 = 1$. 
+Thus we have eigenspace decomposition by $*$ of $\Omega^2 $ as $\Omega^2(\mathrm{ad}P) = \Omega^+ \oplus \Omega^- $. 
+Let the decomposition $ F_A = F_A ^+ + F_A ^- $.
+Expanding $F_A ^2 $ we can see that case on minimum critical points we have that $ F_A = * F_A$
+which is only first order in $A$. 
+This is if and only if $A$ dual or anti-self dual.
+(Switching orientation of $\mathbb{R} ^4$ takes dual to anti-self-dual). 
+
+[ Note: Some issue computing Chern classes over the real bundles?]
+
+\texttt{<<<<<<<<<<<<<<<<<<---->>>>>>>>>>>>>>>>}
+
+Let $G$ be a compact group acting $ \mathbb{R} ^4$. 
+$ F = F_{ij} dx_i \wedge dx_j $.
+Then the self dual equations become:
+\begin{align}
+    F_{12} &= F_{34}  & F_{13} &= F_{42}  & F_{14} &= F_{23}  
+\end{align}
+
+Suppose $ A $ is translation invariant in $x_3$ and $x_4$.
+Relabel $ A_3 = \varphi_1 $ and $A_4 = \varphi_2$.
+Then on $ \mathbb{R} ^2 $ consider the connection $ A = A_1 dx_1 + A_2 dx_2 $. 
+
+ALGEBRA
+
+$\varphi = \varphi_1 + i \varphi_2$
+$ F_{12} = i/2 [ \varphi , \varphi ^* ] $
+$[ \nabla_1 + i \nabla_2 , \varphi ] = 0 $ 
+$ z = x_1 + ix_2$ 
+introduce 
+$ \Phi = \frac{1}{2} \varphi dz \in \Omega^{1,0} ( \mathbb{R} ^2 , \mathfrak{ad}P \otimes \mathbb{C} )$
+$\Phi^* = \frac{1}{2} \varphi * d\bar{z}$
+
+the equations become 
+\begin{align}
+    F = - [ \Phi , \Phi^* ] \\
+    \bar{\partial} _A \Phi = 0 
+\end{align}
+
+These are invariant under changes of coordinates and trivialisations of $ \Omega^1(\mathfrak{ad} P ) $
+
+Observe that the second equation syas that $\Phi $ is a holomorphic section of $ \Omega^{1,0} ( \mathfrak{ad} P \otimes \mathbb{C}) $.
+% section (end)
+
+\section{Hitchin equations} % (fold)
+
+
+
+Examples: 
+$ M $ a compact Riemann surface. 
+$ G$ a compact Lie croup. 
+then $ \Phi = 0 \rightarrow F_A = 0 $ unitary flat connections are in one to one correspondence with stable holomorphic bundles. 
+
+$ g = h dz \wedge d \bar{z} $ compatible with the ex structure. 
+$ G = \mathrm{U} ( 1) $. 
+Take the Levi- Civita connection. 
+Induces a connection on $K$ by $ d + A $, 
+on $ K^{1/2} $ by $ d + 1/2 A $. 
+On $ V = K^{1/2} \oplus K^{-1/2} $ have direct sum of two connections. 
+
+Define $ \Phi = \begin{array}{rr}
+    0 & 0 \\
+    1 & 0 \\
+\end{array} \in \Omega ^{1,0} ( \mathrm{End} (V) ) $ 
+
+Have $ \mathrm{Hom} ( K^{1/2} , K^{-1/2} ) \cong K ^{-1} $ so $1$ denotes the canonical section of $ K^{-1} \otimes K $ 
+
+$F_A = - 2h dz d \bar{z} $ and $ \mathrm{Ricci}_g = -2 g $ 
+We are restricted to negative sectional curvature. 
+
+
+% section (end)
+
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

@@ -1,0 +1,181 @@
+% 
+\input{preamble}
+
+\title{Easy examples of Higgs Bundles and Hitchin Equations}
+\author{}
+\date{}
+
+\begin{document} 
+\maketitle
+\Large
+\section{The motivation} % (fold)
+
+We wish to relate three distinct families of objects over a given manifold:
+representations $ \pi_1 ( S) \rightarrow  \mathrm{Sl}(2, \mathbb{C} ) $;
+harmonic bundles $ ( E, \nabla, h )$;
+and Higgs bundles $(E, \varphi)$.
+
+% section (end)
+
+
+\section{Setting} % (fold)
+
+Let $S$ connected closed oriented surface $ g \geq 2 $ and $X$ a Riemann surface over $ S$. 
+
+\begin{definition}
+    A Higgs bundle on $X$ is a pair $(E, \varphi)$ 
+    where $E \rightarrow  X $ is a rank $2$ holomorphic vector bundle 
+    with trivial determinant and $ \varphi \in H^0 ( X, K \otimes \mathrm{End} _0 (E) ) $.
+\end{definition}
+
+\begin{definition}
+    A Higgs bundle $(E, \varphi)$ is stable if for any $L \subset E $ such that $ \varphi(L) \subset L \otimes K $ 
+    we have $\mathrm{deg}(L) < 0 $. 
+    Such $L$ are called $\varphi$ invariant.
+    If $ E = \bigoplus_{i = 1} ^2  ( E_i , \varphi _i ) $ where the components are stable, then say $(E, \varphi)$is polystable.
+\end{definition}
+
+\begin{theorem}
+ (Hitchin 87) 
+    If $( E, \varphi) $ is polystable then there exists hermitian metric $H$ on $E$ such that the Chern connection $ A $ of $H$ satisfies 
+    \begin{equation}
+        F _A + [ \varphi , \varphi ^{*_H} ] = 0  
+    \end{equation}
+    (This is the Hitchin equation. ) 
+\end{theorem}
+
+[[ CHERN CONNECTION ]] [[ H HERMITIAN ON E OR M ?? Whats is *H ]]
+
+
+Remark ... 
+ALGEBRA 
+
+Once you have a solution to the Hitchin Equation 
+$\nabla = A +\varphi + \varphi^* $ connection on $E$ . 
+
+$(A, \varphi)$ solution $\Leftrightarrow$ $\nabla $ is a flat connection. 
+
+Get a representation $ \mathrm{hol}_\nabla : \pi(S) \rightarrow \mathrm{SL}(2, \mathbb{C} ) $. 
+
+Moreover the fact that $ \varphi$ is holomorphic is equivalent to $H$ being a harmonic metric. 
+
+
+
+% section (end)
+ 
+
+\section{Example 1} % (fold)
+
+$(E, \varphi)$ is a stable Higgs bundle iff $E$ is a stable vecotr bundles. 
+
+Solving hitchins equations for $ (E, 0 ) $ means finding a metric $H$ such that 
+\begin{align}
+    F_A + [0,0^*] = 0 \\
+    F_A = 0 
+\end{align}
+The Chern connection is already flat. 
+
+We recover Narasimhan-seshadin
+\begin{equation}
+    \left\{ E \mbox{ rank 2, triv det, stable holom vb} \right\} \leftrightarrow 
+    \left\{ \mathrm{Rep}( \pi_1 ( S) , \mathrm{SU}(2) ) \right\} 
+\end{equation}
+
+Relating the Moduli space $ \mathcal{M} _{0,2} (X)$ the Doulbeuat moduli. 
+Complex structure with a complex compact submanifold. 
+\begin{equation}
+    M_{0,2} (X) \rightarrow T^* M_{0,2} (X) \xrightarrow{ \mbox{open, dense} } \mathcal{M} _{0,2}
+\end{equation}
+
+
+% section (end)
+
+\section{Hyperbolic Geometry and Teichmuller theory} % (fold)
+
+Recall that hyperbolic space $ \mathbb{H} = \{ (x,y) \in \mathbb{R}  |~ y> 0 \} $
+has hyperbolic metric $ g = \frac{dx \wedge dy }{ y^2} $.
+It has constant sectional curvature $-1$. 
+The orientation preserving automorphism group is $ \mathrm{Aut}^+ ( \mathbb{H} ) = \mathrm{PSL}(2, \mathbb{R} ) $. 
+How does one construct $ \mathbb{H}$-structures on $S $. 
+
+[[Let $ \Gamma < \mathrm{PSL}(2, \mathbb{R}) $ ]]
+
+
+We define the following three spaces associated to $S$.
+The Fuchisan space $ \mathcal{D}F$ is 
+\begin{align}
+    \mathcal{D} F ( \pi_1 ( S) , \mathrm{PSL}_2 \mathbb{R} ) ) & = \\
+    \{ \rho : \pi ( S)  \rightarrow  \mathrm{PSL}_2( \mathbb{R} ) & | \mbox{ injective, discrete} \} /\mathrm{PSL}_2 (\mathbb{R} ) 
+\end{align}
+The Fricke space $\mathcal{F}(S)$ is
+\begin{align}
+    \mathcal{F} ( S)  = \left\{ ( Y, h, f) |~ h \mbox{ hyperbolic metric } f:S \rightarrow Y \right\} / \mathrm{Diff}_0 ( S)  
+\end{align}
+The Teichmuller space $\mathcal{T}(S)$ is
+\begin{align}
+    \mathcal{T}(S)  = \left\{ ( X, l ) |~ l: S \rightarrow X  \right \}  / \mathrm{Diff}_0 ( S)  
+\end{align}
+
+There are maps relating these three spaces ad the spaces. 
+cf Killing Hopf, Uniformization (Poincare Koebe) 
+
+\begin{theorem}
+As smooth manifolds $ \mathcal{D} F (S) = \mathcal{F} (S) = \mathcal{T} (S) = \mathbb{R}  ^{ 6g-6} $
+\end{theorem}
+
+\begin{theorem}
+ (Wolf) 
+    Fix $ X \in \mathcal{T} (S) $. 
+    Then get homeomorphism 
+    \begin{equation}
+        \mathcal{F} (S) \rightarrow H^0 (X, K^2) 
+    \end{equation}
+\end{theorem}
+
+Fix $ X \in \mathcal{T} ( S) $ choose a sqare root of $ K$ 
+Take short exact sequence
+\begin{equation}
+    0 \rightarrow  \mathbb{Z} _2 \rightarrow \mathcal{O}^* \rightarrow \mathcal{O}^* 
+\end{equation}
+
+Let $ E = K^{1/2} \oplus K^{-1/2}$ which is holomorphic of rank 2. 
+Note that this is unstable.
+$ \mathrm{deg} ( K^{1/2} ) = g -1  > 0 $. 
+
+Choose 
+\begin{equation}
+    \varphi = \begin{array}{rr}
+        0 & 0 \\
+        1 & 0 \\
+    \end{array} \in H^0 ( X, K \otimes \mathrm{End}_ 0 ( E))
+\end{equation}
+The only $ \varphi$-invariant subbundle is $ 0 \oplus K^{-1/2} $ 
+which has degree $ 1-g < 0 $. 
+Thus $ ( E, \varphi ) $ is a stable higgs bundle. 
+
+Can now apply Hitchins theorem and get $ H$ hermitian metric on $E$, 
+such that the chern connection satisfies $F_A + [\varphi, \varphi^* ] = 0 $ 
+
+Remark: 
+E is decomposible. 
+
+\begin{align}
+    \mathcal{M} _ {0,2} ( X) & \rightarrow H^0 (X, K ^2) \\
+    ( K ^{1/2} \oplus K^{-1/2} , \left(\begin{array}{rr}
+        0 & \alpha \\
+        1 & 0 \\ 
+    \end{array} \right) \mapsto \alpha 
+\end{align}
+
+
+% section (end)
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+

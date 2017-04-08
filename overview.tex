@@ -1,0 +1,172 @@
+% 
+\input{preamble}
+
+\title{Overview talk}
+\author{Marina Logares}
+\date{}
+
+\begin{document} 
+\maketitle
+
+Higgs bundles were introduced in 1987 Nigel Hitchen.
+They are at the core of many mathematical and physical objects and theories.
+In physics they appear when working with Yang-Mills equations, mirror symmetry, topological quantum field theory, supergravity.
+In mathematics they appear in Teichmuller theory, integrable systems, and representations of $ \pi_1 (X) $. 
+
+\begin{definition}
+    A Higgs bundle $(E, \varphi) $ where $ E \rightarrow  X $ is a holomorphic bundle over a compact Riemann Surface. 
+    $ \varphi \in H^0 ( X, \mathrm{End} (E \otimes K _X) ) $ where $K_X$ is the canonical bundle of $X$. 
+\end{definition}
+
+Let $X$ be an oriented Riemannian manifold, and $P \rightarrow X$ a principal $G$-bundle. 
+Yang - Mills functional $YM$ is a functional on the space of connections of the associated adjoint bundle, defined by
+\begin{equation}
+    YM(A) = \int_X \mathrm{tr}(F_A \wedge * F_A) 
+\end{equation}
+where $ F_A= dA + [A, A] $ is the curvature of connection $A$, and $*$ is the Hodge star. 
+
+In the case of four dimensions, if $F_A$ is dual or anti self dual then global minimums are attained.
+Say that $A$ is an instanton if $ F_A = * F_A $, and has seen a lot of attention.
+Solving $A$ in four dimensions is a struggle, so people have considered dimensional reductions. 
+Reducing by supposing translational invariants in one dimension leads to magnetic monopoles studied by Atiyah and Hitchen.
+A further one dimensional reduction, leads to Higgs bundles via the Higgs equations. 
+\begin{align}
+    \bar{\partial} \varphi & = 0 \\
+    F_A + [ \varphi , \varphi^* ] &= 0 
+\end{align}
+
+
+Let $(E,\varphi) $ where $ E \rightarrow  X$ holomorphic, 
+and $ E = H^\mathbb{C} $ bundle.
+Let $ G$ be a non-maximal component. 
+Then $ \varphi \in H ^0 ( X, E(\mathfrak{m}^ \mathbb{C} \otimes K) $
+$\mathfrak{g} = \mathfrak{h} + \mathfrak{m} $ 
+
+Then $ G = U(p,q) $ and $ E = V \oplus W $ , $\varphi = \begin{array}{rr}
+    0 &  \gamma \\
+    \beta & 0 \\
+\end{array} $ 
+
+Upcoming:
+Non-abelian Hodge theory
+Symplectic structure 
+Hitchin map 
+Singular Higgs bundles (parabolic bundles) 
+Topology of moduli spaces 
+Mirror symmetry for the character varieties. 
+
+\section{Non abelian Hodge} % (fold)
+
+Let $(E, \varphi) $ be our Higgs bundle over Riemann surface $X$.
+
+
+$\varphi = 0 $. 
+$M(r,d) $ is the moduli space of stable vector bundles of rank $r$ and degree $d$.
+Narashimhain-Sashadin theorem. 
+\begin{equation}
+    M ( r, 0  ) \cong \{ \pi_ 1 (X) \rightarrow \mathrm{U}(n)\} / \mathrm{U}(n) 
+\end{equation}
+
+Donaldson generalises representation 
+3 ingredients, $v$, $b$, connections $ \rho : \pi_1 ( X) \rightarrow  G$ 
+
+\begin{equation}
+     H^1 ( X, G) \cong H_1 ( X, G) \cong \mathrm{Hom} ( \pi / [\pi, \pi] , G) \cong \mathrm{Hom} ( \pi, G) 
+\end{equation}
+
+Non-abelian hodge theory consists of the following technique
+\begin{equation}
+    H^1 _{\Delta } (X, G) \cong H^1 _{dR} ( X,G) \cong H^1 _{\partial} ( X,G)  
+\end{equation}
+Relates the singular, d'Rham, and Dolbeaut cohomology. 
+The topological, the differential, and the algebraic
+% section (end)
+
+\section{Symplectic Geometry} % (fold)
+
+Suppose $ H^1( X, \mathbb{R} ) = \mathbb{R} $, 
+for $ X $ compact Riemann surface of genus $g$. 
+The cup product provides $H^1( X, \mathbb{R} ) $ with symplectic structure. 
+Actually, 
+$ \mathcal{M} ^s (r,d) $ the moduli of stable Higgs bundles is symplectic. 
+\begin{equation}
+    T_E M = H^1( X, \mathrm{End}(E) ) 
+\end{equation}
+by Serre duality
+\begin{equation}
+    T_E M ^* = H^0 ( X, \mathrm{E} \otimes K_X 
+\end{equation}
+
+$M^s$ is the moduli space of stable vector bundles 
+Say that vector bundle $E \rightarrow  X$ is stable if
+$\forall F \subset E $ 
+\begin{equation}
+    \mathrm{deg} (F) / \mathrm{rk} (F) < \mathrm{deg}(E) / \mathrm{rk}(E) 
+\end{equation}
+slope condition. 
+In the case of Higgs bundles require stronger condition
+\begin{equation}
+     \forall F \subset E, ~~ \varphi(F) \subset F \otimes K 
+\end{equation}
+% section (end)
+
+
+\section{Symplectic geometry} % (fold)
+
+\begin{equation}
+    \mathrm{dim} M = r^2 ( g-1 ) + 1
+\end{equation}
+% section (end)
+
+\section{Hitchin map} % (fold)
+($ G = \mathrm{GL} ( r, \mathbb{C} ) $) 
+\begin{equation}
+    \mathcal{M}^s \supset T^* M^s \rightarrow M ^s
+\end{equation}
+
+The hitchin map 
+\begin{align}
+    \mathcal{M}^s \rightarrow{h} \bigoplus _{i>0 } H^) ( X, K^i )  = H \\
+    (E, \varphi ) \mapsto \mathrm{tr} ( \bigwedge ^i \varphi ) 
+\end{align}
+Proper map, with $ \mathrm{dim} H  = \frac{1}{2} \mathrm{dim} \mathcal{M} $
+(cf spectral curves, mirror symmetry, and integral systems) 
+
+SYZ- mirror symmetry 
+% section (end)
+
+\section{Parabolic} % (fold)
+
+[NO IDEA]
+
+% section (end)
+
+\section{Topology of moduli of stable Higgs} % (fold)
+
+Define a perfect morse function 
+\begin{align}
+    \mu : \mathcal{M} & \rightarrow  \mathbb{R} \\
+    (E, \varphi)  \mapsto \| \varphi \| ^ 2 
+\end{align}
+
+\begin{equation}
+    P _t ( \mathcal{M}) = \sum t ^{\mathrm{ind}} P _t ( \mathcal{N}) 
+\end{equation}
+where $\mathcal{N} $ are some critical somethings of something. 
+
+
+% section (end)
+
+
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{}
+
+
+\end{document} 
+
