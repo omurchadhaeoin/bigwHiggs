@@ -24,32 +24,27 @@ For open subset $U \subset X $,
     \mathcal{M}_X ( U) =  \mbox{ meromorphic functions on $U$ } 
 \end{align}
 
-To be Tabulated 
+Let $T$ be a topological closed oriented 2-manifold with genus $g$, $M$ a differential manifold homeomorphic to $T$, 
+and $\Sigma $ be a closed Riemann surface of genus $g$. 
 
-\begin{tabular*}{\textwidth}{c|cccc}
-   &   Topological  & Differential & Dolbeaut & algebraic \\
+\begin{tabularx}{0.8\linewidth}{X|XXXX}
+   &   Topological  & Differential & Dolbeaut & algebraic \\ \hline
     Classification results & 
-    Every closed orientable surface is homeomorphic to a sphere with $g$ handles.  & 
-Let $M $ be a smooth orientable closed manifold dimension $2$, 
-    then $M$ is diffeomorphic to $\Sigma _g $. & 
+    $T$ is homeomorphic to a sphere with $g$ handles.  & 
+    $M$ is unique upto diffeomorphism. & & GAGA \\ 
 
+    Fundamental group & 
+    $\pi_1 ( \Sigma_g) = \left< a_i, b_i | ~~ \Pi_{i=1} ^g a_i b_i a_i^{-1} b^{-1} \right> $ & 
+    \\
+    Cohomology & 
+    Hurwicz & 
+    d'Rham & 
+    Dolbeaut & 
+    \\
 
-Denote this by $\Sigma_g$. 
-Pictorially...
+\end{tabularx} 
 
-Have descriptions of the fundamental group
-    $\pi_1 ( \Sigma_g) = \left< a_i, b_i | i =1, \dots, g ~~ a_i b_i a_i^{-1} b^{-1} \right> $
-
-Differential 
-
-D'rham theorem 
-
-
-Dolbeaut + Algebraic.
-Holomorphic objects relate to algebraic varieties, 
-Holomorphic maps relate to regular morphisms, 
-Riemann surfaces relate to projective curves. 
-\end{tabular*} 
+Riemann surfaces are in 1-1 correspondence to projective curves, and holomorphic maps are in 1-1 correspondence to regular morphisms.
 
 Example: Complex tori relate elliptic curves. 
 $ \Gamma( 1, \omega) $  and $j$-invariants 
@@ -73,6 +68,8 @@ Denote this group $ \mathrm{Pic}(X) $.
     A meromorphic section $s$ of line bundle ... (Axioms stated)
     $\mathcal{O}_L $ denotes the sheaf of holomorphic sections. 
 \end{definition}
+ 
+[[ DEFINITION OF A SHEAF ]] 
 
 \begin{definition}
     A sheaf $ \mathcal{F} $ on $ X$ is an invertible if for all $U_i$  in the cover $\{U_i\} $ 
@@ -84,7 +81,7 @@ Denote this group $ \mathrm{Pic}(X) $.
     \begin{equation}
         \mathrm{Pic} (X)  \cong H^1 ( X, \mathcal{O}^* _ X ) 
     \end{equation}
-    And isomorphic to the group of invertible shead on $X$ under $ \otimes$. 
+    And isomorphic to the group of invertible sheaves on $X$ under $ \otimes$. 
 \end{theorem}
 
 \begin{definition}
@@ -96,6 +93,7 @@ Denote this group $ \mathrm{Pic}(X) $.
     \begin{equation}
         h^0 (X, \mathcal{O} _L) - h^0 (X, \mathcal{O}_{L^* \otimes K_X}) = \mathrm{deg} (L) + 1 - g 
     \end{equation}
+    where $h := \mathrm{dim} H $ 
 \end{theorem}
 
 \begin{theorem}
@@ -129,6 +127,8 @@ The class group is defined as
 \end{equation}
 And the analogue for degree 0 .
 
+[[ STATE 0 ANALOGUE ]] 
+
 For a line bundle we can define the associated divisor, which is defined upto principle divisor. 
 That is ...
 \begin{theorem}
@@ -140,20 +140,22 @@ That is ...
 \end{theorem}
 
 Weiestrass problem. 
-Given divisor $ D$ ....
+Given divisor $ D$ 
+
+[[ STATE ]] 
 % section (end)
 
 \section{Jacobian} % (fold)
 
-Define $H^0 ( X, \Omega_X ^ 1) $ space of holom !-forms.
-Define 
+Denote by $H^0 ( X, \Omega_X ^ 1) $ the space of holomorphic 1-forms.
+Let
 \begin{align}
     \lambda _ C : H^0 ( X, \Omega_X ^1 ) & \rightarrow  \mathbb{C} \\
     \omega & \mapsto \int _C \omega
 \end{align}
 By Stokes $\lambda$ only depends on the class $[C] \in H_1 (X, \mathbb{Z} ) $ of curve $C$. 
 
-Lettig $ \Lambda$ be the image of $\lambda$.
+Letting $ \Lambda$ be the image of $\lambda$.
 
 \begin{definition}
 The jacobian of $ X$ is given by 
@@ -171,16 +173,18 @@ The jacobian of $ X$ is given by
     \end{align}
     where $ \gamma_p $ is a path $p_0 $ to $p $. 
     Abel-Jacobi map.
+    
+    [[ WHAT IS ]]
 
     Extend linearly to $ A : \mathrm{Div}(X) \rightarrow \mathrm{Jac} (X) $.
 \end{definition}
 
 \begin{theorem}
-    (Abel) If $D \in \mathrm{Div}_0 $ then $A_0 (D) = 0 $ iff $D \in \mathrm{PDiv}(X)$
+    (Abel) If $D \in \mathrm{Div}_0 $ then $A_0 (D) = 0 $ iff $D \in \mathrm{PDiv}(X)$.
 \end{theorem}
 
 \begin{theorem}
-    (Jacobi) The map $A_0 $ is surjective and $\mathrm{Pic} _0 \cong \mathrm{Jac}(X)$ 
+    (Jacobi) The map $A_0 $ is surjective and $\mathrm{Pic} _0 \cong \mathrm{Jac}(X)$.
 \end{theorem}
 
 % section (end)
@@ -194,6 +198,8 @@ Denote the sheaf section of $ \Lambda^{p,q} X$ by $ A^{p,q} (X) $
 
 We can then decompose $ d$ into $ \partial$ and $ \bar{\partial} $ 
 
+[[ STATE HOW THIS IS DONE ]] 
+
 \begin{theorem}
     (Dolbeault) 
     \begin{equation}
@@ -203,12 +209,18 @@ We can then decompose $ d$ into $ \partial$ and $ \bar{\partial} $
 
 Really long list defining the operators 
 
+[[ ADD THIS LIST ]] 
+
 \begin{theorem}
     (Hodge theorem) 
+    
+    [[ STATE ]] 
 \end{theorem}
 
 \begin{theorem}
     $ \mathcal{H} ^{p,q} _{\bar{\partial} } (X) \cong H^{p,q} (X) $ 
+    
+    [[ WHAT IS THE CONTENT HERE ]] 
 \end{theorem}
 
 \begin{theorem}
@@ -222,7 +234,7 @@ Hodge theory gives us the set of 1 dim representations $\pi_1(X) $ is isomorphic
 
 % section (end)
 
-
+[[ MORE EXPLICITLY DISTINGUISH BETWEEN WHICH COHOMOLOGY IS BEING USED THORUGHOUT ]] 
 \bibliographystyle{plain}
 \bibliography{}
 
