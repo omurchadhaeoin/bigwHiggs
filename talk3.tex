@@ -2,7 +2,7 @@
 \input{preamble}
 
 \title{Vector bundle over Riemann surface}
-\author{}
+\author{Charles}
 \date{}
 
 \begin{document} 
@@ -17,17 +17,24 @@
 
 We get transition maps $ \{ \varphi_{ij} : U_{ij} \rightarrow  \mathrm{GL} ( V) $ satisfying the cocycle condition.
 
+[[ STATE CONDITIONS ]]
+
 From a cover $\{U_i \} $ and transition maps $ \varphi _{ij} $ we can recover the vector bundle. 
 
+[[ EXPLICITLY HOW? ]]
+
 Examples: 
-Trivial. 
-Cotangent space. 
+\begin{enumerate}
+    \item Trivial. 
+    \item Cotangent space. 
+\end{enumerate}
 
 In the case $ E$ is of rank 1, then call $E$ a line bundle. 
-For $ \xi \in H^1( X \mathcal{O} ^* ) $ holomorphic line bundles. 
+For $ \xi \in H^1( X, \mathcal{O} ^* ) $ holomorphic line bundles. 
 
-Vector bundles from surface group representation 
-X a Riemann surface. 
+Vector bundles from fundamental group representation of $X$, for $X$ a Riemann surface. 
+
+[[ WHAT IS THIS SUPPOSED TO MEAN HERE ]] 
 
 $\rho : \pi_1 ( X) \rightarrow  \mathrm{GL} (V) $, 
 $ \hat{X} \times _\rho V : = \hat{X} \times V / \sim $
@@ -36,7 +43,7 @@ And the equivalence is as it should ....
 
 
 \begin{definition}
- As smooth section $ s: X \rightarrow  E $ is a smooth map such that $ \pi \circ s  = \mathrm{id} | _ X $ 
+    As smooth section $ s: X \rightarrow  E $ is a smooth map such that $ \pi \circ s  = \mathrm{id} | _ X $ 
 \end{definition}
 
 $\Gamma ( TX) $ denotes the space of vector fields.
@@ -64,7 +71,7 @@ If we have a map $ f: Y \rightarrow X $ then we can consider the pullback of $ e
 \end{definition}
 
 \begin{definition}
-     The Tautological bundle $ \gamma^n ( \mathbb{R} ^{n+k} ) $ over $ G(n, n+k) $
+    The Tautological bundle $ \gamma^n ( \mathbb{R} ^{n+k} ) $ over $ G(n, n+k) $
      to be the bundle with elements are of the form $ (V, v) $ where $ v \in V$. 
 \end{definition}
 
@@ -74,7 +81,7 @@ If we have a map $ f: Y \rightarrow X $ then we can consider the pullback of $ e
 \end{theorem}
 
 Have a correspondence smooth rank $n$ vector bundles over $ X $ 
-and the homotopy classes of smooth maps from $ X $ to $ G(n) $. 
+and the homotopy classes of smooth maps from $ X $ to $ G(n,n+2) $. 
 
 Degree for line bundles look at the degree of the associated divisor. 
 For higher rank, do as above for $ \mathrm{det} ( E) $ . 
@@ -84,6 +91,9 @@ Over $ X$ a Riemann surface.
 The trivial complex line bundle with $ 2$ open sets. 
 Pick  $p_0 \in X $, $U_1 $ is a contractible neighbourhood of $p$.
 $ U_2  = U_1 \setminus \{p\} $. 
+
+[[ WHERE IS THIS USED ]] 
+
 $f : S^1 \rightarrow S^1 $ 
 
 Have short exact sequence 
@@ -97,7 +107,7 @@ Get the long exact sequence which results in
 which is otherwise known as the degree map
 
 \begin{definition}
- A connection $ D: \Omega^0 ( X, E) \rightarrow  \Omega ^1 ( X, E) $ is a linear map satisfying a Leibniz rule:
+    A connection $ D: \Omega^0 ( X, E) \rightarrow  \Omega ^1 ( X, E) $ is a linear map satisfying a Leibniz rule:
     for $ \sigma \in \Omega^0 ( X, E) $ and $f \in C^\infty $, then 
     $ D(f \sigma) = df \otimes \sigma + f D\sigma$. 
 \end{definition}
@@ -112,7 +122,7 @@ $\omega $ satisfies the computational condition that changing frames by $g$
 \end{equation}
 
 \begin{definition}
-A hermitian structure $H$ on a complex vector bundle $ E$ is a smooth family of 
+    A hermitian structure $H$ on a complex vector bundle $ E$ is a smooth family of 
     Hermitiain scalar products on $E$ such that for any sections $ s, s'$, $ H(s,s') $ is smooth. 
 \end{definition}
 
@@ -123,10 +133,11 @@ A hermitian structure $H$ on a complex vector bundle $ E$ is a smooth family of
 
 \begin{definition}
     $E \rightarrow  X$ is a holomorphic vector bundle if $ \pi: E \rightarrow X $ is holomorphic. 
+
 \end{definition}
 
 \begin{proposition}
-The following are equivalent. 
+    The following are equivalent. 
     1. $ \pi : E \rightarrow X $ is holomorphic.
     2. $ \varphi_{ij} : U_{ij} \rightarrow \mathrm{GL}(U) $ holomorphic
     3. $ \exists \bar{\partial} _E : \Omega ^0 ( E) \rightarrow \Omega ^{0,1} ( E) $ 
@@ -135,12 +146,14 @@ The following are equivalent.
 
 \begin{theorem}
     Let $ (E, \bar{\partial}_E ) $ be a holomorphic vector bundle. 
-    Let $H$ be a holomorphic sturcture on $E$. 
+    Let $H$ be a holomorphic structure on $E$ (??). 
     Then there exists a connection that is unitary with respect to $H$, 
     and $D^{0,1} = \bar{\partial}_E$.
 \end{theorem}
 
 Where $ D^{0,1} = \pi^{0,1} \circ D$.
+
+[[ EXPAND ON PROJECTIONS DEFINITION ]] 
 
 Have $ J : TX \rightarrow TX $. 
 Proof: 
@@ -148,21 +161,23 @@ Calculation using connection 1-form $ \omega \partial H \cdot H^{-1}$
 and parallel transport. 
 
 \begin{definition}
-A section is parallel with respect to a connection $ D$ if $Ds = 0 $
+    A section is parallel with respect to a connection $ D$ if $Ds = 0 $
 \end{definition}
 
 Parallel transport is, in general, sensitive to the underlying curve. 
 It depends on the underlying curvature of the connection. 
 
 \begin{definition}
-The curvature of $D$ is given by $D^2$ 
+    The curvature of $D$ is given by $D^2$ 
 \end{definition}
 This is sensible by extending the initial definition of $ D$ to the exterior algebra. 
 Say $D$ is flat, if $ D^2 = 0 $. 
 
 \begin{theorem}
-    $D$ is flat then the holonomy only depends on the homotopy of the curve. 
+    If $D$ is flat then the holonomy only depends on the homotopy of the curve. 
 \end{theorem}
+
+[[ CONCLUDING REMARK ?? ]] 
 
 \bibliographystyle{plain}
 \bibliography{}
