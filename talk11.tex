@@ -2,105 +2,148 @@
 \input{preamble}
 
 
-\title{Metric structure on M}
-\author{}
+\title{Metric structure on $\mathcal{M}$}
+\author{Calum}
 \date{}
 
 \begin{document} 
 \maketitle
+\parindent 0pt
+\section{Overview of notation and conventions}
+In some of the previous talks we were introduced to the affine space of connections, $\mathcal{A}$, and the space of Higgs fields, $ \Omega ^{1,0} ( M, \mathrm{ad} P \otimes \mathbb{C} )$. In Talk 5 we saw these spaces constructed via dimensional reduction from the affine space of connections over $\mathbb{R}^{4}$. Just to restate it here $\mathcal{A}$ is an affine space modeled on $\Omega^{0,1}(M,\text{ad}P\otimes \mathbb{C})$. By this we mean that for $A,B\in \mathcal{A}$ and $a\in \Omega^{0,1}(M,\text{ad}P\otimes \mathbb{C})$ we have that
+\begin{align}
+\bar{\partial}_{A}-\bar{\partial}_{B}&\in \Omega^{0,1}(M,\text{ad}P\otimes \mathbb{C}),\\
+\bar{\partial}_{A+\alpha}&=\bar{\partial}+A^{(0,1)}+\alpha \in\mathcal{A},
+\end{align}
+where we are using the usual abuse of notation and denoting a connection by the connection one-form piece and since we are working on a holomorphic vector bundle where the connection is compatible with a fixed hermitian metric  the connection is specified by its $(0,1)$ piece\footnote{I think that this was discussed in Talk 3 and is due to the $(1,0)$ part being related to the $(0,1)$ part via conjugation with respect to the hermitian metric.}. We will use the notation of the previous talks where possible and are working on a vector bundle $\text{ad}P$ over the Riemann surface $M$  where $P$ was the principal $G$ bundle over $\mathbb{R}^{4}$.\\
 
-Let $ ( A , \varphi) \in \mathcal{A} \times \Omega ^{1,0} ( M, \mathrm{ad} P \otimes \mathbb{C} ) $.
-$\mathcal{A} $ is the space of connections compatible with a fixed hermitian metric. 
+\textbf{DISCLAIMER:} In \cite{Hitchin} Hitchin proves that $\mathcal{M}$ is a smooth manifold of dimension $12(g-1)$, where $g$ is the genus of the underlying Riemann surface $M$. However, I will not prove this here and refer those interested to $\S 5$ in \cite{Hitchin}. Also I will be assuming that we are working with the $SO(3)$ self-duality equations, as was done in Talk 8.\\
+
+On a notational note, as this was a point of confusion in the talk, I will use $N=\mathcal{A}\times  \Omega^{0,1}(M,\text{ad}P\otimes \mathbb{C})$ for the space of connections and Higgs fields, $(A,\varphi)$ for a connection and Higgs field pair in $N$ and $(\dot{A},\dot{\varphi})$ for a vector in the tangent space $T_{(A,\varphi)}N\simeq \Omega^{(0,1)}(M;\text{ad}P\otimes \mathbb{C})\oplus \Omega^{(1,0)}(M;\text{ad}P\otimes \mathbb{C})$. The only difference between my notation and that of \cite{Hitchin} is that I am using $\dot{A}$ rather than $\dot{A}^{(0,1)}$ for the tangent vector to the connection and not explicitly showing that $\dot{A}$ only stands for the $(0,1)$ piece. 
+
+
+
+
+\section{The Moduli space of solutions to the self-duality equations}
+Let $ ( A , \varphi) \in N$ be a connection, Higgs field pair.
+\begin{definition} The Moduli space of solutions to the Hitchin equations is
+\begin{equation}
+    \mathcal{M} = \{ ( A, \varphi) \in N: \bar{\partial} _A \varphi = 0 , F_A + [\varphi, \varphi^*] = 0 \} / \mathcal{G},
+\end{equation}
+where $\mathcal{G}$ is the group of gauge transformations.
+\end{definition} 
+Note that as $g=SO(3)$ we have that $\mathcal{G}=\Omega^{0}(M;End_{0}(\text{ad}P))$.\\
+We also have that $\mathcal{G} $ acts on $N$  as
 
 \begin{equation}
-    \mathcal{M} = \{ ( A, \varphi) : \bar{\partial} _A \varphi = 0 , F_A + [\varphi, \varphi^*] = 0 \} / \mathcal{G}
+    g \in \mathfrak{g} \cong \Omega^0 (M, \mathrm{ad}P \otimes K ) ,~~ X=( \bar{\partial}_A g, [\varphi, g]) \in T_{A, \varphi} N.
 \end{equation}
-
-$\mathcal{G} $ acts on $ \mathcal{A} \times \Omega^{1,0} $ 
-
-
+The Hermitian metric on $T_{A, \varphi} N$ given in \cite{Hitchin} is
 \begin{equation}
-    g \in \mathfrak{g} \cong \Omega^0 (M, \mathrm{ad}P \otimes K ) ,~~ ( \bar{\partial}_A g, [g, \varphi]) \in T_{A, \varphi} \mathcal{A} \times \Omega^{1,0} 
+    g((\dot{A}_1, \dot{\varphi}_1) , (\dot{A}_2, \dot{\varphi}_2)) = 2i \int _M \mathrm{tr} ( \dot{A}_1 ^* \dot{A}_2 + \dot{\varphi}_1 \dot{\varphi}_2 ^* ) 
 \end{equation}
 
-\begin{equation}
-    g((A_1, \varphi_1) , (A_2, \varphi_2)) = 2i \int _M \mathrm{tr} ( A_1 ^* A_2 + \varphi_1 \varphi_2 ^* ) 
-\end{equation}
-
-
-Claim that $ \Omega^{0,1} \oplus \Omega^{1,0} $ has a hyperkahler structure. 
+\begin{remark}
+$T_{(A,\varphi)}N\simeq \Omega^{0,1} \oplus \Omega^{1,0} $ has a hyperkahler structure. 
 Explicitly 
 \begin{align}
-    J(A, \varphi) & = (i \varphi, -i \varphi^*) \\ 
-    K(A, \varphi) & = (- \varphi, -i \varphi^*) \\ 
-    I(A, \varphi) & = (i \varphi, i \varphi^*) 
+    J(\dot{A}, \dot{\varphi}) & = (i \dot{\varphi}^*, -i \dot{A}^*) ,\\ 
+    K(\dot{A}, \dot{\varphi}) & = (- \dot{\varphi}^*, \dot{A}^*), \\ 
+    I(\dot{A}, \dot{\varphi}) & = (i \dot{A}, i \dot{\varphi}^*) ,
 \end{align}
-To each of these we have the associated symplectic $\omega_J, \omega_K, \omega_I$.
+for which we can check that $I,J,K$ obey the quaternion algebra, $IJ=K$ etc.
+\end{remark}
+To each of these complex structures we have an associated kahler form $\omega_J, \omega_K, \omega_I$.
 
-$\omega_I$ is a symplectic form and so has an associated group action and moment map.
+$\omega_I$ is the kahler form associated to $I$ and is invariant under the action of $\mathcal{G}$ and so has a moment map associated to it. We saw in Talk 8 that this moment map is
 \begin{equation}
-    \mu(A, \varphi) = F_A + [\varphi, \varphi^*] 
+    \mu_{I}(A, \varphi) = F_A + [\varphi, \varphi^*] 
 \end{equation}
-Have holomorphic symplectic structure $\Omega_I$ 
+We can also combing the other  kahler forms to get the holomorphic symplectic structure $\Omega_I=\omega_{J}+i\omega_{K}$\footnote{ It is called a holomorphic symplectic form as it is a closed non-degenerate $(2,0)$ form. More details were given in Talk 12}.
 \begin{equation}
-    \Omega_I ^{((A_1, \varphi_1), (A_2, \varphi_2))} = \int_M \mathrm{tr}(\varphi_2 A_1 - \varphi_1 A_2) 
+    \Omega_I {((\dot{A}_1, \dot{\varphi}_1) , (\dot{A}_2, \dot{\varphi}_2))} = \int_M \mathrm{tr}(\dot{\varphi}_2 \dot{A}_1 - \dot{\varphi}_1 \dot{A}_2). 
 \end{equation}
-We have the action $g \in \mathfrak{g} $ from the lie algebra associated to the Gauge group. 
+In this case the action of $\mathcal{G}$ induces a moment map through
 \begin{equation}
-    g \in \mathfrak{g} \cong \Omega^0 (M, \mathrm{ad}P \otimes K ) ,~~ ( \bar{\partial}_B g, [g, \psi]) \in T_{B, \psi} \mathcal{A} \times \Omega^{1,0} 
+    i_{X_{g}} \Omega_I = d f_{X_g} = d \left< \mu, g \right>.
 \end{equation}
-induces moment map
-\begin{equation}
-    i_X \Omega_I = d f_{X_g} = d \left< \mu, g \right> 
-\end{equation}
-
-Consider the symplectic contraction on two forms 
+\begin{example}
+To explicitly construct $\mu$ consider
 \begin{align}
-    \Omega_I ( (\bar{\partial}_A g, [\varphi', g] )( A^{0,1}, \Phi))& = \int \\
-    & = - \int_M \mathrm{tr}( - g \bar{\partial} _A \Phi - g [ A^{0,1}, \varphi']) \\
-    & = d \int _M \left( \int_M \mathrm{tr}(\bar{\partial}_A \Phi g) \right) ( A^{0,1} , \Phi) 
+   (i_{X}\Omega_{I})(\dot{A},\dot{\varphi})	&=\omega((\bar{\partial}_{A}g, [\varphi,g]),(\dot{A},\dot{\varphi})),\\
+										&=\int_{M}\mathrm{tr}\left(\dot{\varphi}\bar{\partial}_{A}g-[\varphi,g]\dot{A}\right),\\
+										&=\int_{M}\mathrm{tr}\left(-g \bar{\partial}_{A}\dot{\varphi}-g[\dot{A},\varphi]\right),\\
+										&=d_{N}\Big( -\int_{M}\mathrm{tr}\left(\bar{\partial}_{A}\varphi g\right)\Big)(\dot{A},\dot{\varphi}),
 \end{align}
-Have $ \mu(A', \varphi') = \bar{\partial}_{A'} \varphi' $
-
-Split moment maps into real and imaginary parts $ \mu = \mu_J + i \mu_K$.
-For $ i = I,J,K$, have $\mu_i ( A', \varphi') = 0 $. 
-This is equivalent to the self duality equations.
-\begin{equation}
-    \mathcal{M} = \bigcap_{i} \mu^{-1}_i (0) / \mathcal{G} 
+so we have that
+\begin{equation} 
+\mu(A, \varphi) = \bar{\partial}_{A} \varphi.
 \end{equation}
+\end{example}
+Split this moment map into real and imaginary parts $ \mu = \mu_J + i \mu_K$ to get the moment maps associated with $J$ and $K$.\\
+Now for $ j = I,J,K$ we have that 
+\begin{equation}
+\mu_i ( A', \varphi') = 0
+\end{equation}
+ is equivalent to the self duality equations. Going back our definition of $\mathcal{M}$ we have that
+\begin{equation}
+    \mathcal{M} = \bigcap_{i=I,J,K} \mu^{-1}_i (0) / \mathcal{G} 
+\end{equation}
+which is the form of a hyperkahler quotient. If we had that $N$ was a finite dimensional manifold and $\mathcal{G}$ a finite dimensional group then by a variant of the Kempf-Ness theorem, which we encountered in Talk 4, we would have that $\mathcal{M}$ inherited a hyperkahler structure. However, in the infinite dimensional case we don't have it so easy and need to proceed on a case by case basis.\\
+
 
 Want to construct a hyperkahler structure over $\mathcal{M}$.
 Let $ P : \bigcap_i \mu^{-1} _i (0) \rightarrow \mathcal{M} $, 
-suppose that $ \bar{\omega}_i $ is pullbacked by $ P^* \bar{\omega}_i = \omega_i |_{\bigcap \mu}$
-This is hypersymplectic structure. 
-Complex structure (requires a descension of metric). 
+suppose that $ \bar{\omega}_i $ is pullbacked by $ P^* \bar{\omega}_i = \omega_i |_{\bigcap \mu^{-1}(0)}$ then $d\omega_{i}=0$ implies that $d\bar\omega_{i}=0$.
+This is a hypersymplectic structure. To make it hyperkahler we need to see that the complex structure, and the metric descends\footnote{To see this consider that $df_{X}=0$ on $\bigcap_i \mu^{-1} _i (0)$ so the metric is degenerate there and in particular it is zero for vectors tangent to the gauge orbits and we can also see that the horizontal subspace is preserved by $I,J,K$. Now the $\mathcal{G}$ action also preserves $I,J,K$ so the three complex structures descend to $\mathcal{M}$.}  to $\mathcal{M}$. It is somewhat surpising that this works but it does, for the details see the proof of Theorem 6.7 in \cite{Hitchin}.
 
-We are taking for granted that the Moduli space $\mathcal{M}$ is smooth.
-And that the dimension is $ 12(g-1) $. 
-Claim we have shown it is hyperkahler. 
-So we have a sphere of complex structures on $\mathcal{M} $.
-
-Recall we have a $U(1)$ action on the solution to Hitchins equations. 
-If $(A, \varphi)$ a solution then so to is $( A, e^{i \vartheta}) $. 
-The $U(1) $ action induces action on ... 
+Remember that here we are taking for granted that the Moduli space $\mathcal{M}$ is smooth and that the dimension is $ 12(g-1) $. 
+We can now see that $\mathcal{M}$ is a smooth hypekahler manifold. 
+\begin{remark}
+Take $x \in S^{2}$ then 
+\begin{equation}
+(x_{1}I+x_{2}J+x_{3}K)^{2}=-1
+\end{equation}
+so we have a sphere of complex structures on $\mathcal{M} $ which we call a twistor sphere of complex structure.
+\end{remark}
+Now consider $\mathcal{M}\times S^{2}$.
+Recall that we have a $U(1)$ action on the solution to Hitchins equations;
+If $(A, \varphi)$ a solution then so to is $( A, e^{i \vartheta}\varphi) $. 
+The $U(1) $ action induces an action on $T_{(A,\varphi)}\mathcal{M}$ and $\mathcal{M}\times S^{2}$ under which 
 \begin{align}
-    \omega_I \rightarrow \omega_I , ~~ \Omega_I \rightarrow  e^{i \vartheta} \Omega_I 
+    \omega_I \rightarrow \omega_I , ~~ \Omega_I \rightarrow  e^{i \vartheta} \Omega_I .
 \end{align}
-preserves one kahler form, so on $S^2$ of $\mathbb{C} $ structures there are two fixed points, 
+This preserves one kahler form, so on the $S^2$ of $\mathbb{C} $ structures there are two fixed points, 
 the two poles $ \pm I$.
 
-$I$ is then the `preferred' $\mathbb{C} $ structure. 
+$I$ is then the `preferred' $\mathbb{C} $ structure. \\
 
-Aside: consider stable Higgs bundles then if $(V, \varphi) $ is stable, so too is $(V, e^{i\vartheta} \varphi) $ is also stable. 
-$( \mathcal{M}, I) $ is isomorphic to the space of stable Higgs bundles.
+Aside: consider stable Higgs bundles then if $(V, \varphi) $ is stable, so too is $(V, e^{i\vartheta} \varphi) $. 
+Using this aside and the equivalence of stable Higgs bundles to solutions of the self-duality equations seen in Talk 8 we can say that
+$( \mathcal{M}, I) $ is isomorphic to the space of stable Higgs bundles with complex structure $I$.
 
-$(\mathcal{M}, J) $ is isomorphic to the moduli space of flat connections $A + \varphi + \varphi^* +A ^* $.
+In \cite{Hitchin} it was proven that all the complex structures other than $\pm I$ are equivalent, to see this consider that on the stable Higgs bundles side the $U(1)$ action can be extended to a $\mathbb{C}^{*}$ action. Picking one of these other complex structures, $J$ we can show that  
+$(\mathcal{M}, J) $ is isomorphic to the moduli space of $PSL(2,\mathbb{C})$ flat connections $A + \varphi + \varphi^* +A^{*} $. Note that more usually the flat connection would just be denoted by $A+\varphi+\varphi^{*}$ where the difference is down to my using $A$ to denote $A^{(0,1)}$ so that $A+A^{*}$ here would be the full connection in the notation of \cite{Hitchin} and I think some of the earlier talks.
+
+\section{Extra topics}
+There were a couple of topics that I did not have time to mention in my talk which I think are interesting enough to get a mention here.
+\begin{enumerate}
+\item As $\omega_{I}$ is invariant under the $U(1)$ action we can find the moment map associated to this action which will be $\mu_{U(1)}(A,\varphi)=-\frac{1}{2}||\varphi||_{L^{2}}^{2}$. This can be used as a Morse function to explore the topology of $\mathcal{M}$.
+
+\item A related feature is that the fixed points of this action include the flat holomorphic vector bundles, when $\varphi=0$, and the case when the Higgs bundle splits into two parts $(E,\varphi)=\oplus_{i=1}^{2}(E_{i},\varphi_{i})$ with $\varphi$ nilpotent. In the case of this splitting the self-duality equations seem to reduce to the vortex equations on $M$ which are another set of interesting equations.
+
+\item $\mathcal{M}$ can also be seen to be related to $\mathcal{M}_{Betti}$ when complex structure $K$ is picked.
+
+\item We can interpret where the various complex structures come from and find that $I$ is inherited from the Riemann surface $M$ and $K$ comes from the representations of the fundamental group in $Gl(n,\mathbb{C})$.
+\end{enumerate}
 
 
-
-\bibliographystyle{plain}
-\bibliography{}
+\begin{thebibliography}{100}
+\bibitem{Hitchin}
+N.~J. {Hitchin}.
+\newblock {The Self-Duality Equations on a Riemann Surface}.
+\newblock {\em Proc. London Math. Soc.}, (3) 55 (1987) 59-126.
+\end{thebibliography}
 
 
 \end{document} 
-
