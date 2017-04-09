@@ -1,22 +1,20 @@
-% 
 \input{preamble}
 
 \title{Easy examples of Higgs Bundles and Hitchin Equations}
-\author{}
+\author{Lorenzo Ruffoni}
 \date{}
 
 \begin{document} 
 \maketitle
-\Large
 \section{The motivation} % (fold)
 
 We wish to relate three distinct families of objects over a given manifold:
 representations $ \pi_1 ( S) \rightarrow  \mathrm{Sl}(2, \mathbb{C} ) $;
 harmonic bundles $ ( E, \nabla, h )$;
 and Higgs bundles $(E, \varphi)$.
+Denote these moduli spaces by $\mathcal{M}_{\mathrm{Betti}} $, $\mathcal{M}_{\mathrm{Har}} $, and $\mathcal{M}_{\mathrm{Higgs}} $.
 
 % section (end)
-
 
 \section{Setting} % (fold)
 
@@ -29,9 +27,9 @@ Let $S$ connected closed oriented surface $ g \geq 2 $ and $X$ a Riemann surface
 \end{definition}
 
 \begin{definition}
-    A Higgs bundle $(E, \varphi)$ is stable if for any $L \subset E $ such that $ \varphi(L) \subset L \otimes K $ 
-    we have $\mathrm{deg}(L) < 0 $. 
-    Such $L$ are called $\varphi$ invariant.
+    A subset $L \subset E $ of Higgs bundle $(E, \varphi)$ is $\varphi$ invariant if 
+    $L$ is a subbundle such that $\varphi(L) \subset L \otimes K $. 
+    Say that $(E, \varphi) $ is stable if for any $\varphi$ invariant subbundle $L \subset E $, we have $\mathrm{deg}(L) < 0 $. 
     If $ E = \bigoplus_{i = 1} ^2  ( E_i , \varphi _i ) $ where the components are stable, then say $(E, \varphi)$is polystable.
 \end{definition}
 
@@ -44,25 +42,28 @@ Let $S$ connected closed oriented surface $ g \geq 2 $ and $X$ a Riemann surface
     (This is the Hitchin equation. ) 
 \end{theorem}
 
-[[ CHERN CONNECTION ]] [[ H HERMITIAN ON E OR M ?? Whats is *H ]]
+[[ CHERN CONNECTION ??]] 
 
 
 Remark ... 
 ALGEBRA 
 
+[[ HOLE HERE ]] 
+
 Once you have a solution to the Hitchin Equation 
 $\nabla = A +\varphi + \varphi^* $ connection on $E$ . 
 
-$(A, \varphi)$ solution $\Leftrightarrow$ $\nabla $ is a flat connection. 
+[[ WHAT DOES THIS MEAN ]] 
 
+$(A, \varphi)$ solution $\Leftrightarrow$ $\nabla $ is a flat connection. 
 Get a representation $ \mathrm{hol}_\nabla : \pi(S) \rightarrow \mathrm{SL}(2, \mathbb{C} ) $. 
 
 Moreover the fact that $ \varphi$ is holomorphic is equivalent to $H$ being a harmonic metric. 
 
+[[ WRITE SYMBOLICALLY ASWELL ]] 
 
 
 % section (end)
- 
 
 \section{Example 1} % (fold)
 
@@ -92,11 +93,11 @@ Complex structure with a complex compact submanifold.
 
 \section{Hyperbolic Geometry and Teichmuller theory} % (fold)
 
+Wish to endow in $S$ hyperbolic structure.
 Recall that hyperbolic space $ \mathbb{H} = \{ (x,y) \in \mathbb{R}  |~ y> 0 \} $
 has hyperbolic metric $ g = \frac{dx \wedge dy }{ y^2} $.
 It has constant sectional curvature $-1$. 
 The orientation preserving automorphism group is $ \mathrm{Aut}^+ ( \mathbb{H} ) = \mathrm{PSL}(2, \mathbb{R} ) $. 
-How does one construct $ \mathbb{H}$-structures on $S $. 
 
 [[Let $ \Gamma < \mathrm{PSL}(2, \mathbb{R}) $ ]]
 
@@ -116,8 +117,13 @@ The Teichmuller space $\mathcal{T}(S)$ is
     \mathcal{T}(S)  = \left\{ ( X, l ) |~ l: S \rightarrow X  \right \}  / \mathrm{Diff}_0 ( S)  
 \end{align}
 
-There are maps relating these three spaces ad the spaces. 
+[[ DEFINE THE QUOTIENT SPACES HERE ]] 
+
+[[ COMMUTATIVE DIAGRAMME ]] 
+There are maps relating these three spaces. 
 cf Killing Hopf, Uniformization (Poincare Koebe) 
+
+
 
 \begin{theorem}
 As smooth manifolds $ \mathcal{D} F (S) = \mathcal{F} (S) = \mathcal{T} (S) = \mathbb{R}  ^{ 6g-6} $
@@ -126,13 +132,13 @@ As smooth manifolds $ \mathcal{D} F (S) = \mathcal{F} (S) = \mathcal{T} (S) = \m
 \begin{theorem}
  (Wolf) 
     Fix $ X \in \mathcal{T} (S) $. 
-    Then get homeomorphism 
+    Then there is a homeomorphism 
     \begin{equation}
         \mathcal{F} (S) \rightarrow H^0 (X, K^2) 
     \end{equation}
 \end{theorem}
 
-Fix $ X \in \mathcal{T} ( S) $ choose a sqare root of $ K$ 
+Fix $ X \in \mathcal{T} ( S) $ choose a square root of $ K$ 
 Take short exact sequence
 \begin{equation}
     0 \rightarrow  \mathbb{Z} _2 \rightarrow \mathcal{O}^* \rightarrow \mathcal{O}^* 
@@ -144,10 +150,10 @@ $ \mathrm{deg} ( K^{1/2} ) = g -1  > 0 $.
 
 Choose 
 \begin{equation}
-    \varphi = \begin{array}{rr}
+    \varphi = \left(\begin{array}{rr}
         0 & 0 \\
         1 & 0 \\
-    \end{array} \in H^0 ( X, K \otimes \mathrm{End}_ 0 ( E))
+    \end{array} \right) \in H^0 ( X, K \otimes \mathrm{End}_ 0 ( E))
 \end{equation}
 The only $ \varphi$-invariant subbundle is $ 0 \oplus K^{-1/2} $ 
 which has degree $ 1-g < 0 $. 
@@ -161,10 +167,10 @@ E is decomposible.
 
 \begin{align}
     \mathcal{M} _ {0,2} ( X) & \rightarrow H^0 (X, K ^2) \\
-    ( K ^{1/2} \oplus K^{-1/2} , \left(\begin{array}{rr}
+    \left( K ^{1/2} \oplus K^{-1/2} , \left(\begin{array}{rr}
         0 & \alpha \\
         1 & 0 \\ 
-    \end{array} \right) \mapsto \alpha 
+    \end{array} \right) \right) &  \mapsto \alpha 
 \end{align}
 
 
