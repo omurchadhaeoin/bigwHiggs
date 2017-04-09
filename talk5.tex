@@ -7,7 +7,6 @@
 
 \begin{document} 
 \maketitle
-\Large
 
 \section{Principal bundles} % (fold)
 
@@ -38,7 +37,8 @@ Note that $\mathrm{Aut}(\mathfrak{g}) $ denotes the group of automorphisms respe
 \end{enumerate}
 \end{definition}
 
-Relating to the covariant derivative given by Charles (talk, need to have (locally) a one form on $M$ with values in $ \mathfrak{g} $. 
+Relating to the covariant derivative given by Charles talk
+(and so need to have (locally) a one form on $M$ with values in $ \mathfrak{g} $). 
 
 Take a local trivialisation $ \{U_\alpha \} $, 
 and set $ A_\alpha = s^* (\omega) $ 
@@ -64,6 +64,9 @@ we can define the Yang mills functional is defined on the space of connections o
     YM(A) = \int _{} | F_A | ^2 d \mu 
 \end{equation}
 The critical points are the solutions of the associated Euler Lagrange
+
+[[EXPAND ON THIS]] 
+
 \begin{equation}
      d_A F_A = 0, ~~ d_A * F_A = 0 
 \end{equation}
@@ -76,6 +79,9 @@ Thus if the integral is defined for some connection, there exists a minimum.
 
 Note that the Hodge star $*$, implicitly appearing in the functional, requires a metric and orientation to be defined.  
   $ * : \Omega^2(\mathrm{ad}P)  \rightarrow  \Omega^2(\mathrm{ad}P) $ 
+
+  In the case that $ c_2 ( E) = 0 $, then the minimum of the Yang-Mills functional is attained by self dual, and anti-self dual curvatures. 
+  This motivates wishing to solve in $A$, $F_A = * F_A $. 
 
 % section (end)
 
@@ -91,13 +97,13 @@ which is only first order in $A$.
 This is if and only if $A$ dual or anti-self dual.
 (Switching orientation of $\mathbb{R} ^4$ takes dual to anti-self-dual). 
 
-[ Note: Some issue computing Chern classes over the real bundles?]
+[[ Note: Some issue computing Chern classes over the real bundles?]]
 
-\texttt{<<<<<<<<<<<<<<<<<<---->>>>>>>>>>>>>>>>}
+
 
 Let $G$ be a compact group acting $ \mathbb{R} ^4$. 
 $ F = F_{ij} dx_i \wedge dx_j $.
-Then the self dual equations become:
+Then the self dual equation become:
 \begin{align}
     F_{12} &= F_{34}  & F_{13} &= F_{42}  & F_{14} &= F_{23}  
 \end{align}
@@ -106,25 +112,23 @@ Suppose $ A $ is translation invariant in $x_3$ and $x_4$.
 Relabel $ A_3 = \varphi_1 $ and $A_4 = \varphi_2$.
 Then on $ \mathbb{R} ^2 $ consider the connection $ A = A_1 dx_1 + A_2 dx_2 $. 
 
-ALGEBRA
+[[ ALGEBRA ]] 
 
-$\varphi = \varphi_1 + i \varphi_2$
-$ F_{12} = i/2 [ \varphi , \varphi ^* ] $
-$[ \nabla_1 + i \nabla_2 , \varphi ] = 0 $ 
-$ z = x_1 + ix_2$ 
-introduce 
-$ \Phi = \frac{1}{2} \varphi dz \in \Omega^{1,0} ( \mathbb{R} ^2 , \mathfrak{ad}P \otimes \mathbb{C} )$
-$\Phi^* = \frac{1}{2} \varphi * d\bar{z}$
+Let $\varphi = \varphi_1 + i \varphi_2$. 
+Then $ F_{12} = i/2 [ \varphi , \varphi ^* ] $ and $[ \nabla_1 + i \nabla_2 , \varphi ] = 0 $. 
+Setting $ z = x_1 + ix_2$ and introducing $ \Phi = \frac{1}{2} \varphi dz \in \Omega^{1,0} ( \mathbb{R} ^2 , \mathrm{ad}P \otimes \mathbb{C} )$
+then $\Phi^* = \frac{1}{2} \varphi * d\bar{z}$. 
 
-the equations become 
+The equations become 
 \begin{align}
     F = - [ \Phi , \Phi^* ] \\
     \bar{\partial} _A \Phi = 0 
 \end{align}
+These are invariant under changes of coordinates and trivialisations of $ \Omega^1(\mathrm{ad} P ) $
+Observe that the second equation says that $\Phi $ is a holomorphic section of $ \Omega^{1,0} ( \mathrm{ad} P \otimes \mathbb{C}) $.
 
-These are invariant under changes of coordinates and trivialisations of $ \Omega^1(\mathfrak{ad} P ) $
 
-Observe that the second equation syas that $\Phi $ is a holomorphic section of $ \Omega^{1,0} ( \mathfrak{ad} P \otimes \mathbb{C}) $.
+[[ MISSING CRUCIAL PART OF ARGUEMENT RELATING TRANSLATIONAL INVARIANCE AND VECTOR BUNDLES OVER RIEMANN SURFACES. ]] 
 % section (end)
 
 \section{Hitchin equations} % (fold)
@@ -132,26 +136,30 @@ Observe that the second equation syas that $\Phi $ is a holomorphic section of $
 
 
 Examples: 
-$ M $ a compact Riemann surface. 
-$ G$ a compact Lie croup. 
-then $ \Phi = 0 \rightarrow F_A = 0 $ unitary flat connections are in one to one correspondence with stable holomorphic bundles. 
+Let $ M $ a compact Riemann surface and $ G$ a compact Lie croup. 
+Then $ \Phi = 0 \rightarrow F_A = 0 $ unitary flat connections are in one to one correspondence with stable holomorphic bundles. 
 
 $ g = h dz \wedge d \bar{z} $ compatible with the ex structure. 
 $ G = \mathrm{U} ( 1) $. 
 Take the Levi- Civita connection. 
 Induces a connection on $K$ by $ d + A $, 
 on $ K^{1/2} $ by $ d + 1/2 A $. 
+
+[[CLARIFY WHAT THIS MEANS]]
 On $ V = K^{1/2} \oplus K^{-1/2} $ have direct sum of two connections. 
 
-Define $ \Phi = \begin{array}{rr}
+Define $ \Phi = \left( \begin{array}{rr}
     0 & 0 \\
     1 & 0 \\
-\end{array} \in \Omega ^{1,0} ( \mathrm{End} (V) ) $ 
+\end{array} \right) 
+\in \Omega ^{1,0} ( \mathrm{End} (V) ) $ 
 
 Have $ \mathrm{Hom} ( K^{1/2} , K^{-1/2} ) \cong K ^{-1} $ so $1$ denotes the canonical section of $ K^{-1} \otimes K $ 
 
-$F_A = - 2h dz d \bar{z} $ and $ \mathrm{Ricci}_g = -2 g $ 
+$F_A = - 2h dz d \bar{z} $ and $ \mathrm{Ricci}_g = -2 g $.
 We are restricted to negative sectional curvature. 
+
+[[ THEN WHAT ]] 
 
 
 % section (end)
