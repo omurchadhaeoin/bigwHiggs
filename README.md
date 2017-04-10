@@ -49,14 +49,17 @@ For those who know git please clone, branch (with your name), edit and push.
 For those who know NO git please copy, edit and paste into an email to me (dw580@bath.ac.uk). 
 
 ## Editing 
+You may wish to compile the document as you edit. 
+To do this you will need a copy of the preamble.tex in the same directory (folder) 
+as the document you want to compile. 
+If you need any additional packages, add them to the preamble and push or send that back too. 
 
+## Standards 
 ####** 1 sentence, 1 line. ** 
 
 This makes it much much easier to track changes. 
 It makes no difference in the compiled pdf at the end. 
 
-
-## Standards 
 As To keep notation consistent please adopt the following.
 
 1. Higgs fields (and nothing but) are denoted \varphi except in exceptional circumstances. 
