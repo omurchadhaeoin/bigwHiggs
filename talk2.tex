@@ -1,243 +1,248 @@
-% 
-\input{preamble}
-
-\title{Hodge theory}
-\author{Marille Ong}
-\date{}
-
-\begin{document} 
+\documentclass[10pt, a4paper]{article}
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, amsthm, amsfonts, physics}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{pbox}
+\theoremstyle{plain}
+\newtheorem{thrm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thrm]{Definition}
+\newtheorem{exmp}[thrm]{Example}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\gal}{Gal}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Nm}{Nm}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\coker}{Coker}
+\DeclareMathOperator{\sym}{Sym}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Tra}{Tr}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad} 
+\DeclareMathOperator{\GL}{GL} 
+\DeclareMathOperator{\proj}{proj} 
+\DeclareMathOperator{\Jac}{Jac} 
+\DeclareMathOperator{\LB}{LB} 
+\DeclareMathOperator{\gl}{\mathfrak{gl}}
+\DeclareMathOperator{\SO}{SO} 
+\DeclareMathOperator{\SL}{SL} 
+\DeclareMathOperator{\U}{U} 
+\DeclareMathOperator{\SU}{SU} 
+\DeclareMathOperator{\End}{End} 
+\DeclareMathOperator{\Deck}{Deck} 
+\renewcommand{\Vert}{\text{Vert}} 
+\renewcommand{\div}{\text{div}} 
+\DeclareMathOperator{\Aut}{Aut} 
+\DeclareMathOperator{\Der}{\mathfrak{Der}}
+\DeclareMathOperator{\Int}{\mathfrak{Int}} 
+\DeclareMathOperator{\Inn}{Int} 
+\DeclareMathOperator{\Isom}{Isom} 
+\DeclareMathOperator{\Ric}{Ric} 
+\DeclareMathOperator{\Pic}{Pic} 
+\DeclareMathOperator{\mult}{mult} 
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\On}{O}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\PDiv}{PDiv}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Homeo}{Homeo}
+\renewcommand{\ip}[2]{\langle #1, #2 \rangle}
+\allowdisplaybreaks
+\title{British Isles Graduate Workshop: Higgs Bundles \\
+Talk 1: Riemann surfaces}
+\author{Marielle Ong}
+\begin{document}
 \maketitle
-
-\section{Four worlds of Riemann surfaces} % (fold)
-
-\begin{definition}
-  A Riemann surface $X$ is a complex manifold of dimension $1$.
-\end{definition}
-
-examples:
-$ \mathbb{P} $.... 
-
-Denote two sheaves of particular interest. 
-For open subset $U \subset X $, 
-\begin{align}
-    \mathcal{O}_X ( U) =  \mbox{ holomorpic functions on $U$ } \\
-    \mathcal{M}_X ( U) =  \mbox{ meromorphic functions on $U$ } 
-\end{align}
-
-Let $T$ be a topological closed oriented 2-manifold with genus $g$, $M$ a differential manifold homeomorphic to $T$, 
-and $\Sigma $ be a closed Riemann surface of genus $g$. 
-
-\begin{tabularx}{0.8\linewidth}{X|XXXX}
-   &   Topological  & Differential & Dolbeaut & algebraic \\ \hline
-    Classification results & 
-    $T$ is homeomorphic to a sphere with $g$ handles.  & 
-    $M$ is unique upto diffeomorphism. & & GAGA \\ 
-
-    Fundamental group & 
-    $\pi_1 ( \Sigma_g) = \left< a_i, b_i | ~~ \Pi_{i=1} ^g a_i b_i a_i^{-1} b^{-1} \right> $ & 
-    \\
-    Cohomology & 
-    Hurwicz & 
-    d'Rham & 
-    Dolbeaut & 
-    \\
-
-\end{tabularx} 
-
-Riemann surfaces are in 1-1 correspondence to projective curves, and holomorphic maps are in 1-1 correspondence to regular morphisms.
-
-Example: Complex tori relate elliptic curves. 
-$ \Gamma( 1, \omega) $  and $j$-invariants 
-
-% section (end)
-
-\section{Line Bundles} % (fold)
-
-\begin{definition}
-A holomorphic line bundle $ L \rightarrow  X$ is a complex vector bundle. 
-    (Axioms stated here)
-\end{definition}
-
-The set of (holomorphic) line bundles (upto isomorphism) forms a group with tensor power acting as the binary operator.
-The trivial bundle is then the identity element, and inverse is given by duality.
-Denote this group $ \mathrm{Pic}(X) $. 
-
-\begin{definition}
-    Let $L$ be a line bundle with trivialisation $\{ U_i \} $ 
-    A holomorphic section $s$ of line bundle ... (Axioms stated)
-    A meromorphic section $s$ of line bundle ... (Axioms stated)
-    $\mathcal{O}_L $ denotes the sheaf of holomorphic sections. 
-\end{definition}
- 
-[[ DEFINITION OF A SHEAF ]] 
-
-\begin{definition}
-    A sheaf $ \mathcal{F} $ on $ X$ is an invertible if for all $U_i$  in the cover $\{U_i\} $ 
-    such that $ \mathcal{F}_i$ is a free $\mathcal{O}_{U_i} $ module. 
-\end{definition}
-
-\begin{theorem}
-    There exists a canonical isomorphism 
-    \begin{equation}
-        \mathrm{Pic} (X)  \cong H^1 ( X, \mathcal{O}^* _ X ) 
-    \end{equation}
-    And isomorphic to the group of invertible sheaves on $X$ under $ \otimes$. 
-\end{theorem}
-
-\begin{definition}
-    The canonical bundle $ K_X $ is the determinant of the cotangent bundle. 
-\end{definition}
-
-\begin{theorem}
-    (Riemann - Roch) 
-    \begin{equation}
-        h^0 (X, \mathcal{O} _L) - h^0 (X, \mathcal{O}_{L^* \otimes K_X}) = \mathrm{deg} (L) + 1 - g 
-    \end{equation}
-    where $h := \mathrm{dim} H $ 
-\end{theorem}
-
-\begin{theorem}
-    (Serre duality) 
-    \begin{equation}
-        H^k ( X, \mathcal{O}_L ) \cong H^{n-k} (X, \mathcal{O}_{L ^* \otimes K}) ^* 
-    \end{equation}
-\end{theorem}
-
-
-% section (end)
-
-\section{Divisors} % (fold)
-
-\begin{definition}
-    A divisor $D : X \rightarrow \mathbb{Z} $ which is 0 for all but finitely many $x \in X$. 
-    Represent $D$ as the formal sum $ \sum D(x) x $. 
-    The set of all divisors is denoted $ \mathrm{Div}(X)$
-    The degree of a divisor $D$ is $\mathrm{deg}(D)  = \sum D(x) $. 
-    For any function $f$ have the associated divisor $ \mathrm{Div}(f) = \sum \mathrm{ord}_x(f) x $  
-\end{definition}
-
-Divisors form a group under formal addition in a natural way. 
-We induce on the set of divisors a partial ordering induced by $\mathbb{Z} $. 
-There are notable subgroups.
-
-Say two divisors are equivalent if they differ by a principle divisors 
-The class group is defined as 
-\begin{equation}
-    \mathrm{Cl} ( X) = \frac{\mathrm{Div }(X)}{\mathrm{PDiv}(X) }  
-\end{equation}
-And the analogue for degree 0 .
-
-[[ STATE 0 ANALOGUE ]] 
-
-For a line bundle we can define the associated divisor, which is defined upto principle divisor. 
-That is ...
-\begin{theorem}
- There exists 
-    \begin{equation}
-        \frac{\mathrm{Div}(X) }{\mathrm{PDiv}(X) }  \cong \mathrm{Cl}(X) \cong \mathrm{Pic}(X) 
-    \end{equation}
-    And the $0 $ analogue. 
-\end{theorem}
-
-Weiestrass problem. 
-Given divisor $ D$ 
-
-[[ STATE ]] 
-% section (end)
-
-\section{Jacobian} % (fold)
-
-Denote by $H^0 ( X, \Omega_X ^ 1) $ the space of holomorphic 1-forms.
-Let
-\begin{align}
-    \lambda _ C : H^0 ( X, \Omega_X ^1 ) & \rightarrow  \mathbb{C} \\
-    \omega & \mapsto \int _C \omega
-\end{align}
-By Stokes $\lambda$ only depends on the class $[C] \in H_1 (X, \mathbb{Z} ) $ of curve $C$. 
-
-Letting $ \Lambda$ be the image of $\lambda$.
-
-\begin{definition}
-The jacobian of $ X$ is given by 
-    \begin{equation}
-        \mathrm{Jac}(X) = H^0 (\Omega^1 _X )/ \Lambda
-    \end{equation}
-    Thus we identify $H^0 ( X, \Omega^1 _X) ^* $ with $ \mathbb{C} ^ g$
-\end{definition}
-
-\begin{definition}
-    Fix a base point $ p_0 \in X $ define 
-    \begin{align}
-        A: X & \rightarrow \mathrm{Jac}(X) \\
-        p & \mapsto \int \gamma_p \omega 
-    \end{align}
-    where $ \gamma_p $ is a path $p_0 $ to $p $. 
-    Abel-Jacobi map.
-    
-    [[ WHAT IS ]]
-
-    Extend linearly to $ A : \mathrm{Div}(X) \rightarrow \mathrm{Jac} (X) $.
-\end{definition}
-
-\begin{theorem}
-    (Abel) If $D \in \mathrm{Div}_0 $ then $A_0 (D) = 0 $ iff $D \in \mathrm{PDiv}(X)$.
-\end{theorem}
-
-\begin{theorem}
-    (Jacobi) The map $A_0 $ is surjective and $\mathrm{Pic} _0 \cong \mathrm{Jac}(X)$.
-\end{theorem}
-
-% section (end)
-
-\section{Hodge theory } % (fold)
-
-Let $X$ now be compact complex manifold. 
-The induced almost complex structure (here defined) 
-We have the decomposition of the exterior algebra into $(p,q)$ forms. 
-Denote the sheaf section of $ \Lambda^{p,q} X$ by $ A^{p,q} (X) $ 
-
-We can then decompose $ d$ into $ \partial$ and $ \bar{\partial} $ 
-
-[[ STATE HOW THIS IS DONE ]] 
-
-\begin{theorem}
-    (Dolbeault) 
-    \begin{equation}
-        H^{p,q} ( X) \cong H^q ( X, \Omega ^p _X ) 
-    \end{equation}
-\end{theorem}
-
-Really long list defining the operators 
-
-[[ ADD THIS LIST ]] 
-
-\begin{theorem}
-    (Hodge theorem) 
-    
-    [[ STATE ]] 
-\end{theorem}
-
-\begin{theorem}
-    $ \mathcal{H} ^{p,q} _{\bar{\partial} } (X) \cong H^{p,q} (X) $ 
-    
-    [[ WHAT IS THE CONTENT HERE ]] 
-\end{theorem}
-
-\begin{theorem}
-    $H^k _{\Delta } ( X, \mathbb{C} ) = \bigoplus _{p+q = k }  H^{p,q} ( X) $
-    In the case where $ k = 1 $
-    $H^1 _\Delta ( X, \mathbb{C}  ^* ) \cong \mathrm{Jac} (X) \oplus H^0 ( X, \Omega_X ^ 1) $
-\end{theorem}
-
-
-Hodge theory gives us the set of 1 dim representations $\pi_1(X) $ is isomorphic to the set of holomorphic line bundles with degree 0 
-
-% section (end)
-
-[[ MORE EXPLICITLY DISTINGUISH BETWEEN WHICH COHOMOLOGY IS BEING USED THORUGHOUT ]] 
-\bibliographystyle{plain}
-\bibliography{}
-
-
-\end{document} 
-
+\section{Definition of a Riemann surface}
+\begin{defn} A \emph{Riemann surface} $X$ is a complex manifold of dimension 1. 
+\end{defn} 
+Since $\mathbb{C}$ can be identified with $\mathbb{R}^2$, we can view $X$ as a real, orientable manifold of dimension 2.  
+\begin{exmp} The complex projective line $\mathbb{P}^1(\mathbb{C})$ 
+is the set of one-dimensional subspaces of $\mathbb{C}^2$. That is, if $(x, y)$ is a non-zero vector in $\mathbb{C}^2$, then its span, denoted by $[x : y],$ is a point in $\mathbb{P}^1(\mathbb{C}).$ It is a Riemann surface with charts $U_i$ and coordinate maps $\phi_i$ given by 
+\begin{align*} 
+U_1 &= \{[x: y] : x \neq 0 \},  \quad \phi_1([x: y]) = y/x, \\
+U_2 &= \{[x: y] : y \neq 0 \},  \quad \phi_2([x: y]) = x/y. 
+\end{align*}
+These charts are compatible because the composition
+$$\phi_2 \circ \phi_1^{-1}: \phi_1(U_1 \cap U_2) \rightarrow \phi_2(U_1 \cap U_2),$$
+which is given by $\phi_2 \circ \phi_1^{-1}(z) = 1/z$, is biholomorphic on $U_1 \cap U_2 = \mathbb{C}^*$. 
+\end{exmp}
+\begin{exmp} Let $\omega_1, \omega_2 \in \mathbb{C}$ be linearly independent over $\mathbb{R}$. Define the lattice 
+$$\Gamma(\omega_1, \omega_2) = \mathbb{Z}\omega_1  + \mathbb{Z}\omega_2,$$
+which is a subgroup of the additive group $\mathbb{C}$. We call the quotient $\mathbb{C}/\Gamma$ the complex torus. It is a Riemann surface equipped with the quotient topology via the projection map $\pi: \mathbb{C} \rightarrow X$.
+\end{exmp} 
+More detailed examples can be found in Chapter 1 of Rick Miranda's book "Algebraic curves and Riemann surfaces". For notation, denote the set of holomorphic functions over an open subset $U \subseteq X$ by $\mathcal{O}_X(U)$ and similarly, the set of meromorphic functions over an open subset $U \subseteq X$ as $\mathcal{M}_X(U)$. 
+\section{Different perspectives on Riemann surfaces}
+Riemann surfaces may be described in four different settings: topological (Betti), smooth (De Rham), holomorphic (Dolbeault) and algebraic. 
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline \textbf{Topological} & \textbf{Smooth} & \textbf{Dolbeault} & \textbf{Algebraic} \\ 
+\hline 
+\pbox{20cm}{\vspace{0.1cm}
+\textbf{Theorem:} Every closed \\ orientable  surface is \\ homeomorphic to \\ a sphere with $g$ handles, \\
+denoted by $\Sigma_g$.} & \pbox{20cm}{\vspace{0.1cm} \textbf{Theorem:} Let $M$ be a smooth, \\ orientable manifold \\with dimension 2. \\
+Then, $M$ is diffeomorphic \\ to $\Sigma_g$.} & GAGA & GAGA \\ 
+\hline 
+\pbox{20cm}{\vspace{0.1cm}  $\pi_1(\Sigma_g) =$ \\ $\{a_i, b_i : \prod^g_{i = 1} a_i b_i a_i^{-1} b_i^{-1} = e\}$}  & \pbox{20cm}{\vspace{0.1cm}  \textbf{Theorem (de Rham):} \\  $H^k_{\text{sing}}(X, \mathbb{R}) \cong H^k_{\text{DR}}(X)}$ & \pbox{20cm}{\vspace{0.1cm}   holomorphic objects \\ holomorphic maps \\ Riemann surfaces \\ complex tori} & \pbox{20cm}{\vspace{0.1cm}  algebraic varieties \\ regular morphisms \\ Projective varieties \\elliptic curves}  \\ 
+\hline \vspace{0.1cm}  \pbox{20cm}{$H_k( \Sigma_g) = \begin{cases} \mathbb{Z} & k = 0, 2 \\
+\mathbb{Z}^{2g} & k = 1 \end{cases}}$ &  &  & • \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\section{Line bundles}
+\begin{defn} A \emph{holomorphic line bundle} on $X$ is a complex manifold $L$ and a holomorphic surjective map $\pi: L \rightarrow X$ such that 
+\begin{enumerate}[(i)]
+\item For every $p \in X$, $L_p = \pi^{-1}(p) \cong \mathbb{C}.$
+\item For every $p \in X$, there exists a neighbourhood $U$ containing $p$ and a vector space isomorphism $\phi_U: \pi^{-1}(U) \rightarrow U \times \mathbb{C}$. We call $\phi_U$ a local trivialisation on $U$. 
+\item the local trivialisations relate to each other via transition maps $t_{ij}$, which satisfy cocyle relations.
+\end{enumerate}
+\end{defn}
+Under the tensor product $\otimes$, the isomorphism classes of line bundles form a group $\Pic(X)$. Here, the inverse of a line bundle $L$ is given by its dual $L^*$ and the trivial bundle $O = \End(L) = L \otimes L^*$ is the identity. 
+\\\\
+Let $L$ be a line bundle with a covering $\{U_i\}_{i \in I}$ of $X$. 
+\begin{defn} A \emph{holomorphic (resp. meromorphic) section} $s$ is a collection of sections $\{s_i\}_{i \in I|}$ over $U_i$ such that $t_{ij} s_i = s_j$ for $s_i \in \mathcal{O}_X(U_i)$ (resp. $\mathcal{M}_X(U_i)$)
+and $t_{ij} \in \mathcal{O}_X(U_i \cap U_j)$ (resp. $\mathcal{O}^*_X(U_i \cap U_j)$. 
+\end{defn} 
+We  denote the sheaf of holomorphic sections as $\mathcal{O}_L$. 
+\begin{defn} A sheaf is \emph{invertible} if for all open sets $U_i$ in the cover $\{U_i\}_{i \in I}$, the group $\mathcal{F}(U_i)$ is a free $\mathcal{O}_X(U_i)$-module. 
+\end{defn}
+This condition is what we call ``locally free of rank 1". If it is of rank $n$, then $\mathcal{F}(U_i)$ is isomorphic to a direct sum of $n$ copies of $\mathcal{O}_X(U_i)$-modules. 
+\begin{thrm} There exists a canonical isomorphism 
+$$\Pic(X) \cong \left\{\text{group of invertible sheaves on $X$ under } \otimes \right\} \cong H^1(X, \mathcal{O}^*),$$
+where $\mathcal{O}^*$ is the sheaf of nowhere vanishing holomorphic functions.
+\end{thrm} 
+\begin{defn} The \emph{canonical bundle} $K$ is the determinant if the cotangent bundle. For the case of Riemann surfaces, $K = \Omega^1_X$, the bundle of holomorphic $1$-forms. 
+\end{defn} 
+\begin{thrm}[Riemann-Roch]
+If $L$ is a line bundle over a Riemann surface $X$ with genus $g$, then
+$$\dim H^0(X, \mathcal{O}_X) - \dim H^0(X, \mathcal{O}_{L^{-1} \otimes K} = \deg(L)+1-g.$$
+\end{thrm} 
+Letting $L$ be the trivial bundle, one can show that $\dim H^0(X, \mathcal{O}_K) = g$. Therefore, $g$ is the dimension of the space of holomorphic 1-forms. 
+\begin{thrm}[Serre Duality]
+$H^1(X, \mathcal{O}_L) \cong H^0(X, \mathcal{O}_{L^{-1} \otimes K})^*$. 
+\end{thrm} 
+The Picard group has some interesting geometric structures and to see this, we need to realise line bundles via divisors. 
+\section{Divisors}
+\begin{defn} A \emph{divisor} is a function $D: X \rightarrow \mathbb{Z}$, denoted by 
+$$D = \sum_{p \in X} n_p \cdot p$$
+with $n_p \in \mathbb{Z}$. Furthermore, the \emph{degree} of a divisor is given by
+$$\deg(D) = \sum_{p\in X} n_p.$$
+\end{defn}
+The divisors form a group, which we will denote by $\Div X$. Let $\Div_0 X$ be the group of degree 0 divisors. 
+\begin{defn} A divisor is \emph{principal} if it is of the form $\div(f) = \sum_{p \in X} \ord_p(f) \cdot p$. The group of principal divisors is $\PDiv X$. 
+\end{defn}
+We say that two divisors $D_1$ and $D_2$ are linearly equivalent or $D_1 \sim D_2$ if and only if $D_1 - D_2 \in \PDiv X$. Through this linear equivalence, we can form the group
+$$\frac{\Div X}{\PDiv X}.$$
+We say that a divisor $D \geq 0$ if $n_p \geq 0$ for all $p \in X$. From this, we can associate a vector space of meromorphic functions to a divisor. 
+\begin{defn} 
+The \emph{vector space of meromorphic functions associated to a divisor} is given by 
+$$L(D) = \{f \in \mathcal{M}(X) : \div(f) \geq -D\}.$$
+\end{defn} 
+Let $s$ be a meromorphic section. Define 
+\begin{align*}
+\ord_p(s) &= \ord_p(s_i), \quad p \in U_i \\
+\div(s) &= \sum_{p \in X} \ord_p(s) \cdot p \\
+\deg(L) = \sum_{p \in X} \ord_p(s).
+\end{align*}
+So from a given section of a line bundle, we can obtain a divisor. It turns out that the converse is true: that divisors give rise to line bundles. One first needs to be able to associate a meromorphic function to a divisor. This is called the \emph{Weierstrass problem}, which states: given a divisor $D$, is there a meromorphic function $f$ such that $\div(f) = D$? This problem is always solvable over non-compact sets. For the situation over compact sets, one requires content in the \emph{Abel-Jacobi theorem}, which we will touch on later. By transitioning between meromorphic function on different neighbourhoods, we obtain a transition function, which completely determines a line bundle. As such, the line bundle-divisor correspondence may be stated as follows. 
+\begin{thrm}
+There exists canonical isomorphisms 
+$$\frac{\Div X}{\PDiv X} \cong \Pic(X) \quad \frac{\Div_0 X}{\PDiv X} \cong \Pic_0(X)$$
+where $\Pic_0(X)$ is the line bundles with degree 0. 
+\end{thrm}
+\section{The Jacobian}
+Let $H^0(X, \Omega^1_X)$ to be the space of holomorphic 1-forms. Define 
+\begin{align*} 
+\lambda_c: H^0(X, \Omega^1_X) &\rightarrow \mathbb{C} \\
+\omega \mapsto \int_c d\omega.
+\end{align*}
+By Stoke's theorem, $\lambda_c$ only depends on the homology class $[c] \in H_1(X, \mathbb{Z})$. We obtain a map 
+$$\lambda: H_1(X, \mathbb{Z}) \rightarrow H^0(X, \Omega^1_X)^*.$$
+Let $\Lambda = \im(\lambda)$. 
+\begin{defn} The \emph{Jacobian} of $X$ is given by 
+$$\Jac(X) = \frac{H^0(X, \Omega^1_X)^*}{\Lambda}.$$
+\end{defn} 
+Since $\dim H^0(X, \Omega^1_X)^* = g$ (as a consequence of Riemann Roch), we can identify $ H^0(X, \Omega^1_X)^*$ with $\mathbb{C}^g$ and so, $\Jac(X) \cong \mathbb{C}^g/\Lamgda$, the $g$-dimensional torus. 
+\begin{defn} Fix a base point $p_0 \in X$. For all $p \in X$, define $A: X \rightarrow \Jac(X)$ as the \emph{Abel-Jacobi map} in which 
+$$p \mapsto \int_{\gamma_p} \omega,$$
+where $\gamma_p$ is a path from $p_0$ to $p$. \end{defn}
+Extend the Abel-Jacobi map linearly to 
+$$A(D) = \sum_{p \in X} n_p A(p)$$
+and obtain the map $A: \Div X \rightarrow \Jac X$ and its restriction to degree 0 divisors, $A_0: \Div_0 X \rightarrow \Jac X$. 
+\begin{thrm}[Abel]
+Let $D \in Div_0 X$. If $A_0(D) = 0$, then $D \in \PDiv X$.  
+\end{thrm} 
+\begin{thrm}[Jacobi] The map $A_0: \Div_0 X \rightarrow \Jac X$ is surjective.
+\end{thrm}
+With these theorems combined, we have that
+$$\Pic_0 X \cong \frac{\Div_0 X}{\PDiv X} \cong \Jac X.$$
+Using the splitting of the exact sequence 
+$$0 \rightarrow \Pic_0 X \rightarrow \Pic X \rightarrow \mathbb{Z} \rightarrow 0,$$
+we have the isomorphism
+$$\Pic X \cong \Pic_0 X \times \mathbb{Z} \cong \Jac X \times \mathbb{Z}.$$
+So the upshot of this is that line bundles are parametrized by $\Jac X \times \mathbb{Z}$. 
+\section{Hodge theory}
+Let $X$ be a compact complex manifold and $TX$ be its underlying real tangent bundle. The complex structure of $X$ induces an almost complex structure $J$ on $TX$. Here, $J$ is a $\mathbb{R}$-linear endomorphism,
+$$J: TX \rightarrow TX, \quad J^2 = -\id.$$
+From this, we have the following decompositions 
+$$TX_\mathbb{C} = TX \otimes_\mathbb{R} \mathbb{C} = TX^{(1, 0)} \oplus TX^{(0, 1)}.$$
+The summands are the $\pm i$-eigenspaces of $J$ and are the \emph{holomorphic} and \emph{antiholomorphic} parts respectively. Furthermore,
+\begin{align*} 
+TX^*_\mathbb{C}  &= TX^{*(1, 0)} \oplus TX^{*(0, 1)}.\\
+\Lambda^{p, q}_\mathbb{C}(X)  &= \Lambda^p(TX^{*(1, 0)}) \otimes_\mathbb{C} \Lambda^q(TX^{*(0, 1)}).\\
+\Lambda^k_\mathbb{C}(X)  &= \bigoplus_{p + 1 = k} \Lambda^{p, q}_\mathbb{C}(X).
+\end{align*}
+Let $\mathcal{A}^{p, q}_X$ be the sheaf of $(p, q)$-differential forms and 
+$$\mathcal{A}^{k}_\mathbb{C} X = \bigoplus \mathcal{A}^{p, q}_X.$$
+We may define the following differential operators, 
+\begin{align*}
+d&: \mathcal{A}^k_{X, \mathbb{C}} \rightarrow \mathcal{A}^{k+1}_{X, \mathbb{C}} \\
+\partial&: \mathcal{A}^{p, q}_{X} \rightarrow \mathcal{A}^{p+1, q}_{X} \\
+\overline{\partial}&: \mathcal{A}^{p, q}_{X} \rightarrow \mathcal{A}^{p, q+1}_{X} 
+\end{align*}
+On a complex manifold, $d = \partial + \overline{\partial}$ (that is, $X$ is integrable) and $d^2 = \partial^2 = \overline{\partial}^2 = 0$. Henceforth, we obtain the \emph{$(p, q)$-Dolbeault cohomology group} 
+$$H^{p, q}(X) = H^q(\mathcal{A}^{p, \cdot}(X), \overline{\partial}) = \frac{\ker(\overline{\partial}: \mathcal{A}^{p, q}(X) \rightarrow \mathcal{A}^{p, q+1}(X))}{\Ima( \overline{\partial}: \mathcal{A}^{p, q-1}(X) \rightarrow \mathcal{A}^{p, q}(X))}.$$
+\begin{thrm}[Dolbeault]
+$H^{p, q}(X) \cong H^q(X, \Omega^p_X)$
+\end{thrm}
+This is simply the complex-geometric analogue of De Rham's theorem. For further definitions, we require the Hodge-$\ast$ operator, 
+$$\ast: \Lambda^k_{\mathbb{C}} X \rightarrow \Lambda^{2n-k}_{\mathbb{C}} X$$
+where $2n$ is the real dimension. Implicitly, this definition requires a Hermitian metric $g$ on the complex manifold $X$, which we have thanks to a partition of unity argument. From this, we again obtain another set of differential operators.
+\begin{align*}
+d^* &= - \ast \circ d \circ *, \quad \Delta = d^*d+dd^* \\
+\partial^* &= - \ast \circ \overline{\partial}  \circ *, \quad \Delta_{\partial} = \partial^*\partial+\partial \partial^* \\
+\overline{\partial}^* &= - \ast \circ \partial \circ *, \quad \Delta_{\partial} = \overline{\partial}  ^*\overline{\partial}  +\overline{\partial} \overline{\partial} ^*.
+\end{align*}
+We also have $\mathcal{H}^{p, q}_{\overline{\partial}} (X, g)= \{\alpha \in \mathcal{A}^{p, q}_\mathbb{C}(X, g), \Delta_{\overline{\partial}}\alpha = 0\}$. We can also define $\mathcal{H}^{p, q}_{\overline{\partial}} (X, g)$ analogously. 
+\begin{thrm}[Hodge decomposition] With respect to the Hermitian metric $g$ on $X$, 
+\begin{align*}
+\mathcal{A}^{p, q}(X, g) &= \partial \mathcal{A}^{p-1, q}(X, g) \oplus \mathcal{H}^{p, q}_{\partial} (X, g) \oplus  \partial^* \mathcal{A}^{p, q+1}(X, g) \\
+&= \overline{\partial} \mathcal{A}^{p-1, q}(X, g) \oplus \mathcal{H}^{p, q}_{\overline{\partial}} (X, g) \oplus  \overline{\partial}^* \mathcal{A}^{p, q+1}(X, g).
+\end{align*}
+\end{thrm} 
+It has a very important corollary that motivates the study of Higgs bundles. 
+\begin{cor} 
+$$H^k_{\text{sing}}(X, \mathbb{C}) = \bigoplus_{p+q=k} H^{p, q}(X).$$
+\end{cor} 
+Thus, Hodge's decomposition is the bridge between the topological and Dolbeault worlds. For the rank 1 case ($k = 1$) in particular, the corollary states that
+\begin{align*}
+H^1_{\text{sing}}(X, \mathbb{C}) &= H^{1, 0}(X) \oplus H^{0, 1}(X) \\
+&= H^1(X, \Omega^0_X) \oplus H^0(X, \Omega^1_X) \\
+&=  H^1(X, \mathcal{O}_X) \oplus H^0(X, \Omega^1_X) \quad \text{by definition} \\
+&= H^0(X, \Omega^1_X)^* \oplus H^0(X, \Omega^1_X) \quad \text{by Serre Duality} 
+\end{align*}
+Through an extreme exact sequence arguement (see Eoin's talk!), we have that
+\begin{align*}
+\Hom(\pi_1(X), \GL(1, \mathbb{C}^*) = H^1(X, \mathbb{C}^*) = \Jac X \oplus H^0(X, \Omega^1_X).
+\end{align*}
+What Hodge theory is really saying is that
+$$\{1- \text{dim representations of } \pi_1(X)\} \leftrightarrow \{(E, \varphi) : E \text{ holomorphic line bundle of degree 0}, \varphi \text{ holomorphic 1-form}\}$$
+Non-abelian Hodge theory seeks to generalise this phenomenon:
+$$\{n- \text{dim representations of } \pi_1(X)\} \leftrightarrow \{(E, \varphi) : E \text{ holomorphic vector bundle of degree 0}, \varphi \text{ holomorphic $n$-form}\}.$$
+The right hand side is merely the Higgs bundle. 
+\end{document}
