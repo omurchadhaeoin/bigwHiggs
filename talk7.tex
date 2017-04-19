@@ -1,4 +1,3 @@
-% 
 \input{preamble}
 
 \title{Stability of Higgs Bundles}
@@ -8,139 +7,249 @@
 \begin{document} 
 \maketitle
 
+\begin{remark}
+	All the statements in the notes of this talk can be found in (paragraph 3) from Hitchins `87 paper `The self-duality equation on a Riemann surface' \cite{Hitchin}.
+\end{remark}
+
+\section{Higgs Bundles}
 \begin{definition}
-    Let $M$ compact Riemann surface. 
-    A $\mathrm{GL}_n $-Higgs bundle is pair $(V, \varphi)$ 
-    where $ V$ is a holomorphic rank $n$ vector bundle and 
-    $ \varphi$ is a holomorphic section of $ \mathrm{End}(V) \otimes K $.
-    That is $ \varphi \in H^0 ( \mathrm{End} (V) \otimes K) $.
+    Let $M$ be a compact Riemann surface. A $\mathrm{GL}_n $-Higgs bundle is pair $(V, \varphi)$ where $ V$ is a holomorphic rank $n$ vector bundle, and $ \varphi$ is a holomorphic section of $ \mathrm{End}(V) \otimes K $. Here we denote by $K$ the canonical bundle on $M$. 
 \end{definition}
 
+One can also define $G$-Higgs bundles for other groups $G \subseteq GL_n$ (to be more precise: real reductive Lie groups). In that case there are extra conditions on $V$ and $\varphi$ reflecting the properties of the group. For example, a $\mathrm{SL}(2,\mathbb{C})$-Higgs bundle consists of a vector bundle of rank 2 with trivial determinant and $\varphi \in H^0(\mathrm{End}_0(V)\otimes K)$, where $\mathrm{End}_0(V)$ are the trace-free endormorphisms of $V$. See also Remark \ref{G=SU(2)}.
+\begin{remark}
+Usually we view $\varphi \in H^0 ( \mathrm{End} (V) \otimes K)$ as a morphism $\varphi: V \rightarrow V \otimes K$.
+\end{remark}
+
 \begin{definition}
-    Say two Higgs bundles $(V, \varphi) $ and $(V', \varphi')$ are isomorphic if 
-    there exists $ \psi: V \rightarrow  V'$ inducing the commutative diagram
-    
-    [[ DIAGRAMME ]] 
+    Two Higgs bundles $(V, \varphi) $ and $(V', \varphi')$ are isomorphic if 
+    there exists an isomorphism of vector bundles $ \psi: V \rightarrow  V'$ such that the following diagram commutes: 
+    \[
+    \begin{xymatrix}{
+    V \ar[d]^{\phi}\ar[r]^{\psi}&V' \ar[d]^{\phi'}\\
+    V\otimes K \ar[r]^{\psi\otimes\mathrm{id}}&V'\otimes K
+	}\end{xymatrix}
+    \]
 \end{definition}
 
-Recall that for $P$ a principal $G$-bundle, 
-say that connection $A$ on $P$, 
-and $ \varphi \in \omega^1 ( M , \mathrm{ad} ( P) \otimes \mathbb{C} ) $ 
-solve the Hitchin equations if $ F_ A = [ \varphi , \varphi ^* ] $ and $ \bar{\partial} _A \varphi = 0 $.
-
-[[SIGN CONVENTION? / A THE CONNECTION OF THE ADJOINT?? ]] 
-
-Claim: $ V = (P \otimes \mathbb{C} ^n) / G $ then $(V, \varphi) $ is a Higgs bundle. 
-Note that $ \Omega^1 ( M, \mathrm{ad} ( P) \otimes \mathbb{C}  = H^0 ( M , ( \mathrm{ad} P \otimes \mathbb{C} ) \otimes K) $
-
-Commutative diagram defining that map 
+\subsubsection*{From a solution of Hitchins equations to a Higgs Bundle}
+Recall that a solution of Hitchins equations is given by a pair $(A,\varphi)$ such that 
 \begin{align}
-    (\mathrm{ad}P \otimes \mathbb{C} )_x & \rightarrow  \mathrm{End}(V) _x \\
-    [p, m ] & \mapsto ([pg, v] \mapsto [pg, g^{-1} m g v] ) 
+	F_A + [\varphi,\varphi^*] = 0, \\
+	\overline{\partial}_A\varphi = 0. \label{holomorphic}
 \end{align}
+Here $A$ is a connection on a principal $G$-bundle $P$, and $\varphi \in \Omega^1 ( M , \mathrm{ad} ( P) \otimes \mathbb{C} )$ where we denote by $\mathrm{ad} ( P) = (P \times \mathfrak{g})/\mathrm{ad}$ the vector bundle associated to the adjoint representation of $G$ on the Lie algebra $\mathfrak{g}$. The connection $A$ induces via $\overline{\partial}_A$ a holomorphic structure on the vector bundle $V = (P \otimes \mathbb{C} ^n) / G$ associated to $P$ via the standard representation of $G$. Note that $\Omega^1 ( M , \mathrm{ad} ( P))$ is defined as 
+\[
+\Omega^1 ( M , \mathrm{ad} ( P)\otimes \mathbb{C}) := H^0 ( M , ( \mathrm{ad} (P) \otimes \mathbb{C} ) \otimes K). 
+\]
+So if we show that $\mathrm{ad} ( P) \otimes \mathbb{C} \cong \mathrm{End}(V)$, then $(V,\varphi)$ is a Higgs bundle (equation (\ref{holomorphic}) then gives us that $\varphi$ is a holomorphic section of $\mathrm{End}(V)\otimes K$.
 
+\begin{lemma}
+	If $V$ is the associated vector bundle of $P$, then
+	\[
+	\mathrm{ad} ( P) \otimes \mathbb{C} \cong \mathrm{End}(V).
+	\]
+\end{lemma}
+\begin{proof} Note that $(\mathrm{ad}P \otimes \mathbb{C} )_x = (P_x \times \mathrm{Mat}_n(\mathbb{C}))/G$ and $\mathrm{End}(V)_x = \mathrm{End}(V_x)$. Recall also that if you choose a point $p$ in a fiber $P_x$, then every point $q$ in the fiber $P_x$ can be expressed as $p\cdot g$ for a unique $g \in G$. Consider the following map on fibers: 
+	\begin{align*}
+	(\mathrm{ad}P \otimes \mathbb{C} )_x & \rightarrow  \mathrm{End}(V) _x \\
+	[p, X ] & \mapsto ([pg, v] \mapsto [pg, g^{-1} X g v] ) 
+	\end{align*}
+It is easy to check that this map is well-defined and induces an isomorphism of vector bundles. 
+\end{proof}
+
+\begin{remark}\label{G=SU(2)}
+	Note that we have the following isomorphisms of Lie algebras:
+	\begin{equation}
+	\mathfrak{so}(3) \otimes \mathbb{C} \cong \mathfrak{su}(2) \otimes \mathbb{C}  \cong \mathfrak{sl}(2, \mathbb{C} ) = \{ X \in \mathrm{Mat}(2, \mathbb{C} )| ~ \mathrm{tr}(X) = 0 \}.
+	\end{equation}
+	So a Higgs bundle coming from a $SO(3)$-solution of Hitchins equations, consist of a vector bundle of rank 2 and a trace-free Higgs field $\varphi \in H^0(\mathrm{End}_0(V)\otimes K)$.
+\end{remark}
 
 \section{Stability} % (fold)
 
 \begin{definition}
-    Let $( V, \varphi) $ be Higgs bundle. 
-    Say $ E \subset L$ is $ \varphi$ invariant if $ \varphi(E) \subset E \otimes K$. 
-    In such cases, say $E$ is a Higgs subbundle. 
-
-    A Higgs bundle is stable if $\mu(E) < \mu(V) $ for all Higgs subbundles. 
-    Recall slope $ \mu(E) : = \mathrm{deg} ( \mathrm{det}(E)) / \mathrm{rank}(E) $ 
+    Let $( V, \varphi) $ be a Higgs bundle. Then a subbundle $ E \subset L$ is called $ \varphi$-invariant (or a Higgs subbundle) if $ \varphi(E) \subset E \otimes K$. 
+\end{definition}
+\begin{definition}
+    A Higgs bundle $( V, \varphi) $ is called stable if $\mu(E) < \mu(V) $ for all $\varphi$-invariant subbundles $E \subseteq V$. 
+    Recall that the slope of a bundle is defined as $ \mu(E) : = \frac{\mathrm{deg} ( \Lambda^nE)}{\mathrm{rank}(E)} $.
 \end{definition}
 
-Example: $(V,0)$ is stable if and only if $ V$ is stable as a vector bundle. 
-In fact, if $ V$ is stable then any $\varphi$ gives rise to stable Higgs bundle. 
-Furthermore, if $(V, \varphi)$ and $(V, \varphi') $ are isomorphic, then $ \varphi = \varphi'$.
+One of the reasons why we are interested in stable Higgs bundles, is the following theorem: 
+\begin{theorem}
+	There is a 1-1 correspondence between $\mathrm{SO}(3)$-solutions of Hitchins equations up to gauge equivalence and the moduli space of stable ($\mathrm{SO}(3)$-)Higgs bundles. 
+\end{theorem}
 
-\begin{align}
-    \mathcal{M}_{\mathrm{Higgs}} \subset \{ ( V,\varphi) | \mbox{ $V$ stable} \} \rightarrow T^* \mathcal{M}_{\mathrm{Vect}} \\
-    ( V, \varphi) \mapsto \varphi 
-\end{align}
+\begin{proof}
+	See Theorem 2.1 and Theorem 4.3 in \cite{Hitchin}.
+\end{proof}
 
-There is a 1-1 correspondence between self dual  Hitchin Pair $(F_A , E) $ upto Gauge 
-and (semi?) stable Higgs bundles up to isomorphism 
+\begin{example}\label{ex:Vstable}
+	A Higgs bundle $(V,0)$ is stable if and only if $ V$ is stable as a vector bundle. 
+\end{example}
+Namely, every subbundle is invariant under the zero Higgs field, and hence in this case the notion of stability as a Higgs bundle is equivalent to the notion of stability as a vector bundle. In fact, if $ V$ is a stable vector bundle, then any $\varphi$ gives rise to a stable Higgs bundle $(V,\varphi)$. 
+Furthermore, using the fact that $\mathrm{End}(V)=\mathbb{C}$ for every stable vector bundle $V$, one can easily show that if $V$ is a stable vector bundle, then $(V, \varphi)$ and $(V, \varphi') $ are isomorphic as Higgs bundles if and only if $ \varphi = \varphi'$. 
 
-Example: 
+This last observation can be used to see that the cotangent bundle of the moduli space of stable vector bundles $T^* \mathcal{M}_{\mathrm{Vect}}$ sits inside the moduli space of stable Higgs bundles. 
+Namely, using Serre-Duality one can show that the tangent space at a point $[V]$ of $\mathcal{M}_{\mathrm{Vect}}$ is given by:
+\begin{align*}
+	T_{[V]}\mathcal{M}_{\mathrm{Vect}} &\cong \mathrm{Ext}(V,V)\\
+	&\cong H^1(\mathrm{End}(V))\\
+	&\cong H^0(\mathrm{End}(V)\otimes K)^*.
+\end{align*}	
+Since the isomorphism class of Higgs bundles $(V,\varphi)$ with $V$ a stable vector bundle is completely determined by the Higgs field, we get a bijection:
+	\begin{align*}
+	\mathcal{M}_{\mathrm{Higgs}} \supset \{ ( V,\varphi) | \mbox{ $V$ stable} \} &\longleftrightarrow T^* \mathcal{M}_{\mathrm{Vect}} \\
+	( V, \varphi) &\longmapsto \varphi. 
+	\end{align*}
+	
+\begin{remark}
+	Similar to the case of stable vector bundles, one can also show that for a stable Higgs bundle every endormorphism is a scalar multiplication. See Proposition 3.15 in \cite{Hitchin}.
+\end{remark}
+	
+\begin{example}
+	Let $M$ be a Riemann surface with $g>1$. Then the Higgs bundle $(V,\varphi)$ given by $V = K^{1/2}\otimes K^ {-1/2}$ and $\varphi = \begin{pmatrix}0&0\\1&0\end{pmatrix}$ is a stable Higgs bundle. 
+\end{example}
+	
+	Note that in this case 
+	\[
+	\varphi: K^{1/2} \otimes K^{-1/2} \longrightarrow K^{3/2}\otimes K^{1/2},
+	\]
+	so $1$ is just the identity morphism form $K^{1/2}$ to $K^{1/2}$. Since $\begin{pmatrix}0&0\\1&0\end{pmatrix}\begin{pmatrix}v_1\\v_2\end{pmatrix}=\begin{pmatrix}0\\v_1\end{pmatrix}$, the only $\varphi$-invariant subbundle of $V$ is the line bundle $K^{-1/2}$. So we only need to check the stability condition for $K^{-1/2}$. Note that we have
+	\[
+	\deg(K^{-1/2}) = -\frac 12(2g-2) = -(g-1)<0.
+	\]
+	On the other hand we also have 
+	\begin{align*}
+		\Lambda^2(K^{1/2}\otimes K^{-1/2}) &\cong \Lambda K^{1/2} \otimes \Lambda K^{-1/2} \\
+		&\cong K^{1/2}\otimes K^{-1/2}\\
+		&\cong \mathcal{O}.
+	\end{align*}
+	Hence we can conclude that $\deg(K^{-1/2})<0 = \frac 12 \deg(\Lambda^2V)$, from which it follows that $(V,\varphi)$ is a stable Higgs bundle. Note that $V$ is \textit{not} a stable vector bundle, since $\deg(K^{1/2})>0$.
+	\\
+	 
+To further illustrate the notion of stability, we will show the following result: 
 
-Let $ G = \mathrm{SU}(2) $. 
-Then 
-\begin{equation}
-    \mathfrak{su}(2) \otimes \mathbb{C}  \cong \mathfrak{sl}(2, \mathbb{C} ) = \{ m \in \mathrm{Mat}(2, \mathbb{C} )| ~ \mathrm{tr}(m) = 0 \}
-\end{equation}
-$ \varphi \in H^0 ( \mathrm{End} _0 ( V) \otimes K) $ 
-$V$ of rank 2. 
+\begin{lemma}\label{nostableonP1}
+	There are no stable Higgs bundles of rank 2 on $\mathbb{P}^1$. 
+\end{lemma}
 
-Remark: 
-\begin{align}
-    \mathrm{Hom} ( L_1 , L_2 ) \rightarrow  H^0 ( L_1 ^* \otimes L_2 ) 
-\end{align}
+For the proof of this statement we will need the following lemma: 
+\begin{lemma}\label{lem:Hom(L1,L2)}
+	If $L_1$ and $L_2$ are both line bundles on $X$, then we have: 
+	\[
+	\mathrm{Hom} ( L_1 , L_2 ) \cong H^0 ( L_1 ^* \otimes L_2 ).
+	\]
+\end{lemma}
 
-[[ ISOM?? ]] 
+\begin{proof}
+	Take a morphism $\theta \in \mathrm{Hom}(L_1,L_2)$ and consider the following morphism: 
+	\[
+	\mathrm{id}_{L_1^*} \otimes \theta  : \mathcal{O}_X \cong L_1^* \otimes L_1 \longrightarrow L_1^* \otimes L_2.
+	\]
+	Since a linebundle is a locally free $\mathcal{O}_X$-module of rank 1, a morphism from $\mathcal{O}_X$ to another linebundle is completely determined by the image of the generator $1 \in \mathcal{O}_X(X)$. Hence $\mathrm{id}_{L_1^*} \otimes \theta$ determines a unique element $a_{\theta} \in H^0(L_1^*\otimes L_2)$.
+\end{proof}
 
-$M = \mathbb{P} ^1 $, $V = \mathcal{O} (m) \oplus \mathcal{O} (n) $ , $K = \mathcal{O}(-2) $. 
-Let $ \varphi: \mathcal{O} ( m) \oplus \mathcal{O} ( n) \rightarrow  \mathcal{O} (m -2) \oplus \mathcal{O} (n-2) $ 
-then may regard $\varphi $ as a matrix with elements forms in the relevant bundles. 
-
-Then $ \mathrm{det}(\mathcal{O} ( m) \oplus \mathcal{O} (n) = \mathcal{O} (m+n) $
-As $ \mathrm{deg}( \mathcal{O} (m) = m $, there are no stable Higgs bundles in $\mathbb{P} ^1$. 
+\begin{proof}[Proof of Lemma \ref{nostableonP1}]
+	Let $V$ be a rank 2 vector bundle on $\mathbb{P} ^1 $. Since every vectorbundle on $\mathbb{P}^1$ splits as a direct sum of line bundles $\mathcal{O}(a_i)$, we have 
+	\[
+	V \cong \mathcal{O} (m) \oplus \mathcal{O} (n)
+	\]
+	for some intergers $m,n \in \mathbb{Z}$. Recall that the canoncial line bundle on $\mathbb{P}^1$ is given by $K\cong \mathcal{O}(-2)$. So we can represent a morphism $\varphi \in H^0(\mathrm{End}(V)\otimes K)$ as follows: 
+	\[
+	\varphi = \begin{pmatrix}
+	a&b\\c&d
+	\end{pmatrix}:\mathcal{O} ( m) \oplus \mathcal{O} ( n) \rightarrow  \mathcal{O} (m -2) \oplus \mathcal{O} (n-2).
+	\]
+	Without loss of generality we may assume that $n-m<0$. Using the lemma above, together with the fact that line bundles with negative degree have no global sections, this gives us the following:
+	\begin{align*}
+		a &\in H^0(\mathcal{O}(-2)) = 0 \\
+		b &\in H^0(\mathcal{O}(m-n-2)) \\
+		c &\in H^0(\mathcal{O}(n-m-2))=0 \\ 
+		d &\in H^0(\mathcal{O}(-2))=0.
+	\end{align*}
+ 	Hence $\varphi = \begin{pmatrix} 0&b\\0&0 \end{pmatrix}$, and $\mathcal{O}(m)$ is the only $\varphi$-invariant subbundle of $V$. Now note that we have 
+ 	\[
+ 	\Lambda^2(\mathcal{O} ( m) \oplus \mathcal{O} (n)) \cong \mathcal{O}(m) \otimes \mathcal{O}(n) \cong \mathcal{O} (m+n).
+ 	\]
+ 	Since $n-m<0$, this gives us 
+ 	\[
+ 	\mathrm{deg}(\mathcal{O}(m)) = m \geq \frac12(m+n) = \frac12\mathrm{deg}(\Lambda^2V).
+ 	\]
+ 	From this we can conclude that every Higgs bundles of rank 2 on $\mathbb{P} ^1$ is unstable.
+\end{proof}
+ 
 
 % section (end)
 
 \section{Moduli} % (fold)
 
 
-\begin{proposition}
+\begin{lemma}\label{lem:uniqueL}
 If $V$ is unstable vector bundle of rank 2, 
 then there exists a unique $L \subset V$ such that
-$ \mathrm{deg}(L) \geq \frac{1}{2} \mathrm{deg} (\Lambda^2 V ) $ 
+$ \mathrm{deg}(L) \geq \frac{1}{2} \mathrm{deg} (\Lambda^2 V ) $ and $V$ is given by an extension of the form
 \begin{equation}
-    0 \rightarrow  L \rightarrow V \rightarrow  L^* \otimes \mathrm{det} (V) \otimes 0 
+    0 \rightarrow  L \rightarrow V \rightarrow  L^* \otimes \Lambda^2V \rightarrow 0 
 \end{equation}
-\end{proposition}
+\end{lemma}
+\begin{proof}
+	In fact one can prove that for every unstable vector bundle of rank $n$, there exists a unique maximal destabilizing subbundle of largest slope. This is used to proof the uniqueness of the Harder-Narasimhan filtration. See for example Proposition V.1.13 in \cite{Kob}. For the last statement Hitchin refers to this paper \cite{AB} of Atiyah-Bott.
+\end{proof}
 
-\begin{proposition}
-    Let $ g>1 $. A rank $2$ vector bundle $V$ occurs in a stable Higgs bundle $(V, \varphi) $ if and only if one of the following holds: 
+\begin{proposition}\label{VinstableHiggs}
+    Let $ g>1 $. A rank $2$ vector bundle $V$ occurs in a stable $\mathrm{SO}(3)$-Higgs bundle $(V, \varphi) $ if and only if one of the following holds: 
     \begin{enumerate}[label=(\roman*)]
         \item $V$ is stable,
         \item $V$ is semistable and $g>2$, 
-        \item $V$ is semistable and $g=2$, and $V = U \otimes L$, 
-            and $U$ decomposable or $0 \rightarrow  \mathcal{O} \rightarrow U \rightarrow \mathcal{O} \rightarrow 0 $ 
-        \item $V$ is not semistable and $h^0 (L^{-2} \otimes \mathrm{det}(V) \otimes K ) > 1 $ 
-        \item $V$ is not semistable and $h^0 (L^{-2} \otimes \mathrm{det}(V) \otimes K ) = 1 $ and $V = L\oplus (L^* \otimes \mathrm{det}(V) ) $
+        \item $V$ is semistable and $g=2$, and $V = U \otimes L$, with $U$ decomposable or $0 \rightarrow  \mathcal{O} \rightarrow U \rightarrow \mathcal{O} \rightarrow 0$, 
+        \item $V$ is not semistable and $h^0 (L^{-2} \otimes \Lambda^2V \otimes K ) > 1 $,
+        \item $V$ is not semistable and $h^0 (L^{-2} \otimes \Lambda^2V \otimes K ) = 1 $ and $V = L\oplus (L^* \otimes \Lambda^2V ) $
     \end{enumerate}
-
+	Here $L\subseteq V$ is the unique line bundle with $\mathrm{deg}(L) \geq \frac{1}{2} \mathrm{deg} (\Lambda^2V ) $.
 \end{proposition}
 
-Suppose $V$ is not stable. 
-Let $ L$ be the ( most ?) unstable subspace of $V$. 
-Then
-\begin{equation}
-    0 \rightarrow  L \rightarrow  V \rightarrow  L^* \otimes \mathrm{det} V  \rightarrow  0 
-\end{equation}
+\begin{remark}
+	In Lemma \ref{nostableonP1} we showed that there are no stable Higgs bundles in the case when $g=0$. Hitchin shows in his paper (Remark 3.2.iv) that there is only one possibility for a stable $\mathrm{SO}(3)$-Higgs bundle when $g=1$. Namely $(V,0)$ where $V$ is an extension $0\rightarrow \mathcal{O} \rightarrow V \rightarrow \mathcal{O}(-1) \rightarrow 0$. In that case $V$ is already a stable vector bundle, and since $\varphi$ must be trace-free, we have $\varphi=0$. 
+\end{remark}
 
-\begin{equation}
-    0 \rightarrow  F \rightarrow  \mathrm{End} _0 ( V \otimes K) \rightarrow L^{-2} \otimes \mathrm{det} ( V) \otimes K \rightarrow  0 
-\end{equation}
-
-$H^0 ( L^{-2} \otimes \mathrm{Det} (V)  \otimes K ) = \mathrm{Hom} ( L...) $ 
-
-
-$H^0 ( F) = H^0 ( \mathrm{End}_0 ( V) \otimes K ) $ 
-if and only if $ V$ does not occur in a stable Higgs bundle. 
-
-[[ EXPAND THIS END SECTION ]]
-
+\begin{proof}[Idea of the proof of Proposition \ref{VinstableHiggs} ]
+	It is clear that any stable vector bundle $V$ occurs in a stable pair (see Example \ref{ex:Vstable}). So assume that $V$ is not a stable vector bundle and let $L\subseteq V$ be the (unique) linebundle which violates the stability condition (see Lemma \ref{lem:uniqueL}). Consider the following exact sequence:
+	\[
+	 0 \rightarrow  F \rightarrow  \mathrm{End} _0 ( V) \otimes K \rightarrow L^{-2} \otimes \Lambda^2V \otimes K \rightarrow  0 
+	\]
+	Here $F$ is defined as the kernel of the map $\mathrm{End} _0 ( V )\otimes K \rightarrow L^{-2} \otimes \Lambda^2V \otimes K$. Using Lemma \ref{lem:Hom(L1,L2)} and Lemma \ref{lem:uniqueL} we have: 
+	\begin{align*}
+		H^0(L^{-2}\otimes \Lambda^2V\otimes K) &\cong \mathrm{Hom}(L,L^* \otimes \Lambda^2V\otimes K) \\
+		&\cong\mathrm{Hom}(L,V/L \otimes K).
+	\end{align*}
+	So the map $H^0(\mathrm{End} _0 ( V) \otimes K)) \rightarrow H^0(L^{-2} \otimes \Lambda^2V \otimes K)$ is given by $\varphi \mapsto \pi \circ \varphi|_{L}$. Therefore we have:
+	\begin{align*}
+	H^0(F) &= \{ \varphi \in H^0(\mathrm{End}_0(V)\otimes K) \colon \pi \circ \varphi|_{L} = 0 \}\\
+	&= \{ \varphi \in H^0(\mathrm{End}_0(V)\otimes K) \colon \varphi(L) \subseteq L \}.
+	\end{align*}
+	In other words, $H^0(F)$ consists of all the Higgs-field $\varphi$ for which $L$ is $\varphi$-invariant. Now consider the induced long exact sequence in cohomology: 
+	\[
+	 0 \rightarrow  H^0(F) \overset{f}{\rightarrow} H^0(\mathrm{End} _0 ( V) \otimes K) \overset{g}{\rightarrow} H^0(L^{-2} \otimes \Lambda^2V \otimes K ) \overset{\delta}{\rightarrow} H^1(F) \rightarrow \ldots 
+	\]
+	Using the exactness of the above sequence, we can conclude the following:
+	\begin{align*}
+		0 = \mathrm{ker}(\delta)= \mathrm{im}(g)
+		&\iff H^0(\mathrm{End}_0(V)\otimes K) = \mathrm{ker}(g) = \mathrm{im}(f)\\
+		&\iff H^0(\mathrm{End}_0(V)\otimes K) \cong H^0(F)\\
+		&\iff \varphi(L)\subseteq L \text{ for all } \varphi \in H^0(\mathrm{End}_0(V)\otimes K).
+	\end{align*}
+	Now remember that $\mathrm{deg}(L) \geq \frac{1}{2} \mathrm{deg} (\Lambda^2V ) $. So if $L$ is $\varphi$-invariant for every $\varphi \in H^0(\mathrm{End}(V)\otimes K)$, then every pair $(V,\varphi)$ is an unstable Higgs bundle. On the other hand, if $V$ does not occur in a stable pair, then $(V,\varphi)$ is an unstable Higgs bundle for every $\varphi \in H^0(\mathrm{End}(V)\otimes K)$. Since $L$ is the unique subbundle of $V$ which violates the stability condition, this means that $L$ is $\varphi$-invariant for all $\varphi \in H^0(\mathrm{End}(V)\otimes K)$. Hence we can conclude that $\delta$ is injective if and only if $V$ does not occur in a stable pair. \\
+	
+	In other words, $V$ does occur in a stable pair if and only if the coboundary map $\delta$ is \textit{not} injective. The rest of the proof now boils down to analyzing the injectivity of $\delta$ in all possible cases. For example, if $V$ is not semistable, one can show that $H^1(F) \cong \mathbb{C}$, which immediately gives case $(iv)$. See Proposition 3.3 in \cite{Hitchin} for the remaining work. 
+\end{proof}
 
 % section (end)
 
 
-
 \bibliographystyle{plain}
-\bibliography{}
+\bibliography{references}
 
 
 \end{document} 
-
