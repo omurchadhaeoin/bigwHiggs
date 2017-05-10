@@ -1,125 +1,311 @@
 % 
 \input{preamble}
 
-\title{Non Abelian hodge theory}
-\author{Owen}
+\title{Non-Abelian Hodge Theory}
+\author{Eoin Murphy, University of Sheffield}
 \date{}
+
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+
+\setlength\parindent{0pt}
 
 \begin{document} 
 \maketitle
 
-Throughout $X$ is  a compact connected Riemann surface. 
+\section{Contact}
+If you have any feedback or questions, feel free to drop me an email at: \href{mailto:emurphy2@sheffield.ac.uk}{\texttt{emurphy2@sheffield.ac.uk}}
 
 
-\begin{theorem}
-    (Non Abelain Hodge Theorem)
-    \begin{equation}
-        \mathcal{M}_{\mathrm{flat}}|^{\mathrm{ss}} \rightarrow  \mathcal{M}_{\mathrm{higgs}} 
-    \end{equation}
-\end{theorem}
-where $\mathcal{M}_{\mathrm{flat}}$ is the moduli space of rank $n$ vector bundles over $X$ with flat connection, 
-and $\mathcal{M}_{\mathrm{Higgs}}$ is the moduli space of rank $n$, degree $0$ vector bundles $E$ over $X$ together with a section $\varphi \in H^0 (X, \mathrm{End}(E) \otimes \Omega^1 _X) $. 
+\section{What's the aim of this talk?}
 
-\begin{definition}
-    $(E, \nabla)$ is simple if it has no proper flat subbundles. 
-    It is semisimple if it decomposes as a direct sum of simple bundles. 
+Throughout $X$ is  a compact, connected Riemann surface of genus g.\\
+
+This talk is all about a really neat result referred to in the scriptures as the Non-Abelian Hodge Theorem (NAHT). This theorem simply says that the two different moduli spaces are diffeomorphic (though not complex analytic isomorphic!). One of these moduli space $\mathcal{M}_{\mathrm{Flat}}$ parametrises flat rank $n$ vector bundles on X, the other  $\mathcal{M}_{\mathrm{Higgs}}$ parametrises rank $n$ Higgs bundles.\\
+
+At first glance this statement doesn't look very much at all like the usual Hodge decomposition theorem. Indeed the usual Hodge decomposition theorem says that on (for example) a compact Riemann surface one can decompose its singular cohomology $H^{i}(X,\mathbb{C})$ as a direct sum of certain smaller vector spaces $\bigoplus_{p+q=i}H^{p,q}(X,\mathbb{C})$. What $H^{p,q}(X,\mathbb{C})$ are exactly is unimportant for this talk. It is a fact however that $H^{p,q}(X,\mathbb{C})$ coincides with the sheaf cohomology $H^{q}(X,\Omega_{X}^{p})$ of the sheaf of holomorphic $p$-forms $\Omega_{X}^{p}$.\\
+
+The whole aim of this talk try and explain carefully how, \textit{in the special case of rank n=1 bundles}, the diffeomorphism between the two moduli spaces can be interpreted as an analogue of the Hodge decomposition above. I hope this should motivate the `Hodge' in Non-Abelian Hodge Theorem.\\
+
+The `Non-Abelian' in Non-Abelian Hodge Theorem has to do with changing the coefficients that one takes cohomology in from being an Abelian group  to a Non-Abelian group. We won't go into this in any detail.\\
+
+Finally I intend to prove the NAHT in the special case of rank n=1 bundles placing emphasis on the fact that, although the moduli spaces $\mathcal{M}_{\mathrm{Flat}}$ and $\mathcal{M}_{\mathrm{Higgs}}$ are endowed with the structure of complex manifolds, they are \textit{not} isomorphic as complex manifolds. Only as differentiable manifolds.
+
+\section{How the NAHT is an analogue of the usual Hodge decomposition}
+
+
+\subsection{The Non-Abelian Hodge Theorem}
+
+To start things off, in this subsection we state the theorem at the heart of this talk: the non-Abelian Hodge theorem.\\
+
+As already described, the non-Abelian Hodge theorem identifies two different moduli spaces as differentiable manifolds. Before stating the theorem, a subtlety I brushed over is that one needs to restrict to certain kinds of flat/Higgs bundles to get a good notion of moduli spaces. In the Higgs case we restrict ourselves to stable Higgs bundles, a concept which has been discussed in previous talks. In the flat case we shall need the idea of semi-simplicity:
+
+\begin{definition}\ \\
+A flat bundle $(E, \nabla)$ is simple if it has no proper flat sub-bundles. $(E, \nabla)$ is semi-simple if it decomposes as a direct sum of simple bundles.
 \end{definition}
-By $ \mathcal{M}_{\mathrm{flat}}|^{\mathrm{ss}} $ we denote the moduli space restricted to semisimple bundles. 
 
-Assume $n=1$, so and $E$ is a line bundle. 
+To be explicit let's denote by $\mathcal{M}_{\mathrm{Flat}}|^{\mathrm{semi-simple}},\mathcal{M}_{\mathrm{Higgs}}|^{\mathrm{stable}}$ the moduli space of objects restricted as indicated. Then we have
 
-Recall that there is a complex analytic isomorphism. 
-\begin{align}
-    \mathcal{M}_{\mathrm{Betti}} & = \mathrm{Maps}(\pi_1 ( X) , \mathrm{GL}_n \mathbb{C} ) / \mathrm{GL}_n \mathbb{C}  \\
-    & = \mathrm{Maps}(\pi_1 ( X) , \mathbb{C} ^*) \\
-    & = \mathrm{Maps}(\pi_1 ( X)/[\pi_1(X) , \pi_1(X) , \mathbb{C} ^*) \\
-    & = \mathrm{Maps}(H^1(X, \mathbb{Z} , \mathbb{C} ^*) \\
-    & = H^1(X, \mathbb{C} ^*) 
+\begin{theorem}(Non-Abelian Hodge Theorem)\\
+There is a diffeomorphism between the following moduli spaces
+    \begin{equation}\label{NAHT}
+        \mathcal{M}_{\mathrm{Flat}}|^{\mathrm{semi-simple}}\rightarrow\mathcal{M}_{\mathrm{Higgs}}|^{\mathrm{stable}} 
+    \end{equation}
+where
+\begin{itemize}
+\item $\mathcal{M}_{\mathrm{Flat}}|^{\mathrm{semi-simple}}$ is the moduli space of semi-simple rank $n$ smooth vector bundles $E$ over $X$ with flat connection $\nabla$
+\item $\mathcal{M}_{\mathrm{Higgs}}|^{\mathrm{stable}}$ is the moduli space of stable rank $n$, degree $0$ holomorphic vector bundles $E$ over $X$ together with a Higgs field $\varphi \in H^0 (X, \mathrm{End}(E) \otimes \Omega^1 _X) $
+\end{itemize}
+\end{theorem}
+
+\fbox{%
+    \parbox{\textwidth}{%
+\textbf{Assumption}: from now on we assume $n=1$, that is from now on all vector bundles $E$ are line bundles. In this rank one case stability and semi-simplicity are automatically satisfied. Accordingly we shall simply write $\mathcal{M}_{\mathrm{Flat}}$ in place of $\mathcal{M}_{\mathrm{Flat}}|^{\mathrm{semi-simple}}$ and likewise $\mathcal{M}_{\mathrm{Higgs}}$ for $\mathcal{M}_{\mathrm{Higgs}}|^{\mathrm{stable}}$.
+    }%
+}
+
+
+\subsection{Reformulation of the rank 1 non-Abelian Hodge theorem in terms of cohomology}
+
+In this subsection we reformulate the non-Abelian Hodge theorem diffeomorphism (\ref{NAHT}) in terms something which looks more like a statement about cohomology in order to compare it with the usual Hodge decomposition.\\
+
+First we shall use the Riemann-Hilbert correspondence to replace $\mathcal{M}_{\mathrm{Flat}}$ with $H^1(X, \mathbb{C} ^\times) $. Then we shall write $\mathcal{M}_{\mathrm{Higgs}}$ in terms of the Jacobian $\textrm{Jac}(X)$ of $X$ and the space $H^0 ( \Omega_X ^1 ) $ of holomorphic $1$-forms on $X$.\\
+
+Recall the Riemann-Hilbert correspondence says given a flat bundle $(E,\nabla)$ one can take it's monodromy and get a representation of the fundamental group $\rho:\pi_{1}(X)\rightarrow Gl_{n}(\mathbb{C})$. Conversely given a representation $\rho:\pi_{1}(X)\rightarrow Gl_{n}(\mathbb{C})$ one can cook up a flat bundle $(E,\nabla)$ whose monodromy is given by $\rho$. This neat correspondence upgrades to a complex analytic isomorphism of moduli spaces:
+
+\begin{theorem}(Riemann-Hilbert Correspondence)\\
+There is a diffeomorphism (in fact in this case a complex analytic isomorphism) between the following moduli spaces
+    \begin{equation}\label{RHC}
+        \mathcal{M}_{\mathrm{Betti}}|^{\mathrm{semi-simple}}\rightarrow\mathcal{M}_{\mathrm{Flat}}|^{\mathrm{semi-simple}} 
+    \end{equation}
+where
+\begin{itemize}
+\item $\mathcal{M}_{\mathrm{Betti}}|^{\mathrm{semi-simple}}:=\mathrm{Hom}(\pi_1 ( X) , \mathrm{GL}_n(\mathbb{C})) / \mathrm{GL}_n(\mathbb{C})|^{\mathrm{semi-simple}}$ is the character variety (or Betti moduli space) and semi-simple means semi-simple as a representation of $\pi_{1}(X)$
+\end{itemize}
+\end{theorem}
+
+Using the isomorphism (\ref{RHC}) and dropping $|^{\mathrm{semi-simple}}$ as we are in the rank one case then one has a diffeomorphism
+\begin{align*}
+    \mathcal{M}_{\mathrm{Flat}} \cong & \mathcal{M}_{\mathrm{Betti}}\\
+    & \textrm{(Defintion of $\mathcal{M}_{\mathrm{Betti}}$)} \\
+     = & \mathrm{Hom}_{Grp}(\pi_1 ( X) , \mathrm{GL}_n \mathbb{C} ) / \mathrm{GL}_n \mathbb{C}\\
+    & \textrm{($n=1$ and thus $Gl_{1}(\mathbb{C})=\mathbb{C} ^\times$; $\mathrm{GL}_n$ action is by conjugation which is trivial when $n=1$)}\\
+    = & \mathrm{Hom}_{Grp}(\pi_1 ( X) , \mathbb{C} ^\times)\\
+    & \textrm{(Group homomorphisms into Abelian $\mathbb{C}^\times$ factor through Abelianization of $\pi_{1}(X)$)}\\
+    = & \mathrm{Hom}_{Grp}(\pi_1 ( X)/[\pi_1(X) , \pi_1(X)], \mathbb{C} ^\times)\\
+    = & \mathrm{Hom}_{Grp}(H^1(X, \mathbb{Z}), \mathbb{C}^\times) \\
+    & \textrm{(Universal coefficients theorem as $H_\bullet(X, \mathbb{Z})$ is torsion free)}\\
+    = & H^1(X,\mathbb{C}^\times)
+\end{align*}
+To see that $H_\bullet(X,\mathbb{Z})$ is torsion free note that in the case of a compact, connected genus $g$ Riemann surface we have 
+\begin{align}\label{CohomologyOfX}
+H^\bullet (X, \mathbb{Z} ) \cong\begin{cases}
+0 & \textrm{otherwise}\\
+\mathbb{Z} & \bullet=2\\
+\mathbb{Z}^{2g} & \bullet=1\\
+\mathbb{Z} & \bullet=0
+\end{cases} 
 \end{align}
 
-In the case is a genus $g$ Riemann surface we have 
-\begin{align}
-    H^\bullet (X, \mathbb{Z} ) \begin{cases}
-        things 
-    \end{cases} 
-\end{align}
+So $\mathcal{M}_{\mathrm{Flat}}$ is diffeomorphic (indeed complex analytic isomorphic) to $H^1(X,\mathbb{C}^\times)$ and so we can reformulate the non-Abelian Hodge theorem as there being a diffeomorphism
+\begin{equation*}
+H^1(X, \mathbb{C} ^\times) \rightarrow \mathcal{M}_{\mathrm{Higgs}}
+\end{equation*}
 
-Remark: when $n=1$ stability and semistability are automatic. 
-Thus we have that NAHT is equivalent in our case to 
-\begin{equation}
-    H^1(X, \mathbb{C} ^*) \rightarrow \mathcal{M}_{\mathrm{Higgs}}
+Now we focus on the right hand side, writing $\mathcal{M}_{\mathrm{Higgs}}$ in terms of a complex manifold called the the Jacobian $\textrm{Jac}(X)$ of $X$ and the space $H^0 ( \Omega_X ^1 ) $ of holomorphic $1$-forms on $X$.\\
+
+What is a point of $\mathcal{M}_{\mathrm{Higgs}}$? It picks out a pair $(E,\varphi)$ where $E$ is a degree $0$, holomorphic line bundle on $X$ and $\varphi$ is a Higgs field $\varphi\in H^0 (X,\mathrm{End}(E) \otimes \Omega^1 _X)$. There are natural complex manifolds parametrising both of these objects.\\
+
+Fact: there exists a complex manifold $\textrm{Jac}(X):=\mathrm{Pic} ^0(X)$ called the Jacobian which parameterizes degree 0 line bundles. It is the connected component $\mathrm{Pic} ^0$ of the identity of the Picard group $\textrm{Pic}(X)$. If you are unfamiliar with the Picard group it is just the group of (isomorphism classes of) holomorphic line bundles. The group multiplication is given by tensor product, inverse is given by taking the dual bundle and the identity is given by the trivial line bundle.\\
+
+The Higgs fields $\varphi$ also have a simple interpretation (and don't actually depend at all on $E$ in this rank 1 case). The endomorphism bundle of any line bundle is trivial. Since tensoring a bundle by the trivial bundle does nothing then one has $\varphi\in H^0(X,\mathrm{End}(E) \otimes \Omega^1 _X)=H^0 ( X , \Omega_X ^1 )$. So it turns out Higgs fields of line bundles are simply holomorphic 1-forms on $X$. $H^0 ( X , \Omega_X ^1 )$ is a complex vector space and in particular is a complex manifold.\\
+
+Putting the above two observations together gives us $\mathcal{M}_{\mathrm{Higgs}}=\textrm{Pic}^{0}(X)\times H^0 ( X , \Omega_X ^1)$ as a complex manifold. In doing so we can reformulate the non-Abelian Hodge theorem one last time as saying there is a diffeomorphism
+\begin{equation}\label{NAHTDecomposition}
+\fbox{
+$H^1(X, \mathbb{C}^\times)\cong\mathrm{Pic}^0 (X) \times H^0 (X,\Omega_X ^1 )$
+}
 \end{equation}
 
-Fact: there exists a complex manifold $\mathrm{Pic} ^0 $ called the Jacobian 
-which parameterizes degree 0 line bundles.
-In the case that $E$ is of rank 1 so the endomorphism bundle is trivial. 
-Have Higgs field $\varphi \in H^0 ( X , \Omega_X ^1 ) $ 
+\subsection{The usual Hodge decomposition}
 
-Thus we reformulate NAHT as 
-\begin{equation}
-    H^1(X, \mathbb{C} ^*) \rightarrow \mathrm{Pic}^0 (X) \times H^0 (\Omega_X ^1 ) 
+The punch line is that the recasted non-Abelian Hodge theorem (\ref{NAHTDecomposition}) looks \textit{very} similar to the usual Hodge decomposition for $H^1 ( X, \mathbb{C} )$ which says
+\begin{equation*}
+H^1 (X, \mathbb{C})=H^1 ( X, \mathcal{O} _X ) \oplus H^0 (X,\Omega_X ^1 )
+\end{equation*}
+as complex vector spaces, or rather perhaps notationally it would be better to write this as
+\begin{equation}\label{UsualHodgeDecomposition}
+\fbox{
+$H^1 (X, \mathbb{C})=H^1 ( X, \mathcal{O} _X )\times H^0 (X,\Omega_X ^1 ) $
+}
+\end{equation}
+as complex manifolds.\\
+
+Note here $H^1 ( X, \mathcal{O} _X )$ and $H^0 (X,\Omega_X ^1 )$ are the sheaf cohomologies of $\mathcal{O}_{X}$ the sheaf of holomorphic functions on $X$ and $\Omega_X ^1$ the sheaf of sections of the holomorphic cotangent bundle. It might be helpful to note that $\mathcal{O} _X=\Omega_X ^0$ by definition.\\
+
+\section{The relationship between the rank 1 NAHT and the usual Hodge decomposition}
+
+In this section we will relate the usual Hodge decomposition (\ref{UsualHodgeDecomposition}) to the non-Abelian Hodge theorem decomposition (\ref{NAHTDecomposition}).\\
+
+More precisely, we will relate slightly weaker objects. We will show that there is a short exact sequence of Abelian groups $0\rightarrow H^0 (X,\Omega_X ^1 )\rightarrow H^1 (X, \mathbb{C})\rightarrow H^1 ( X, \mathcal{O} _X )\rightarrow 0$ and  $0\rightarrow H^0 (X,\Omega_X ^1 )\rightarrow H^1(X, \mathbb{C}^\times)\rightarrow\mathrm{Pic}^0 (X)\rightarrow 0$. As Abelian groups, (\ref{UsualHodgeDecomposition}) and (\ref{NAHTDecomposition}) are splittings of these short exact sequences. Warning: this is not saying that (\ref{NAHTDecomposition}) splits as complex manifolds, indeed we show it does not in Section 4.\\
+
+The relationship between the above short exact sequences is given by the following commutative diagram of Abelian groups which we shall derive explicitly in a moment:
+
+\begin{equation}\label{TheDiagram}
+\begin{tikzcd}[sep=large]
+& & 0 \arrow[d] & 0 \arrow[d] &  \\
+& & H^{0}(X,\Omega_{X}^{1}) \arrow[equal,r] \arrow[d]  & H^{0}(X,\Omega_{X}^{1}) \arrow[d] & \\
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}} \arrow[r] \arrow[d, "\textrm{identity}"]) & H^{1}(X,\underline{\mathbb{C}}) \arrow[r] \arrow[d]  & H^{1}(X,\underline{\mathbb{C}}^\times) \arrow[d] \arrow[r] & 0 \\
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}) \arrow[r] \arrow[d] & \textrm{Pic}^{0}(X) \arrow[r] \arrow[d] & 0\\
+& & 0 & 0& 
+\end{tikzcd}
 \end{equation}
 
-The usual hodge decomposition 
-\begin{equation}
-    H^1 ( X, \mathbb{C} ) = H^1 ( X, \mathcal{O} _X ) \oplus H^0 ( \Omega_X ^1 ) 
+How should one `read' this diagram? Both the rows and columns of (\ref{TheDiagram}) are short exact sequences. The middle column is the usual Hodge decomposition (\ref{UsualHodgeDecomposition}) in short exact sequence form. The column on the right is the non-Abelian Hodge decomposition (\ref{NAHTDecomposition}) in short exact sequence form.\\
+
+Crudely speaking then, the diagram says that the NAHT decomposition (in short exact sequence form) is a quotient of the usual Hodge decomposition (in short exact sequence form) by the lattice $H^{1}(X,\underline{\mathbb{Z}})$ in the left hand column of the diagram. Another way to look at this is that the complex vector spaces in the middle column are the universal covers of the complex manifolds in the right hand column. \\
+
+Ok, let's derive (\ref{TheDiagram}), explaining where all the maps come from. Consider the following diagram of sheaves of Abelian groups.
+
+\begin{equation}\label{SESDiagram}
+\begin{tikzcd}[sep=large]
+0 \arrow[r] & \underline{\mathbb{Z}} \arrow[r, "\textrm{inclusion}"] \arrow[d, "\textrm{id}_{\mathbb{Z}}"] & \underline{\mathbb{C}} \arrow[r, "exp(2\pi i - )"] \arrow[d, "\textrm{inclusion}"]  & \underline{\mathbb{C}}^\times \arrow[r] \arrow[d, "\textrm{inclusion}"] & 0\\
+0 \arrow[r] & \underline{\mathbb{Z}} \arrow[r, "\textrm{inclusion}"] &  \mathcal{O}_{X}  \arrow[r,"exp(2\pi i - )"] &  \mathcal{O}_{X}^\times \arrow[r] & 0
+\end{tikzcd}
 \end{equation}
-which is almost what we want, but not quite. 
 
-The rest of the talk aims to patch over some holes above, 
-and complete the proof of NAHT.
 
-\section{Sheaves} % (fold)
 
-Consider the short exact sequence of sheaves of abelian groups 
-\begin{align}
-    0 & \mathbb{Z}  & \mathbb{C}  & \mathbb{C} ^* & 0 \\
-    0 & \mathbb{Z}  & \mathcal{O}  & \mathcal{O}^* & 0 \\
-\end{align}
 
-[[ MAKE THIS A COMMUTATIVE DIAGRAMME ]] 
 
-And applying functor $H^ \bullet (X, - ) $ and consider the long exact sequence. 
-We now play the diagram chasing game to prove the necessary injectivity and surjectivity results. 
+By $\underline{\mathbb{Z}},\underline{\mathbb{Z}}$ and $\underline{\mathbb{C}}^\times$ I mean the locally constant sheaves associated to the Abelian groups $\mathbb{Z},\mathbb{C}$ and $\mathbb{C}^\times$ respectively. $\mathcal{O}_{X}$ is the sheaf of holomorphic functions on $X$ and $\mathcal{O}_{X}^\times$ is the sheaf of nowhere vanishing holomorphic functions on $X$.\\
 
-Claim $ H^0 ( \mathbb{C} ^* ) \rightarrow  H^1 ( \mathbb{Z} ) $. 
-Same holds for $ H^1 ( \mathbb{Z} ) \rightarrow  H^1( \mathcal{O} _X ) $.
+The two rows are short exact sequences called the exponential short exact sequences. Applying the sheaf cohomology functor $H^ \bullet (X, - )$ to the first row gives us a long exact sequence in cohomology
 
-By definition $ \mathrm{Pic} (X) = H^1 ( \mathcal{O} _X ) $
-The $\mathrm{ker}( \mathrm{deg}: H^1 ( \mathcal{O}_X ^* ) \rightarrow H^2(\mathbb{Z} ) )$ is precisely the Jacobian $\mathrm{Pic}^0 (X)$.
-
-Surjectivity at $H^1( \mathbb{C} ^* ) $ follows from the universal coefficient theorem since 
-\begin{equation}
-    H^2 (\mathbb{Z} ) \rightarrow H^2 ( \mathbb{C} ) 
+\begin{equation}\label{LESDiagram1}
+\begin{tikzcd}[sep=large]
+0 \arrow[r] & H^{0}(X,\underline{\mathbb{Z}} \arrow[r]) & H^{0}(X,\underline{\mathbb{C}}) \arrow[r]  & H^{0}(X,\underline{\mathbb{C}}^\times) \ar[out=0, in=180, looseness=2, overlay, "\delta^{0}"]{dll}\\
+ & H^{1}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{1}(X,\underline{\mathbb{C}}) \arrow[r] & H^{1}(X,\underline{\mathbb{C}}^\times) \ar[out=0, in=180, looseness=2, overlay,  "\delta^{1}"]{dll}\\
+ & H^{2}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{2}(X,\underline{\mathbb{C}}) \arrow[r] & ...
+\end{tikzcd}
 \end{equation}
-is injective. 
 
-Example: 
-Suppose $X$ has genus 1. 
-Then 
-$H^1(\mathbb{Z} ) = \mathbb{Z} ^2 $, $ H^1 ( \mathbb{C} ) = \mathbb{C} ^2 $, $H^1 ( \mathcal{O} _X )  = \mathbb{C} $, 
-$H^1(\mathbb{C} ^*) = (\mathbb{C} ^*) ^2 $, $H^0 (\Omega_X ^1) $. 
+Applying the sheaf cohomology functor $H^ \bullet (X, - )$ to the second row gives us the long exact sequence in cohomology
 
-Warning: 
-$H^1 ( \mathbb{C} ^* ) $ is not holomorphically equal to $\mathcal{M} _{\mathrm{flat}} $.
+\begin{center}
+\begin{tikzcd}[sep=large]
+0 \arrow[r] & H^{0}(X,\underline{\mathbb{Z}} \arrow[r]) & H^{0}(X,\mathcal{O}_{X}) \arrow[r]  & H^{0}(X,\mathcal{O}_{X}^\times) \ar[out=0, in=180, looseness=2, overlay]{dll}\\
+ & H^{1}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}^\times) \ar[out=0, in=180, looseness=2, overlay]{dll}\\
+ & H^{2}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{2}(X,\mathcal{O}_{X}) \arrow[r] & ...
+\end{tikzcd}
+\end{center}
 
-Suppose $H^1 ( \mathbb{C} ^* )$ splits as $ \mathrm{Pic} ^0 (X) \times H^0 (\Omega_X ^1 ) $. 
-Then there is a section $s: \mathrm{Pic}^0 (X) \rightarrow  H^1 ( \mathbb{C} ^*) $. 
-Pulls back to a map $ s: \mathrm{Pic}^0 (X) \rightarrow H^1 (\mathbb{C} ) $
+We only care about the $H^{1}$ rows in the above two long exact sequences (have a quick glance back at the two bottom rows in~\ref{TheDiagram}). Using the induced maps on cohomology coming from the vertical maps in (\ref{SESDiagram}) the $H^{1}$ rows fit into the following commutative diagram:
 
-[[ OTHER THINGS I CANNOT READ ]] 
+\begin{equation}\label{MainDiagram}
+\begin{tikzcd}[sep=large]
+H^{1}(X,\underline{\mathbb{Z}} \arrow[r] \arrow[d, "\textrm{identity}"]) & H^{1}(X,\underline{\mathbb{C}}) \arrow[r] \arrow[d]  & H^{1}(X,\underline{\mathbb{C}}^\times) \arrow[d] \\
+H^{1}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}^\times)
+\end{tikzcd}
+\end{equation}
+
+Let's say some more about the various maps in this diagram.\\
+
+On the LHS of the diagram (\ref{MainDiagram}) both $H^{1}(X,\underline{\mathbb{Z}})\rightarrow H^{1}(X,\underline{\mathbb{C}})$ and $H^{1}(X,\underline{\mathbb{Z}})\rightarrow H^{1}(X,\mathcal{O}_{X})$ are injective. To see this, for example in the first case, note that in Diagram (\ref{LESDiagram1}) the connecting map $\delta^{0}$ is $0$ as $H^{0}(X,\underline{\mathbb{C}})\rightarrow H^{0}(X,\underline{\mathbb{C}}^\times)$ is surjective. Surjectivity here follows from the fact that the exponential map is surjective and since $X$ is connected so $H^{0}(X,\underline{\mathbb{C}})=\mathbb{C}$ and $H^{0}(X,\underline{\mathbb{C}}^\times)=\mathbb{C}^\times$. A similar argument shows $H^{1}(X,\underline{\mathbb{Z}})\rightarrow H^{1}(X,\mathcal{O}_{X})$ is injective using the fact that the only globally defined holomorphic functions on a compact complex manifold are the constant ones.\\
+
+On the RHS of diagram (\ref{MainDiagram}) the map $H^{1}(X,\underline{\mathbb{C}})\rightarrow H^{1}(X,\underline{\mathbb{C}}^\times)$ is surjective. This time surjectivity follows from the fact the other connecting map $\delta^{1}$ is $0$ as $H^{2}(X,\underline{\mathbb{Z}})\rightarrow H^{2}(X,\underline{\mathbb{C}})$ is injective. Injectivity comes from two facts. First sheaf cohomology $H^{i}(X,\underline{G})$ of a constant sheaf \underline{$G$} coincides with singular cohomology  $H^{2}(X,G)$ with coefficients in $G$. Second since by (\ref{CohomologyOfX}) the singular cohomology of $X$ is torsion free one can use the universal coefficients theorem from algebraic topology to conclude that $H^{2}(X,\mathbb{Z})\rightarrow H^{2}(X,\mathbb{C})$ is injective.\\
+
+It is not true, however, that $H^{1}(X,\mathcal{O}_{X})\rightarrow H^{1}(X,\mathcal{O}_{X}^\times)$ is surjective. The best we could do is replace $H^{1}(X,\mathcal{O}_{X}^\times)$ by the image of the map $H^{1}(X,\mathcal{O}_{X})\rightarrow H^{1}(X,\mathcal{O}_{X}^\times)$ to get something surjective. But actually this starts to look pretty good -  it is a fact that $H^{1}(X,\mathcal{O}_{X}^\times)=\textrm{Pic}(X)$ the Picard group of $X$ and the image of the map is $\textrm{Pic}^{0}(X)$ the Jacobian of $X$. And this exactly one of the terms cropping up in the non-Abelian Hodge theorem.\\
+
+Putting the above observations together gives us a commutative diagram of Abelian groups whose rows are short exact sequences:
+
+\begin{equation}\label{ModifiedMainDiagram}
+\begin{tikzcd}[sep=large]
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}} \arrow[r] \arrow[d, "\textrm{identity}"]) & H^{1}(X,\underline{\mathbb{C}}) \arrow[r] \arrow[d]  & H^{1}(X,\underline{\mathbb{C}}^\times) \arrow[d] \arrow[r] & 0 \\
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}) \arrow[r] & \textrm{Pic}^{0}(X) \arrow[r] & 0
+\end{tikzcd}
+\end{equation}
+
+I know all this messing around with commutative diagrams is a pain - bear with me we're almost there in deriving diagram (\ref{TheDiagram}). We just have to fill in the middle and right-hand columns.\\
+
+Note that the map $H^{1}(X,\underline{\mathbb{C}})\rightarrow H^{1}(X,\mathcal{O}_{X})$ in the middle column has two of the terms from the Hodge decomposition short exact sequence. In fact this map is exactly the map in the Hodge decomposition short exact sequence (Lemma 3.3.1 in Daniel Huybrecht's Complex Geometry). Thus we can complete this column to the Hodge decomposition short exact sequence $H^{0}(X,\Omega^{1}_{X})\rightarrow H^{1}(X,\underline{\mathbb{C}})\rightarrow H^{1}(X,\mathcal{O}_{X})$.\\
+
+Regarding the map $H^{1}(X,\underline{\mathbb{C}}^\times)\rightarrow\textrm{Pic}^{0}(X)$ a lengthy bit of diagram chasing should convince the reader that its kernel is isomorphic to $H^{0}(X,\Omega^{1}_{X})$. This completes the derivation of Diagram (\ref{TheDiagram}).\\
+
+It may also aid the reader to fill in what each piece is in Diagram (\ref{TheDiagram}). One can then easily read off the complex manifold structure of $\mathcal{M}_{\mathrm{Flat}}$ and $\mathcal{M}_{\mathrm{Higgs}}$.\\
+
+Since $X$ is a genus 1 compact, connect Riemann surface then $H^1(X,\mathbb{Z} ) = \mathbb{Z} ^{2g} $, $ H^1 (X,\mathbb{C} ) = \mathbb{C} ^{2g} $, $H^1 (X,\mathcal{O} _X )  = \mathbb{C}^{g} $, $H^1(X,\mathbb{C} ^\times) = (\mathbb{C} ^\times) ^{2g} $, $H^0 (X,\Omega_X ^1)=\mathbb{C}^{g}$. Thus~ref{TheDiagram} becomes
 
 
-% section (end)
+\begin{equation}
+\begin{tikzcd}[sep=large]
+& & 0 \arrow[d] & 0 \arrow[d] &  \\
+& & \mathbb{C}^{g} \arrow[equal,r] \arrow[d]  & \mathbb{C}^{g} \arrow[d] & \\
+0 \arrow[r] & \mathbb{Z}^{2g}  \arrow[r] \arrow[d, "\textrm{identity}"] & \mathbb{C}^{2g} \arrow[r] \arrow[d]  & (\mathbb{C}^\times)^{2g} \arrow[d] \arrow[r] & 0 \\
+0 \arrow[r] & \mathbb{Z}^{2g}  \arrow[r] & \mathbb{C}^{g}  \arrow[r] \arrow[d] & \textrm{Pic}^{0}(X)=\mathbb{C}^{g}/\mathbb{Z}^{2g}  \arrow[r] \arrow[d] & 0\\
+& & 0 & 0& 
+\end{tikzcd}
+\end{equation}
 
 
-Proof of $n=1 $ NAHT 
+\section{Why the NAHT is not a complex analytic isomorphism}
 
-[[ FILL IN THIS HOLE ]] 
+Warning: in the actual talk I gave a different proof of this fact. Several people in previous talks mentioned a slicker way to see why the NAHT is not a complex analytic isomorphism and we shall use this proof here.\\
+
+The idea is very simple. One explicitly describes all the complex manifolds involved and then use a standard fact about complex manifolds to show the two moduli spaces could not be complex analytic isomorphic.\\
+
+As we have mention in the previous section $H^{1}(X,\underline{\mathbb{C}}^\times)\cong(\mathbb{C}^\times)^{2g}, \textrm{Pic}^{0}(X)\cong H^{1}(X,\mathcal{O}_{X})/H^{1}(X,\underline{\mathbb{Z}})\cong\mathbb{C}^{g}/\mathbb{Z}^{2g}$ and $H^{0}(X,\Omega_{X}^{1})\cong \mathbb{C}^{g}$. Thus if the NAHT were a complex analytic isomorphism then one would have an isomorphism of complex manifolds:
+\begin{equation*}
+(\mathbb{C}^\times)^{2g}\cong H^{1}(X,\underline{\mathbb{C}}^\times)=\mathcal{M}_{\mathrm{Flat}}\cong\mathcal{M}_{\mathrm{Higgs}}=\textrm{Pic}^{0}(X)\times H^{0}(X,\Omega_{X}^{1})\cong\mathbb{C}^{g}/\mathbb{Z}^{2g}\times\mathbb{C}^{g}
+\end{equation*}
+Note that the complex torus $\mathbb{C}^{g}/\mathbb{Z}^{2g}$ is a compact complex submanifold of the RHS. The LHS however is an affine complex manifold. It is a standard fact that there are no compact complex submanifolds of affine complex manifolds and so it could not be the case that there is a biholomorphism $\mathcal{M}_{\mathrm{Flat}}\cong\mathcal{M}_{\mathrm{Higgs}}$.\\
+
+We do of course get a diffeomorphism, which we prove in the next section.
+
+\section{Proof of $n=1 $ non-Abelian Hodge theorem}
+
+First note that there is a splitting of the Abelian group $\mathbb{C}^\times=U(1)\times\mathbb{R}_{>0}$ given by considering a complex number in polar form. Here $U(1)$ is the unitary group and $\mathbb{R}_{>0}$ is the group of strictly positive real numbers under multiplication. On the level of cohomology this induces a diffeomorphism
+\begin{equation*}
+H^{1}(X,\mathbb{C}^\times)=H^{1}(X,U(1))\times H^{1}(X,\mathbb{R}_{>0})
+\end{equation*}
+
+The claim then is that $H^{1}(X,U(1))$ is diffeomorphic to $\textrm{Pic}^{0}(X)$ and $H^{1}(X,\mathbb{R}_{>0})$ is diffeomorphic to $H^{0}(X,\Omega_{X}^{1})$. This would tell us we get a diffeomorphism
+\begin{equation*}
+H^{1}(X,\mathbb{C}^\times)=H^{1}(X,U(1))\times H^{1}(X,\mathbb{R}_{>0})\cong \textrm{Pic}^{0}(X)\times H^{0}(X,\Omega_{X}^{1})
+\end{equation*}
+
+Let's give the explicit isomorphism between $H^{1}(X,U(1))$ and $\textrm{Pic}^{0}(X)$ with the case of $H^{1}(X,\mathbb{R}_{>0})$ and $H^{0}(X,\Omega_{X}^{1})$ being similar.\\
+
+Just as before everything follows from a commutative diagram of exponential short exact sequences. This time we need to introduce the unitary group $U(1)$ and so we can consider the following diagram of Abelian groups:
 
 
+\begin{equation}\label{SESDiagram2}
+\begin{tikzcd}[sep=large]
+0 \arrow[r] & \underline{\mathbb{Z}} \arrow[r, "\textrm{inclusion}"] \arrow[d, "\textrm{id}_{\mathbb{Z}}"] & \underline{\mathbb{R}} \arrow[r, "exp(2\pi i - )"] \arrow[d, "\textrm{inclusion}"]  & \underline{U(1)} \arrow[r] \arrow[d, "\textrm{inclusion}"] & 0\\
+0 \arrow[r] & \underline{\mathbb{Z}} \arrow[r, "\textrm{inclusion}"] & \underline{\mathbb{C}} \arrow[r, "exp(2\pi i - )"]  & \underline{\mathbb{C}}^\times \arrow[r] & 0\\
+\end{tikzcd}
+\end{equation}
 
+Playing the same game as we did previously, we can apply the sheaf cohomology functor $H^{1}(X,-)$ to the above diagram. Sticking the resulting commutative diagram on top of Diagram (\ref{ModifiedMainDiagram}) yields the commutative diagram (in black):
 
+\begin{equation}\label{InitialDiagram}
+\begin{tikzcd}[sep=large]
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}} \arrow[r] \arrow[d, "\textrm{identity}"]) & H^{1}(X,\underline{\mathbb{R}}) \arrow[r] \arrow[d] \arrow[bend left=90, dd, thick, red, "\theta"]  & H^{1}(X,\underline{U(1)}) \arrow[d] \arrow[r] \arrow[bend left=90, dd, red, thick, "\overline{\theta}"] & 0 \\
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}} \arrow[r] \arrow[d, "\textrm{identity}"]) & H^{1}(X,\underline{\mathbb{C}}) \arrow[r] \arrow[d]  & H^{1}(X,\underline{\mathbb{C}}^\times) \arrow[d] \arrow[r] & 0 \\
+0 \arrow[r] & H^{1}(X,\underline{\mathbb{Z}}) \arrow[r] & H^{1}(X,\mathcal{O}_{X}) \arrow[r] & \textrm{Pic}^{0}(X) \arrow[r] & 0\\
+\end{tikzcd}
+\end{equation}
+
+I claim that the composition of the two maps in the right hand column is the required diffeomorphism $H^{1}(X,U(1))\rightarrow\textrm{Pic}^{0}(X)$. Let's denote this map by $\overline{\theta}$ for simplicity. Here I have implicitly identified sheaf cohomology $H^{1}(X,\underline{U(1)})$ of the constant sheaf $\underline{U(1)}$ with singular cohomology $H^{1}(X,U(1))$ with coefficients in the unitary group $U(1)$.\\
+
+To check that $\overline{\theta}$ is indeed a diffeomorphism, it is enough to check upstairs that the composition $\theta:H^{1}(X,\underline{\mathbb{R}})\rightarrow H^{1}(X,\underline{\mathbb{C}})\rightarrow H^{1}(X,\mathcal{O}_{X})$ is an isomorphism of \textit{real} vector spaces and moreover that the lattices $H^{1}(X,\underline{\mathbb{Z}})$ sitting inside $H^{1}(X,\underline{\mathbb{R}})$ and $H^{1}(X,\mathcal{O}_{X})$ respectively are preserved by $\theta$. Then $H^{1}(X,U(1))$ and $\textrm{Pic}^{0}(X)$ would be diffeomorphic as real tori, that is the quotient of real vector spaces by a lattice.\\
+
+First note that $\theta$ preserves the lattice $H^{1}(X,\underline{\mathbb{Z}})$ by commutative of the diagram. To complete the proof let's show $\theta$ is an isomorphism of real vector spaces.\\
+
+We have observed before that the homology $H_\bullet(X,\mathbb{Z})$ is torsion free. The universal coefficient theorem from algebraic topology then says that $H^{1}(X,G)\cong\textrm{Hom}_{AbGrp}(H_{1}(X,\mathbb{Z}),G)$ for any Abelian group $G$. Moreover this isomorphism is natural in group homomorphisms $G\rightarrow G'$. Thus any generators, say $\varphi_{1},...,\varphi_{2g}$, of $H^1(X,\mathbb{Z})\subset H^1(X,\mathbb{R})$ will also generate $H^1(X,\mathbb{R})$ as a real vector space. What does the basis $\varphi_{1},...,\varphi_{2g}$ map to under $\theta$? Using commutativity of the diagram they map to the images of $\varphi_{1},...,\varphi_{2g}\in H^1(X,\mathbb{Z})$ sitting inside $H^1(X,\mathcal{O}_{X})$. However these also generate $H^1(X,\mathcal{O}_{X})$ as a real vector space! (See Corollary 3.3.6 of Daniel Huybrecht's Complex Geometry). So $\theta$ maps the $2g$ $\mathbb{R}$-basis vectors of $H^{1}(X,\mathbb{R})$ to the $2g$ $\mathbb{R}$-basis vectors of $H^{1}(X,\mathcal{O}_{X})$ and hence is an isomorphism of real vector spaces. This completes the proof.
+
+\section{Acknowledgments}
+What little I know about the Non-Abelian Hodge Theorem, including much of the content of this talk, I learned from a series of excellent discussions with Dr. Sven Meinhardt.
 
 
 
@@ -130,4 +316,3 @@ Proof of $n=1 $ NAHT
 
 
 \end{document} 
-
